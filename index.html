@@ -1,0 +1,842 @@
+[13.23, 31/12/2025] Ayoen Galieh: <!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+  <title>Surfside Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="surfside media" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets…
+[18.07, 31/12/2025] Ayoen Galieh: <!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Djava Works | Official Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="author" content="Djava Works">
+  
+  <!-- Plugins CSS (Zed-Three Standard) -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Bootstrap 5 (Zed-Three Standard) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- 1. CSS VARIABLES & RESET (Zed-Three Style) --- */
+    :root {
+      --primary: #111;
+      --text-secondary: #777;
+      --accent: #d32f2f;
+      --bg-body: #fff;
+      --bg-gray: #f4f4f4;
+      --font-main: 'Jost', sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-main); background: var(--bg-body); color: var(--primary); line-height: 1.5; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+    img { width: 100%; display: block; object-fit: cover; }
+    .container { max-width: 1620px; padding: 0 30px; } /* Zeed-Three uses container mw-1620 */
+
+    /* --- 2. HEADER STYLES --- */
+    .header-transparent-bg {
+        background: rgba(255,255,255, 0.95);
+        border-bottom: 1px solid #eee;
+        position: sticky; top: 0; z-index: 100;
+        padding-top: 8px; padding-bottom: 8px;
+    }
+    
+    .logo img { max-width: 220px; } /* Jika menggunakan gambar logo */
+    .logo-text { font-size: 28px; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
+    .logo-text span { color: var(--accent); }
+
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+    
+    /* Desktop Nav */
+    .navigation { display: flex; gap: 30px; }
+    .navigation__link { font-weight: 500; font-size: 14px; color: #111; text-transform: uppercase; cursor: pointer; }
+    .navigation_link:hover, .navigation_link.active { color: var(--accent); }
+    
+    /* Header Tools (Search, User, Cart) */
+    .header-tools { display: flex; align-items: center; gap: 20px; }
+    .header-tools__item { cursor: pointer; font-size: 20px; color: #111; position: relative; }
+    .header-tools__item:hover { color: var(--accent); }
+    .cart-amount { position: absolute; top: -8px; right: -10px; background: #111; color: #fff; font-size: 10px; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+
+    /* Mobile Nav */
+    .mobile-nav-activator { display: none; font-size: 24px; color: #111; cursor: pointer; }
+    .header-mobile__navigation {
+        display: none; /* Hidden on desktop */
+        flex-direction: column;
+        position: absolute; top: 100%; left: 0; width: 100%; background: #fff;
+        padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 999;
+    }
+    .header-mobile__navigation.show { display: flex; }
+
+    /* --- 3. SLIDESHOW (Zed-Three Animations) --- */
+    .slideshow {
+        height: 600px; /* Tinggi Hero */
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 40px;
+    }
+    .swiper-slide { overflow: hidden; height: 100%; position: relative; }
+    .slideshow-character {
+        position: absolute; bottom: 0; right: 0; /* Gambar model di kanan */
+        width: 500px; z-index: 5;
+    }
+    /* Animasi Fade Up dari Bawah */
+    .animate { animation-duration: 1s; animation-fill-mode: both; }
+    .animate_fade { animation-name: fadeInUp; }
+    .animate_btt { animation-name: fadeInUp_Btt; }
+    .animate_delay-9 { animation-delay: 0.9s; }
+    
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp_Btt {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .slideshow-text {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 100%; text-align: center; z-index: 10;
+    }
+    .slideshow-text h2 { font-size: 60px; font-weight: 300; line-height: 1; }
+    .slideshow-text h2.fw-bold { font-weight: 700; }
+    .slideshow-text h6 { font-family: 'Allura', cursive; color: #777; font-size: 24px; }
+    .text_dash { text-transform: uppercase; letter-spacing: 2px; }
+
+    /* --- 4. SIDEBAR TOKO (Visible Left Column) --- */
+    .sidebar {
+        background: #f4f4f4;
+        padding: 30px;
+        height: fit-content;
+        border-radius: 4px;
+    }
+    .sidebar h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #111;
+        text-transform: uppercase;
+    }
+    .cat-list li { margin-bottom: 12px; }
+    .cat-list a {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        display: flex;
+        align-items: center;
+    }
+    .cat-list a:hover, .cat-list a.active { color: var(--accent); padding-left: 5px; }
+
+    /* --- 5. PRODUCT CARDS (Zed-Three Style) --- */
+    .product-card_style3 {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    .pc__img-wrapper {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        height: 300px; /* Ukuran Gambar Toko */
+        background: #f9f9f9;
+    }
+    .pc__img { transition: transform 0.5s; }
+    .product-card_style3:hover .pc__img { transform: scale(1.05); }
+    
+    .pc__info { text-align: center; }
+    .pc__title {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        height: 40px;
+    }
+    .product-card__price .price {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--text-secondary);
+        display: block;
+    }
+    
+    /* Overlay Tombol */
+    .anim_appear-bottom {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        background: rgba(255,255,255,0.9);
+        padding: 15px;
+        transform: translateY(100%);
+        transition: transform 0.3s;
+        display: flex; justify-content: center; gap: 15px;
+    }
+    .product-card_style3:hover .anim_appear-bottom { transform: translateY(0); }
+    .btn-link_lg { font-size: 13px; text-transform: uppercase; font-weight: 500; color: #000; border: none; background: none; cursor: pointer; }
+    .btn-link_lg:hover { text-decoration: underline; }
+
+    /* Badge */
+    .product-label {
+        position: absolute; top: 10px; left: 10px;
+        background: #fff; padding: 2px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase;
+        z-index: 2; border-radius: 2px;
+    }
+    .product-label.bg-red { background: #e74c3c; color: #fff; }
+
+    /* --- 6. SECTION HEADERS --- */
+    .section-title {
+        text-align: center;
+        font-size: 24px; font-weight: 600; margin-bottom: 30px; text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* --- 7. FOOTER --- */
+    .footer_type_2 {
+        background: #111; color: #ccc; padding: 60px 0 20px; margin-top: 60px;
+    }
+    .footer-logo { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 20px; display: block; }
+    .footer-logo span { color: #e74c3c; }
+    .footer-links a { color: #aaa; display: block; margin-bottom: 10px; font-size: 14px; }
+    .footer-links a:hover { color: #fff; }
+    .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #333; color: #fff; border-radius: 50%; margin-right: 10px; font-size: 16px; transition: 0.3s; }
+    .social-icon:hover { background: var(--accent); color: #fff; }
+
+    /* --- 8. UTILITY CLASSES --- */
+    .d-none { display: none !important; }
+    .pos_right-center { right: 0; }
+    .mw-1620 { max-width: 1620px; margin-left: auto; margin-right: auto; }
+    
+    /* Responsive Mobile */
+    @media (max-width: 768px) {
+        .mobile-nav-activator { display: block; }
+        .navigation { display: none; } /* Hide desktop nav */
+        .slideshow { height: 400px; }
+        .slideshow-character { width: 50%; right: -50px; }
+        .slideshow-text h2 { font-size: 30px; }
+        
+        /* Mobile Shop Layout */
+        .shop-layout-grid { grid-template-columns: 1fr; }
+        .sidebar { margin-bottom: 30px; }
+        .pc__img-wrapper { height: 200px; }
+        .anim_appear-bottom { transform: translateY(0); position: relative; background: none; padding: 10px; border-top: 1px solid #eee; }
+    }
+
+    /* Detail Styles */
+    .main-image-container { height: 500px; overflow: hidden; border: 1px solid #eee; margin-bottom: 15px; }
+    .main-image-container img { width: 100%; height: 100%; object-fit: contain; }
+    .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .thumb-item { border: 1px solid #eee; overflow: hidden; cursor: pointer; height: 100px; }
+    .thumb-item:hover, .thumb-item.active { border-color: #000; }
+    .detail-price { font-size: 28px; color: #000; font-weight: 700; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- SVG SYMBOLS (Search, Cart, etc.) -->
+  <svg class="d-none">
+    <symbol id="icon_nav" viewBox="0 0 25 18">
+      <rect width="25" height="2"></rect><rect y="8" width="20" height="2"></rect><rect y="16" width="25" height="2"></rect>
+    </symbol>
+    <symbol id="icon_search" viewBox="0 0 20 20">
+      <path d="M8.80758 0C3.95121 0 0 3.95121 0 8.80758C0 13.6642 3.95121 17.6152 8.80758 17.6152C13.6642 17.6152 17.6152 13.6642 17.6152 8.80758C17.6152 3.95121 13.6642 0 8.80758 0ZM8.80758 15.9892C4.84769 15.9892 1.62602 12.7675 1.62602 8.80762C1.62602 4.84773 4.84769 1.62602 8.80758 1.62602C12.7675 1.62602 15.9891 4.84769 15.9891 8.80758C15.9891 12.7675 12.7675 15.9892 8.80758 15.9892Z" fill="currentColor"></path>
+      <path d="M19.7618 18.6122L15.1006 13.9509C14.783 13.6333 14.2686 13.6333 13.951 13.9509C13.6334 14.2683 13.6334 14.7832 13.951 15.1005L18.6122 19.7618C18.771 19.9206 18.9789 20 19.187 20C19.3949 20 19.603 19.9206 19.7618 19.7618C20.0795 19.4444 20.0795 18.9295 19.7618 18.6122Z" fill="currentColor"></path>
+    </symbol>
+    <symbol id="icon_cart" viewBox="0 0 20 20">
+      <path d="M17.6562 4.6875H15.2755C14.9652 2.05164 12.7179 0 10 0C7.28215 0 5.0348 2.05164 4.72445 4.6875H2.34375C1.91227 4.6875 1.5625 5.03727 1.5625 5.46875V19.2188C1.5625 19.6502 1.91227 20 2.34375 20H17.6562C18.0877 20 18.4375 19.6502 18.4375 19.2188V5.46875C18.4375 5.03727 18.0877 4.6875 17.6562 4.6875ZM10 1.5625C11.8548 1.5625 13.3992 2.91621 13.6976 4.6875H6.30238C6.60082 2.91621 8.14516 1.5625 10 1.5625ZM16.875 18.4375H3.125V6.25H4.6875V8.59375C4.6875 9.02523 5.03727 9.375 5.46875 9.375C5.90023 9.375 6.25 9.02523 6.25 8.59375V6.25H13.75V8.59375C13.75 9.02523 14.0998 9.375 14.5312 9.375C14.9627 9.375 15.3125 9.02523 15.3125 8.59375V6.25H16.875V18.4375Z" fill="currentColor"></path>
+    </symbol>
+  </svg>
+
+  <!-- HEADER (Zed-Three Style) -->
+  <header id="header" class="header-transparent-bg">
+    <div class="container nav-wrapper">
+      <!-- Mobile Toggle -->
+      <a class="mobile-nav-activator d-block position-relative" href="#" onclick="toggleMenu()">
+        <svg class="nav-icon" width="25" height="18" viewBox="0 0 25 18">
+          <use href="#icon_nav"></use>
+        </svg>
+      </a>
+
+      <!-- Logo -->
+      <div class="logo">
+        <!-- Jika pakai gambar, gunakan img. Disini saya pakai teks Djava Works -->
+        <a href="#" onclick="navigateTo('home')" class="logo-text">Djava <span>Works</span></a>
+      </div>
+
+      <!-- Desktop Navigation (Menu Lengkap) -->
+      <nav class="navigation d-none d-md-block">
+        <ul class="navigation__list list-unstyled d-flex">
+          <li class="navigation_item"><a onclick="navigateTo('home')" class="navigation_link">Beranda</a></li>
+          <li class="navigation_item"><a onclick="navigateTo('shop')" class="navigation_link">Toko</a></li>
+          <li class="navigation_item"><a onclick="navigateTo('about')" class="navigation_link">Tentang</a></li>
+          <li class="navigation_item"><a onclick="navigateTo('contact')" class="navigation_link">Hubungi Kami</a></li>
+          <li class="navigation_item"><a href="#" class="navigation_link">Keranjang</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Tools (Search, Cart) -->
+      <div class="header-tools d-flex align-items-center">
+        <div class="header-tools__item hover-container position-relative">
+            <a class="js-search-popup" href="#">
+                <svg class="d-block" width="20" height="20" viewBox="0 0 20 20">
+                    <use href="#icon_search"></use>
+                </svg>
+            </a>
+        </div>
+
+        <a href="#" class="header-tools_item header-tools_cart">
+          <svg class="d-block" width="20" height="20" viewBox="0 0 20 20">
+            <use href="#icon_cart"></use>
+          </svg>
+          <span class="cart-amount">3</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Menu Dropdown (Hidden by default) -->
+    <nav class="header-mobile__navigation navigation d-flex flex-column" id="mobileMenu">
+        <ul class="navigation__list list-unstyled">
+            <li class="navigation_item"><a onclick="navigateTo('home')" class="navigation_link">Beranda</a></li>
+            <li class="navigation_item"><a onclick="navigateTo('shop')" class="navigation_link">Toko</a></li>
+            <li class="navigation_item"><a onclick="navigateTo('about')" class="navigation_link">Tentang</a></li>
+            <li class="navigation_item"><a onclick="navigateTo('contact')" class="navigation_link">Hubungi Kami</a></li>
+            <li class="navigation_item"><a href="#" class="navigation_link">Keranjang</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 1. HALAMAN BERANDA (Slider Bergerak + Kategori) -->
+    <section id="home" class="page-section">
+      <!-- Slider Hero (Zed-Three Style) -->
+      <div class="slideshow swiper-container js-swiper-slider" data-settings="{ 'autoplay': { 'delay': 5000 }, 'slidesPerView': 1, 'effect': 'fade', 'loop': true }">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="overflow-hidden position-relative h-100">
+              <!-- Karakter/Model di Kanan (Beranimasi) -->
+              <div class="slideshow-character pos_right-center">
+                <img src="https://picsum.photos/seed/char1/500/733" alt="Model 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto">
+                <div class="position-absolute bottom-0 p-3" style="left:20px;">
+                   <p class="text-uppercase font-family: 'Allura' font-size: 24px animate animate_fade animate_btt animate_delay-10 mb-0">Djava Works</p>
+                </div>
+              </div>
+              <div class="slideshow-text container">
+                <h6 class="text_dash text-secondary fs-base animate animate_fade animate_btt animate_delay-3">Terbaru</h6>
+                <h2 class="display-3 fw-normal animate animate_fade animate_btt animate_delay-5">Motion-Fit</h2>
+                <h2 class="display-3 fw-bold animate animate_fade animate_btt animate_delay-5">Volley Ball</h2>
+                <a href="#" onclick="navigateTo('shop')" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">SportWear</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="overflow-hidden position-relative h-100">
+              <div class="slideshow-character pos_right-center">
+                <img src="https://picsum.photos/seed/char2/400/733" alt="Model 2" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto">
+                <div class="position-absolute bottom-0 p-3" style="left:20px;">
+                    <p class="text-uppercase font-family: 'Allura' font-size: 24px animate animate_fade animate_btt animate_delay-10 mb-0">Djava Works</p>
+                </div>
+              </div>
+              <div class="slideshow-text container">
+                <h6 class="text_dash text-secondary fs-base animate animate_fade animate_btt animate_delay-3">Diskon</h6>
+                <h2 class="display-3 fw-normal animate animate_fade animate_btt animate_delay-5">Motion-Fit</h2>
+                <h2 class="display-3 fw-bold animate animate_fade animate_btt animate_delay-5">Badminton</h2>
+                <a href="#" onclick="navigateTo('shop')" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Lihat Promo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="overflow-hidden position-relative h-100">
+              <div class="slideshow-character pos_right-center">
+                 <img src="https://picsum.photos/seed/char3/400/690" alt="Model 3" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto">
+              </div>
+              <div class="slideshow-text container">
+                <h6 class="text_dash text-secondary fs-base animate animate_fade animate_btt animate_delay-3">Koleksi</h6>
+                <h2 class="display-3 fw-normal animate animate_fade animate_btt animate_delay-5">Motion-Fit</h2>
+                <h2 class="display-3 fw-bold animate animate_fade animate_btt animate_delay-5">Running</h2>
+                <a href="#" onclick="navigateTo('shop')" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">SportWear</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination Indicators -->
+        <div class="container">
+            <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5"></div>
+        </div>
+      </div>
+
+      <div class="container mw-1620 bg-white">
+        <div style="padding: 30px 0;"></div>
+
+        <!-- Kategori Ikon (Carousel) -->
+        <section class="category-carousel container">
+          <h2 class="section-title text-center mb-4">Mungkin Anda Suka</h2>
+          <div class="position-relative">
+            <div class="swiper-container js-swiper-slider" data-settings="{ 'autoplay': { 'delay': 5000 }, 'slidesPerView': 8, 'spaceBetween': 30, 'loop': true, 'breakpoints': { '320': { 'slidesPerView': 3 }, '768': { 'slidesPerView': 5 } } }">
+              <div class="swiper-wrapper text-center">
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/seed/cat1/100/100" class="mx-auto mb-3 rounded-circle" style="width:80px;height:80px;">
+                    <a href="#" class="fw-bold" onclick="filterShop('baju-wanita')">Wanita</a>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/seed/cat2/100/100" class="mx-auto mb-3 rounded-circle" style="width:80px;height:80px;">
+                    <a href="#" class="fw-bold" onclick="filterShop('baju-pria')">Pria</a>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/seed/cat3/100/100" class="mx-auto mb-3 rounded-circle" style="width:80px;height:80px;">
+                    <a href="#" class="fw-bold" onclick="filterShop('baju-anak')">Anak</a>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/seed/cat4/100/100" class="mx-auto mb-3 rounded-circle" style="width:80px;height:80px;">
+                    <a href="#" class="fw-bold" onclick="filterShop('aksesoris')">Aksesoris</a>
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://picsum.photos/seed/cat5/100/100" class="mx-auto mb-3 rounded-circle" style="width:80px;height:80px;">
+                    <a href="#" class="fw-bold" onclick="filterShop('jersey')">Jersey</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div style="padding: 30px 0;"></div>
+
+        <!-- Produk Pilihan (Grid) -->
+        <section class="products-grid container">
+          <h2 class="section-title">Produk Pilihan</h2>
+          <div class="row" id="home-products"></div>
+          <div class="text-center mt-4">
+             <a href="#" onclick="navigateTo('shop')" class="btn-link btn-link_lg default-underline">Lihat Semua</a>
+          </div>
+        </section>
+
+        <div style="padding: 30px 0;"></div>
+      </div>
+    </section>
+
+    <!-- 2. HALAMAN TOKO (Sidebar Kiri + Grid Produk) -->
+    <section id="shop" class="page-section d-none">
+      <!-- Banner Toko -->
+      <div class="slideshow swiper-container" style="height: 200px; margin-bottom: 30px;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="overflow-hidden position-relative h-100">
+               <div class="slideshow-text container">
+                  <h2 class="fw-bold">Katalog Lengkap</h2>
+                  <p>Pilih Kategori Favoritmu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Layout: Sidebar (Kiri) + Produk (Kanan) -->
+      <div class="container mw-1620">
+        <div class="row shop-layout-grid">
+          
+          <!-- SIDEBAR KATEGORI (Terlihat Jelas) -->
+          <div class="col-md-3">
+            <aside class="sidebar">
+              <h4>Kategori</h4>
+              <ul class="cat-list list-unstyled">
+                <li><a onclick="filterShop('all')" class="active">Semua Produk</a></li>
+                <li><a onclick="filterShop('baju-pria')">Baju Pria</a></li>
+                <li><a onclick="filterShop('baju-wanita')">Baju Wanita</a></li>
+                <li><a onclick="filterShop('baju-anak')">Baju Anak</a></li>
+                <li><a onclick="filterShop('aksesoris')">Aksesoris</a></li>
+                <li><a onclick="filterShop('jersey')">Jersey Custom</a></li>
+                <li><a onclick="filterShop('diskon')" style="color: #e74c3c; font-weight: 700;">Promo Diskon</a></li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- PRODUK LIST -->
+          <div class="col-md-9">
+             <h2 class="section-title text-start" id="shop-title">Semua Produk</h2>
+             <div class="row" id="shop-products"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HALAMAN DETAIL PRODUK -->
+    <section id="product-detail" class="page-section d-none">
+      <div class="container mw-1620">
+        <a href="#" onclick="navigateTo('shop')" class="d-block mb-4">&larr; Kembali ke Toko</a>
+
+        <div class="row detail-gallery-wrapper">
+            <!-- Galeri -->
+            <div class="col-lg-6">
+                <div class="main-image-container">
+                    <img id="detail-main-img" src="" alt="Detail Product">
+                </div>
+                <div class="thumb-grid" id="detail-thumbs"></div>
+            </div>
+            <!-- Info -->
+            <div class="col-lg-6">
+                <span class="text-uppercase text-secondary fw-bold" style="font-size: 12px;" id="detail-cat">Category</span>
+                <h1 class="fw-bold my-3" style="font-size: 32px;" id="detail-name">Nama Produk</h1>
+                
+                <div class="detail-price" id="detail-price">Rp 0</div>
+                
+                <div style="background: #f4f4f4; padding: 20px; border-radius: 4px; margin-bottom: 20px;">
+                   <div class="detail-meta-item"><span style="width: 120px; font-weight: 600;">Stok:</span> <span>Tersedia</span></div>
+                   <div class="detail-meta-item"><span style="width: 120px; font-weight: 600;">Bahan:</span> <span id="detail-material">-</span></div>
+                   <div class="detail-meta-item"><span style="width: 120px; font-weight: 600;">Berat:</span> <span id="detail-weight">-</span></div>
+                </div>
+
+                <p class="text-secondary mb-4" id="detail-desc" style="line-height: 1.7;">Deskripsi...</p>
+
+                <div class="d-grid gap-2">
+                    <a id="detail-wa-link" href="#" target="_blank" class="btn btn-success btn-lg fw-bold">
+                        <i class="fab fa-whatsapp"></i> Beli Sekarang via WA
+                    </a>
+                    <button class="btn btn-outline-dark btn-lg">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Produk Lainnya -->
+        <div class="related-section" style="border-top: 1px solid #eee; padding-top: 40px; margin-top: 40px;">
+            <h3 class="section-title">Produk Lainnya</h3>
+            <div class="row" id="related-products"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. HALAMAN TENTANG -->
+    <section id="about" class="page-section d-none">
+      <!-- Banner About -->
+      <div class="slideshow" style="height: 250px; margin-bottom: 30px;">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="overflow-hidden position-relative h-100">
+               <div class="slideshow-text container">
+                  <h2 class="fw-bold">Tentang Djava Works</h2>
+                  <p>Kualitas & Kepercayaan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mw-1620">
+        <h2 class="section-title">Tentang Kami</h2>
+        <div style="background: #f9f9f9; padding: 50px; border-radius: 8px; line-height: 1.8;">
+            <p class="fs-5">Djava Works hadir untuk menyediakan kebutuhan fashion olahraga dan casual bagi keluarga Indonesia.</p>
+            <div class="row mt-4 g-4">
+                <img src="https://picsum.photos/seed/about1/600/400" class="img-fluid rounded">
+                <img src="https://picsum.photos/seed/about2/600/400" class="img-fluid rounded">
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HALAMAN KONTAK -->
+    <section id="contact" class="page-section d-none">
+      <div class="container mw-1620">
+        <h2 class="section-title">Hubungi Kami</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+             <div style="border: 1px dashed #ccc; padding: 50px; border-radius: 8px;">
+                <p class="mb-4">Ada pertanyaan? Hubungi kami melalui kontak di bawah ini.</p>
+                <p class="fw-bold mb-2">Email: help.djava@gmail.com</p>
+                <p class="fw-bold mb-4">WhatsApp: +62 856-9320-6083</p>
+                <a href="https://wa.me/6285693206083" class="btn btn-success btn-lg">
+                    <i class="fab fa-whatsapp"></i> Chat WhatsApp
+                </a>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (Zed-Three Type 2) -->
+  <footer class="footer_type_2">
+    <div class="footer-middle container">
+      <div class="row row-cols-lg-5 row-cols-2">
+        <!-- Store Info -->
+        <div class="footer-column col-12 mb-4 mb-lg-0">
+          <span class="footer-logo">Djava <span>Works</span></span>
+          <p class="mb-2">TANGERANG - INDONESIA</p>
+          <p class="m-0"><strong>help.djava@gmail.com</strong></p>
+          <p><strong>+62 856-9320-6083</strong></p>
+          <div class="d-flex mt-3 gap-3">
+             <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+             <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+             <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+             <a href="#" class="social-icon"><i class="fa fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Menu -->
+        <div class="footer-column col-12 mb-4 mb-lg-0">
+          <h4 class="text-uppercase fw-bold mb-4 pb-2 border-bottom border-secondary" style="color:white;">Menu</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="navigateTo('home')">Beranda</a></li>
+            <li><a href="#" onclick="navigateTo('shop')">Toko</a></li>
+            <li><a href="#" onclick="navigateTo('about')">Tentang</a></li>
+            <li><a href="#" onclick="navigateTo('contact')">Hubungi Kami</a></li>
+          </ul>
+        </div>
+
+        <!-- Toko -->
+        <div class="footer-column col-12 mb-4 mb-lg-0">
+          <h4 class="text-uppercase fw-bold mb-4 pb-2 border-bottom border-secondary" style="color:white;">Toko</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="navigateTo('home')">Terbaru</a></li>
+            <li><a href="#" onclick="filterShop('aksesoris')">Aksesoris</a></li>
+            <li><a href="#" onclick="filterShop('baju-pria')">Pria</a></li>
+            <li><a href="#" onclick="filterShop('baju-wanita')">Wanita</a></li>
+            <li><a href="#" onclick="filterShop('baju-anak')">Anak</a></li>
+          </ul>
+        </div>
+
+        <!-- Kategori -->
+        <div class="footer-column col-12 mb-4 mb-lg-0">
+          <h4 class="text-uppercase fw-bold mb-4 pb-2 border-bottom border-secondary" style="color:white;">Kategori</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="filterShop('jersey')">Jersey</a></li>
+            <li><a href="#" onclick="filterShop('baju-pria')">Pria</a></li>
+            <li><a href="#" onclick="filterShop('baju-wanita')">Wanita</a></li>
+            <li><a href="#" onclick="filterShop('baju-anak')">Anak</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container d-md-flex align-items-center">
+        <span class="me-auto">&copy; 2024 Djava Works. All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- Icon Bootstrap untuk WA -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+  <script>
+    // --- DATABASE PRODUK ---
+    const productsDB = [
+        {
+            id: 1,
+            name: "Jersey Bola Grade Ori - Real Madrid",
+            category: "jersey",
+            tag: ["best-seller", "diskon"],
+            price: 126000,
+            oldPrice: 180000,
+            img: "https://picsum.photos/seed/j1/300/300",
+            material: "Polyester Dryfit",
+            weight: "200 Gram",
+            images: ["https://picsum.photos/seed/j1/300/300", "https://picsum.photos/seed/j2/300/300", "https://picsum.photos/seed/j3/300/300", "https://picsum.photos/seed/j4/300/300"],
+            desc: "Jersey bola grade original high quality."
+        },
+        {
+            id: 2,
+            name: "Kaos Cotton Premium Hitam",
+            category: "baju-pria",
+            tag: ["best-seller"],
+            price: 85000,
+            img: "https://picsum.photos/seed/p1/300/300",
+            material: "Cotton Combed 30s",
+            weight: "250 Gram",
+            images: ["https://picsum.photos/seed/p1/300/300", "https://picsum.photos/seed/p2/300/300", "https://picsum.photos/seed/p3/300/300", "https://picsum.photos/seed/p4/300/300"],
+            desc: "Kaos cotton combed premium."
+        },
+        {
+            id: 3,
+            name: "Kemeja Wanita Floral",
+            category: "baju-wanita",
+            tag: ["diskon"],
+            price: 105000,
+            oldPrice: 150000,
+            img: "https://picsum.photos/seed/w1/300/300",
+            material: "Rayon Premium",
+            weight: "200 Gram",
+            images: ["https://picsum.photos/seed/w1/300/300", "https://picsum.photos/seed/w2/300/300", "https://picsum.photos/seed/w3/300/300", "https://picsum.photos/seed/w4/300/300"],
+            desc: "Kemeja casual wanita."
+        },
+        {
+            id: 4,
+            name: "Celana Jogger Sport",
+            category: "aksesoris",
+            tag: [],
+            price: 110000,
+            img: "https://picsum.photos/seed/a1/300/300",
+            material: "Terry Cotton",
+            weight: "350 Gram",
+            images: ["https://picsum.photos/seed/a1/300/300", "https://picsum.photos/seed/a2/300/300", "https://picsum.photos/seed/a3/300/300", "https://picsum.photos/seed/a4/300/300"],
+            desc: "Celana jogger untuk olahraga."
+        },
+        {
+            id: 5,
+            name: "Jersey Anak Klub Inggris",
+            category: "baju-anak",
+            tag: [],
+            price: 75000,
+            img: "https://picsum.photos/seed/c1/300/300",
+            material: "Hyget Soft",
+            weight: "150 Gram",
+            images: ["https://picsum.photos/seed/c1/300/300", "https://picsum.photos/seed/c2/300/300", "https://picsum.photos/seed/c3/300/300", "https://picsum.photos/seed/c4/300/300"],
+            desc: "Jersey bola ukuran anak."
+        }
+    ];
+
+    // --- RENDER CARD STYLE ZED-THREE ---
+    function renderCardZ3(product) {
+        const oldPriceHTML = product.oldPrice 
+            ? <span class="product-label bg-red">-${Math.round((1 - product.price/product.oldPrice)*100)}%</span> 
+            : '';
+
+        const card = `
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="product-card_style3 cursor-pointer" onclick="openDetail(${product.id})">
+                <div class="pc__img-wrapper">
+                    ${oldPriceHTML}
+                    <img src="${product.img}" alt="${product.name}" class="pc__img">
+                </div>
+                <div class="pc__info">
+                    <h6 class="pc__title"><a>${product.name}</a></h6>
+                    <div class="product-card__price">
+                        <span class="money price">Rp ${product.price.toLocaleString('id-ID')}</span>
+                    </div>
+
+                    <div class="anim_appear-bottom">
+                        <a href="https://wa.me/6285693206083?text=Halo, saya mau beli ${product.name}" class="btn-link_lg">Checkout</a>
+                        <button class="btn-link_lg"><i class="fa fa-heart-o"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        return card;
+    }
+
+    function renderGrid(containerId, filter = 'all') {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        
+        productsDB.forEach(p => {
+            let show = false;
+            if(filter === 'all') show = true;
+            else if(filter === 'diskon' && p.tag.includes('diskon')) show = true;
+            else if(p.category === filter) show = true;
+            else if(filter === 'jersey' && p.category === 'jersey') show = true;
+
+            if(!show) return;
+            container.innerHTML += renderCardZ3(p);
+        });
+    }
+
+    // --- NAVIGASI ---
+    function navigateTo(page) {
+        document.querySelectorAll('.page-section').forEach(s => s.classList.add('d-none'));
+        document.getElementById(page).classList.remove('d-none');
+        window.scrollTo(0,0);
+        document.getElementById('mobileMenu').classList.remove('show');
+    }
+
+    function toggleMenu() {
+        document.getElementById('mobileMenu').classList.toggle('show');
+    }
+
+    function filterShop(cat) {
+        const titles = { 'all':'Semua Produk', 'baju-pria':'Baju Pria', 'baju-wanita':'Baju Wanita', 'baju-anak':'Baju Anak', 'aksesoris':'Aksesoris', 'jersey':'Jersey', 'diskon':'Promo Diskon' };
+        document.getElementById('shop-title').innerText = titles[cat];
+        
+        document.querySelectorAll('.cat-list a').forEach(a => a.classList.remove('active'));
+        if(event && event.target) event.target.classList.add('active');
+
+        renderGrid('shop-products', cat);
+        navigateTo('shop');
+    }
+
+    // --- DETAIL PAGE ---
+    function openDetail(id) {
+        const p = productsDB.find(x => x.id === id);
+        if(!p) return;
+
+        document.getElementById('detail-name').innerText = p.name;
+        document.getElementById('detail-cat').innerText = p.category;
+        document.getElementById('detail-price').innerText = 'Rp ' + p.price.toLocaleString('id-ID');
+        document.getElementById('detail-desc').innerText = p.desc;
+        document.getElementById('detail-material').innerText = p.material;
+        document.getElementById('detail-weight').innerText = p.weight;
+
+        const mainImg = document.getElementById('detail-main-img');
+        const thumbs = document.getElementById('detail-thumbs');
+        mainImg.src = p.images[0];
+        thumbs.innerHTML = '';
+
+        p.images.forEach((img, i) => {
+            thumbs.innerHTML += `
+            <div class="thumb-item ${i===0?'active':''}" onclick="swapImg(this, '${img}')">
+                <img src="${img}">
+            </div>`;
+        });
+
+        // Related
+        const rel = document.getElementById('related-products');
+        rel.innerHTML = '';
+        productsDB.filter(x => x.id !== id).forEach(r => {
+            rel.innerHTML += renderCardZ3(r);
+        });
+
+        navigateTo('product-detail');
+    }
+
+    function swapImg(el, src) {
+        document.getElementById('detail-main-img').src = src;
+        document.querySelectorAll('.thumb-item').forEach(t => t.classList.remove('active'));
+        el.classList.add('active');
+    }
+
+    // --- INIT SWIPER (Zed-Three Config) ---
+    document.addEventListener('DOMContentLoaded', function() {
+        renderGrid('home-products');
+        renderGrid('shop-products');
+
+        // Hero Slider
+        const swiperHome = new Swiper(".js-swiper-slider", {
+            autoplay: { delay: 5000 },
+            slidesPerView: 1,
+            effect: 'fade',
+            loop: true
+        });
+
+        // Category Slider
+        const swiperCat = new Swiper(".js-swiper-slider", {
+            autoplay: { delay: 5000 },
+            slidesPerView: 8,
+            spaceBetween: 30,
+            loop: true,
+            breakpoints: {
+                320: { slidesPerView: 3 },
+                768: { slidesPerView: 5 }
+            }
+        });
+    });
+  </script>
+</body>
+</html>
