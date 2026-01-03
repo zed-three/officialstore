@@ -1,1 +1,112 @@
 
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Djava Works</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <!-- LOGO (Tetap Muncul di Desktop & HP) -->
+                <a href="index.html" class="logo">
+                    <!-- Gunakan logo kecil di HP via CSS nanti -->
+                    <img src="https://placehold.co/200x50/0f172a/FFF?text=Djava+Works" alt="Logo Djava Works">
+                </a>
+                
+                <!-- DESKTOP NAV (Menu Teks - Hanya di Desktop) -->
+                <nav class="desktop-nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                        <li><a href="toko.html" class="nav-link">Toko</a></li>
+                        <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                        <li><a href="https://wa.me/6281234567890" target="_blank" class="btn-wa-header"><i class="fab fa-whatsapp"></i> Chat WA</a></li>
+                    </ul>
+                </nav>
+
+                <!-- MOBILE HEADER ICONS (Hanya di HP) -->
+                <div class="mobile-header-icons">
+                    <a href="toko.html" title="Cari Produk">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" title="Keranjang Belanja" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <!-- Badge notifikasi (opsional) -->
+                        <span class="badge">3</span>
+                    </a>
+                </div>
+
+                <!-- Hamburger (Sembunyikan di HP karena sudah ada Menu Bawah) -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="content-box">
+            <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary-color);">Hubungi Kami</h2>
+            
+            <div class="contact-grid">
+                <div>
+                    <h3 style="margin-bottom: 20px;">Informasi Kontak</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt" style="color: var(--accent-color); width: 20px;"></i>
+                        <span>Jl. Jendral Sudirman No. 123, Jakarta Selatan, DKI Jakarta 12190</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope" style="color: var(--accent-color); width: 20px;"></i>
+                        <span>support@djavaworks.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp" style="color: var(--accent-color); width: 20px;"></i>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock" style="color: var(--accent-color); width: 20px;"></i>
+                        <span>Senin - Jumat: 09:00 - 17:00 WIB</span>
+                    </div>
+                </div>
+
+                <div style="background: var(--bg-light); padding: 30px; border-radius: 8px; text-align: center;">
+                    <h3 style="margin-bottom: 15px;">Butuh Bantuan Cepat?</h3>
+                    <p style="margin-bottom: 25px; color: var(--text-light);">
+                        Hubungi tim customer service kami melalui WhatsApp untuk respon yang lebih cepat terkait pesanan, pengembalian barang, atau pertanyaan produk.
+                    </p>
+                    <a href="https://wa.me/6281234567890?text=Halo%20Admin%20Djava%20Works,%20saya%20ingin%20bertanya..." target="_blank" class="btn btn-accent" style="font-size: 1.1rem; padding: 15px 30px;">
+                        <i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Sama) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://placehold.co/200x50/FFF/333?text=Djava+Works" alt="Logo" class="footer-logo">
+                    <p>Jl. Jendral Sudirman No. 123, Jakarta Selatan, Indonesia.</p>
+                </div>
+                <div class="footer-col"><h4>Company</h4><ul><li><a href="tentang.html">Tentang Kami</a></li></ul></div>
+                <div class="footer-col"><h4>Shop</h4><ul><li><a href="toko.html">Pria</a></li></ul></div>
+                <div class="footer-col"><h4>Help</h4><ul><li><a href="#">Customer Service</a></li></ul></div>
+                <div class="footer-col"><h4>Categories</h4><ul><li><a href="toko.html">Baju Sport</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Djava Works.</p> <a href="#">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
