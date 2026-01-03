@@ -1,33 +1,128 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Detail Produk | Djava Work</title>
-<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk - ZED THREE</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<header class="navbar">
-  <strong>Djava Work</strong>
-</header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="index.html" class="logo">
+                    <img src="https://placehold.co/200x50/0f172a/FFF?text=Djava+Works" alt="Logo ZED THREE">
+                </a>
+                <div class="hamburger"><i class="fas fa-bars"></i></div>
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Beranda</a></li>
+                        <li><a href="toko.html" class="nav-link">Toko</a></li>
+                        <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                        <li><a href="https://wa.me/6281234567890" target="_blank" class="btn-wa-header"><i class="fab fa-whatsapp"></i> Chat WA</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<section class="section detail">
-<div>
-  <img id="mainImg" src="assets/images/pria.jpg">
-  <div class="thumb">
-    <img src="assets/images/pria.jpg" onclick="mainImg.src=this.src">
-    <img src="assets/images/banner-pria.jpg" onclick="mainImg.src=this.src">
-  </div>
-</div>
+    <main class="container" style="padding-top: 40px;">
+        <!-- Breadcrumb sederhana -->
+        <div style="margin-bottom: 20px; color: var(--text-light); font-size: 14px;">
+            <a href="index.html">Beranda</a> > <a href="toko.html">Pria</a> > Jersey Pro Runner
+        </div>
 
-<div>
-  <h2>Jersey Pria</h2>
-  <p class="price">Rp 250.000</p>
-  <p>Sportwear pria kualitas premium.</p>
-  <a class="btn" href="https://wa.me/6281234567890">Pesan WA</a>
-</div>
-</section>
+        <div class="detail-wrapper">
+            <!-- Galeri Gambar -->
+            <div class="detail-gallery">
+                <!-- Gambar Utama -->
+                <img id="main-product-image" src="https://picsum.photos/seed/pria1/600/600" alt="Jersey Pro Runner" class="main-img">
+                
+                <!-- Thumbnails -->
+                <div class="thumbnails">
+                    <img src="https://picsum.photos/seed/pria1/600/600" alt="Thumb 1" class="thumb active">
+                    <img src="https://picsum.photos/seed/pria1-detail2/600/600" alt="Thumb 2" class="thumb">
+                    <img src="https://picsum.photos/seed/pria1-detail3/600/600" alt="Thumb 3" class="thumb">
+                </div>
+            </div>
 
-<footer>© 2026 Djava Work</footer>
+            <!-- Info Produk -->
+            <div class="detail-info">
+                <h1 class="detail-title">Jersey Pro Runner - Edisi Spesial</h1>
+                <p class="detail-price">Rp 250.000</p>
+                
+                <p class="detail-desc">
+                    Jersey Pro Runner dirancang dengan bahan kain Dry-Fit premium yang menyerap keringat dengan cepat. Cocok untuk lari maraton, sepak bola, atau aktivitas olahraga sehari-hari. Desain aerodinamis memberikan kenyamanan maksimal saat bergerak.
+                </p>
+
+                <ul style="margin-bottom: 30px; list-style: disc; padding-left: 20px; color: var(--text-light);">
+                    <li>Bahan: 100% Polyester Dry-Fit</li>
+                    <li>Tersedia ukuran S, M, L, XL</li>
+                    <li>Sablon Plastisol berkualitas tinggi</li>
+                </ul>
+
+                <a href="https://wa.me/6281234567890?text=Halo%20Djava%20Works,%20saya%20tertarik%20membeli%20Jersey%20Pro%20Runner" target="_blank" class="btn btn-accent" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Order via WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <!-- Produk Lainnya -->
+        <section>
+            <h2 class="section-title">Produk Lainnya</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/pria2/400/400" alt="Produk" class="product-img">
+                    <div class="product-info">
+                        <span class="product-category">Pria</span>
+                        <h3 class="product-title">Celana Training Jogger</h3>
+                        <p class="product-price">Rp 150.000</p>
+                        <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/aksesoris2/400/400" alt="Produk" class="product-img">
+                    <div class="product-info">
+                        <span class="product-category">Aksesoris</span>
+                        <h3 class="product-title">Headband Sport</h3>
+                        <p class="product-price">Rp 35.000</p>
+                        <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img src="https://picsum.photos/seed/wanita3/400/400" alt="Produk" class="product-img">
+                    <div class="product-info">
+                        <span class="product-category">Wanita</span>
+                        <h3 class="product-title">Sports Bra Active</h3>
+                        <p class="product-price">Rp 125.000</p>
+                        <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Sama) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://placehold.co/200x50/FFF/333?text=Djava+Works" alt="Logo" class="footer-logo">
+                    <p>Jl. Jendral Sudirman No. 123, Jakarta Selatan, Indonesia.</p>
+                </div>
+                <div class="footer-col"><h4>Company</h4><ul><li><a href="tentang.html">Tentang Kami</a></li></ul></div>
+                <div class="footer-col"><h4>Shop</h4><ul><li><a href="toko.html">Semua Produk</a></li></ul></div>
+                <div class="footer-col"><h4>Help</h4><ul><li><a href="#">Customer Service</a></li></ul></div>
+                <div class="footer-col"><h4>Categories</h4><ul><li><a href="toko.html">Baju Sport</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Djava Works.</p> <a href="#">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
