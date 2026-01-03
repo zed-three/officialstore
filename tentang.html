@@ -1,19 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<title>Tentang Kami | Djava Work</title>
-<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Djava Works</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<header class="navbar"><strong>Djava Work</strong></header>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <!-- LOGO (Tetap Muncul di Desktop & HP) -->
+                <a href="index.html" class="logo">
+                    <!-- Gunakan logo kecil di HP via CSS nanti -->
+                    <img src="https://placehold.co/200x50/0f172a/FFF?text=Djava+Works" alt="Logo Zed Three">
+                </a>
+                
+                <!-- DESKTOP NAV (Menu Teks - Hanya di Desktop) -->
+                <nav class="desktop-nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link active">Beranda</a></li>
+                        <li><a href="toko.html" class="nav-link">Toko</a></li>
+                        <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
+                        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+                        <li><a href="https://wa.me/6281234567890" target="_blank" class="btn-wa-header"><i class="fab fa-whatsapp"></i> Chat WA</a></li>
+                    </ul>
+                </nav>
 
-<section class="section about">
-<h2>Tentang Kami</h2>
-<p>Djava Work adalah brand apparel olahraga profesional.</p>
-</section>
+                <!-- MOBILE HEADER ICONS (Hanya di HP) -->
+                <div class="mobile-header-icons">
+                    <a href="toko.html" title="Cari Produk">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <a href="#" title="Keranjang Belanja" class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <!-- Badge notifikasi (opsional) -->
+                        <span class="badge">3</span>
+                    </a>
+                </div>
 
-<footer>© 2026 Djava Work</footer>
+                <!-- Hamburger (Sembunyikan di HP karena sudah ada Menu Bawah) -->
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 40px;">
+        <!-- Banner Besar -->
+        <img src="https://picsum.photos/seed/about/1200/400" alt="Tentang Djava Works" class="about-banner">
+        
+        <div class="content-box">
+            <h2 style="margin-bottom: 20px; color: var(--primary-color);">Mengenal Djava Works</h2>
+            <p style="margin-bottom: 15px;">
+                Djava Works adalah brand lokal yang didedikasikan untuk menghadirkan apparel olahraga berkualitas tinggi dengan desain modern dan harga yang kompetitif. Kami percaya bahwa olahraga adalah gaya hidup, dan setiap individu berhak mendapatkan pakaian terbaik untuk mendukung aktivitasnya.
+            </p>
+            <p style="margin-bottom: 15px;">
+                Berdiri sejak tahun 2020, kami telah melayani ribuan pelanggan di seluruh Indonesia. Produk kami dibuat menggunakan bahan-bahan pilihan yang nyaman, tahan lama, dan menyerap keringat dengan baik, cocok untuk berbagai jenis olahraga seperti lari, sepak bola, gym, hingga yoga.
+            </p>
+            <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 1.4rem;">Visi Kami</h3>
+            <p>
+                Menjadi brand apparel olahraga nomor satu di Indonesia yang diakui akan kualitas dan inovasi desainnya.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer (Sama) -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://placehold.co/200x50/FFF/333?text=Djava+Works" alt="Logo" class="footer-logo">
+                    <p>Tangerang - Indonesia.</p>
+                </div>
+                <div class="footer-col"><h4>Company</h4><ul><li><a href="tentang.html">Tentang Kami</a></li></ul></div>
+                <div class="footer-col"><h4>Shop</h4><ul><li><a href="toko.html">Pria</a></li></ul></div>
+                <div class="footer-col"><h4>Help</h4><ul><li><a href="#">Customer Service</a></li></ul></div>
+                <div class="footer-col"><h4>Categories</h4><ul><li><a href="toko.html">Baju Sport</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2022 Ayoen Djava.</p> <a href="#">Privacy</a></div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
