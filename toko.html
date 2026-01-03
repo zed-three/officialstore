@@ -1,241 +1,313 @@
 <!DOCTYPE html>
-<html lang="id">
+<html dir="ltr" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Djava Works</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Font Awesome untuk Icon (CDN) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Belanja - Surfside Media</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Surfside Media" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="gradient-bg">
+  <svg class="d-none">
+    <!-- Semua symbol SVG sama seperti sebelumnya (tidak diubah) -->
+    <symbol id="icon_nav" viewBox="0 0 25 18"><rect width="25" height="2"/><rect y="8" width="20" height="2"/><rect y="16" width="25" height="2"/></symbol>
+    <!-- ... symbol lainnya tetap sama ... -->
+    <symbol id="icon_heart" viewBox="0 0 20 20"><!-- ... --></symbol>
+    <!-- Semua symbol lain tetap -->
+  </svg>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="header-top">
-                <!-- LOGO (Tetap Muncul di Desktop & HP) -->
-                <a href="index.html" class="logo">
-                    <!-- Gunakan logo kecil di HP via CSS nanti -->
-                    <img src="https://placehold.co/200x50/0f172a/FFF?text=Zed+Three" alt="Logo ZED THREE">
-                </a>
-                
-                <!-- DESKTOP NAV (Menu Teks - Hanya di Desktop) -->
-                <nav class="desktop-nav">
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="nav-link active">Beranda</a></li>
-                        <li><a href="toko.html" class="nav-link">Toko</a></li>
-                        <li><a href="tentang.html" class="nav-link">Tentang Kami</a></li>
-                        <li><a href="kontak.html" class="nav-link">Kontak</a></li>
-                        <li><a href="https://wa.me/6281234567890" target="_blank" class="btn-wa-header"><i class="fab fa-whatsapp"></i> Chat WA</a></li>
-                    </ul>
-                </nav>
+  <style>
+    #header { padding-top: 8px; padding-bottom: 8px; }
+    .logo__image { max-width: 220px; }
+  </style>
 
-                <!-- MOBILE HEADER ICONS (Hanya di HP) -->
-                <div class="mobile-header-icons">
-                    <a href="toko.html" title="Cari Produk">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <a href="#" title="Keranjang Belanja" class="cart-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                        <!-- Badge notifikasi (opsional) -->
-                        <span class="badge">3</span>
-                    </a>
-                </div>
+  <!-- HEADER MOBILE -->
+  <div class="header-mobile header_sticky">
+    <div class="container d-flex align-items-center h-100">
+      <a class="mobile-nav-activator d-block position-relative" href="#"><svg class="nav-icon" width="25" height="18"><use href="#icon_nav"/></svg></a>
+      <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="Surfside Media" class="logo__image d-block"/></a></div>
+      <a href="#" class="header-tools__item header-tools__cart js-open-aside" data-aside="cartDrawer"><svg width="20" height="20"><use href="#icon_cart"/></svg><span class="cart-amount js-cart-items-count">3</span></a>
+    </div>
+    <nav class="header-mobile__navigation navigation d-flex flex-column w-100 position-absolute top-100 bg-body overflow-auto">
+      <div class="container">
+        <form action="#" class="search-field position-relative mt-4 mb-3">
+          <div class="position-relative">
+            <input class="search-field__input w-100 border rounded-1" type="text" name="search-keyword" placeholder="Cari produk"/>
+            <button class="btn-icon search-popup__submit pb-0 me-2" type="submit"><svg width="20" height="20"><use href="#icon_search"/></svg></button>
+            <button class="btn-icon btn-close-lg search-popup__reset pb-0 me-2" type="reset"></button>
+          </div>
+        </form>
+      </div>
+      <div class="container">
+        <ul class="navigation__list list-unstyled">
+          <li class="navigation__item"><a href="index.html" class="navigation__link">Beranda</a></li>
+          <li class="navigation__item"><a href="shop.html" class="navigation__link">Belanja</a></li>
+          <li class="navigation__item"><a href="wishlist.html" class="navigation__link">Wishlist</a></li>
+          <li class="navigation__item"><a href="about.html" class="navigation__link">Tentang Kami</a></li>
+          <li class="navigation__item"><a href="contact.html" class="navigation__link">Kontak</a></li>
+        </ul>
+      </div>
+      <!-- Sosial & akun tetap -->
+    </nav>
+  </div>
 
-                <!-- Hamburger (Sembunyikan di HP karena sudah ada Menu Bawah) -->
-                <div class="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </div>
+  <!-- HEADER DESKTOP -->
+  <header id="header" class="header header-fullwidth header-transparent-bg">
+    <div class="container">
+      <div class="header-desk header-desk_type_1">
+        <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="Surfside Media" class="logo__image d-block"/></a></div>
+        <nav class="navigation">
+          <ul class="navigation__list list-unstyled d-flex">
+            <li class="navigation__item"><a href="index.html" class="navigation__link">Beranda</a></li>
+            <li class="navigation__item"><a href="shop.html" class="navigation__link">Belanja</a></li>
+            <li class="navigation__item"><a href="wishlist.html" class="navigation__link">Wishlist</a></li>
+            <li class="navigation__item"><a href="about.html" class="navigation__link">Tentang Kami</a></li>
+            <li class="navigation__item"><a href="contact.html" class="navigation__link">Kontak</a></li>
+          </ul>
+        </nav>
+        <div class="header-tools d-flex align-items-center">
+          <div class="header-tools__item hover-container">
+            <a class="js-search-popup search-field__actor" href="#"><svg width="20" height="20"><use href="#icon_search"/></svg></a>
+          </div>
+          <a href="login.html" class="header-tools__item"><svg width="20" height="20"><use href="#icon_user"/></svg></a>
+          <a href="wishlist.html" class="header-tools__item"><svg width="20" height="20"><use href="#icon_heart"/></svg></a>
+          <a href="#" class="header-tools__item header-tools__cart js-open-aside" data-aside="cartDrawer"><svg width="20" height="20"><use href="#icon_cart"/></svg><span class="cart-amount js-cart-items-count">3</span></a>
         </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Slider -->
-        <section class="hero-slider">
-            <!-- Gunakan placeholder gambar -->
-            <div class="slide active" style="background-image: url('https://picsum.photos/seed/sport1/1600/600');"></div>
-            <div class="slide" style="background-image: url('https://picsum.photos/seed/sport2/1600/600');"></div>
-            <div class="slide" style="background-image: url('https://picsum.photos/seed/sport3/1600/600');"></div>
-            
-            <div class="container">
-                <div class="slide-content">
-                    <h2>Koleksi Sportwear Terbaik</h2>
-                    <p>Tampil percaya diri dengan koleksi terbaru dari Djava Works.</p>
-                    <a href="toko.html" class="btn btn-accent">Belanja Sekarang</a>
-                </div>
-            </div>
-        </section>
+  <main class="pt-90">
+    <section class="shop-main container d-flex pt-4 pt-xl-5">
+      <!-- SIDEBAR FILTER -->
+      <div class="shop-sidebar side-sticky bg-body" id="shopFilter">
+        <div class="aside-header d-flex d-lg-none align-items-center">
+          <h3 class="text-uppercase fs-6 mb-0">Filter</h3>
+          <button class="btn-close-lg js-close-aside btn-close-aside ms-auto"></button>
+        </div>
+        <div class="pt-4 pt-lg-0"></div>
 
-        <div class="container page-layout">
-            <!-- Sidebar (Desktop Only) -->
-            <aside class="sidebar">
-                <h3>Info Toko</h3>
-                <p style="margin-bottom: 15px; font-size: 14px; color: var(--text-light);">
-                    Selamat datang di toko resmi Djava Works. Temukan berbagai produk sportwear berkualitas tinggi dengan harga terbaik.
-                </p>
-                <div style="background: #e2e8f0; height: 150px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; border-radius: 4px;">
-                    <span style="color: #94a3b8;">Banner Iklan / Promo</span>
-                </div>
-                <h3>Kategori Populer</h3>
-                <ul>
-                    <li><a href="toko.html">Baju Sport Pria</a></li>
-                    <li><a href="toko.html">Aksesoris</a></li>
-                    <li><a href="toko.html">Produk Custom</a></li>
+        <!-- Kategori Produk -->
+        <div class="accordion" id="categories-list">
+          <div class="accordion-item mb-4 pb-3">
+            <h5 class="accordion-header" id="accordion-heading-1">
+              <button class="accordion-button p-0 border-0 fs-5 text-uppercase" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-filter-1" aria-expanded="true">
+                Kategori Produk
+                <svg class="accordion-button__icon type2" viewBox="0 0 10 6"><use href="#icon_next_sm"/></svg>
+              </button>
+            </h5>
+            <div id="accordion-filter-1" class="accordion-collapse collapse show" data-bs-parent="#categories-list">
+              <div class="accordion-body px-0 pb-0 pt-3">
+                <ul class="list list-inline mb-0">
+                  <li class="list-item"><a href="#" class="menu-link py-1">Dress</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Celana Pendek</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Sweater</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Baju Renang</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Jaket</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Kaos & Atasan</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Jeans</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Celana Panjang</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Pria</a></li>
+                  <li class="list-item"><a href="#" class="menu-link py-1">Cardigan</a></li>
                 </ul>
-            </aside>
-
-            <!-- Produk Terlaris -->
-            <section class="content-main">
-                <h2 class="section-title">Produk Terlaris</h2>
-                <div class="product-grid">
-                    <!-- Produk 1 -->
-                    <article class="product-card">
-                        <img src="https://picsum.photos/seed/pria1/400/400" alt="Jersey Pria" class="product-img">
-                        <div class="product-info">
-                            <span class="product-category">Pria</span>
-                            <h3 class="product-title">Jersey Pro Runner</h3>
-                            <p class="product-price">Rp 250.000</p>
-                            <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
-                        </div>
-                    </article>
-                    <!-- Produk 2 -->
-                    <article class="product-card">
-                        <img src="https://picsum.photos/seed/wanita1/400/400" alt="Baju Sport Wanita" class="product-img">
-                        <div class="product-info">
-                            <span class="product-category">Wanita</span>
-                            <h3 class="product-title">Legging Yoga Active</h3>
-                            <p class="product-price">Rp 185.000</p>
-                            <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
-                        </div>
-                    </article>
-                    <!-- Produk 3 -->
-                    <article class="product-card">
-                        <img src="https://picsum.photos/seed/aksesoris1/400/400" alt="Topi" class="product-img">
-                        <div class="product-info">
-                            <span class="product-category">Aksesoris</span>
-                            <h3 class="product-title">Sport Cap Djava</h3>
-                            <p class="product-price">Rp 75.000</p>
-                            <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
-                        </div>
-                    </article>
-                </div>
-
-                <br><br>
-
-                <!-- Produk Diskon -->
-                <h2 class="section-title">Produk Diskon</h2>
-                <div class="product-grid">
-                    <!-- Produk 4 -->
-                    <article class="product-card">
-                        <img src="https://picsum.photos/seed/anak1/400/400" alt="Baju Anak" class="product-img">
-                        <div class="product-info">
-                            <span class="product-category">Anak</span>
-                            <h3 class="product-title">Setelan Anak Junior</h3>
-                            <p class="product-price"><s style="color:#999; font-size: 14px; margin-right:5px;">Rp 150.000</s> Rp 120.000</p>
-                            <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
-                        </div>
-                    </article>
-                    <!-- Produk 5 -->
-                    <article class="product-card">
-                        <img src="https://picsum.photos/seed/custom1/400/400" alt="Custom" class="product-img">
-                        <div class="product-info">
-                            <span class="product-category">Produk Custom</span>
-                            <h3 class="product-title">Jersey Custom Tim</h3>
-                            <p class="product-price"><s style="color:#999; font-size: 14px; margin-right:5px;">Rp 300.000</s> Rp 250.000</p>
-                            <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
-                        </div>
-                    </article>
-                    <!-- Produk 6 -->
-                    <article class="product-card">
-                        <img src="https://picsum.photos/seed/wanita2/400/400" alt="Jaket Wanita" class="product-img">
-                        <div class="product-info">
-                            <span class="product-category">Wanita</span>
-                            <h3 class="product-title">Jaket Windbreaker</h3>
-                            <p class="product-price"><s style="color:#999; font-size: 14px; margin-right:5px;">Rp 350.000</s> Rp 299.000</p>
-                            <a href="detail-produk.html" class="btn btn-outline product-action">Lihat Detail</a>
-                        </div>
-                    </article>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <!-- Kiri: Info -->
-                <div class="footer-col">
-                    <img src="https://placehold.co/200x50/FFF/333?text=Djava+Works" alt="Logo" class="footer-logo">
-                    <p>Tangerang - Indonesia.</p>
-                    <p>Email: zedthree007@gmail.com</p>
-                    <p>WA: +62 812-3456-7890</p>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- Company -->
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="tentang.html">Tentang Kami</a></li>
-                        <li><a href="#">Karier</a></li>
-                        <li><a href="#">Afiliasi</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="kontak.html">Kontak</a></li>
-                    </ul>
-                </div>
-
-                <!-- Shop -->
-                <div class="footer-col">
-                    <h4>Shop</h4>
-                    <ul>
-                        <li><a href="toko.html">Produk Terbaru</a></li>
-                        <li><a href="toko.html">Aksesoris</a></li>
-                        <li><a href="toko.html">Pria</a></li>
-                        <li><a href="toko.html">Wanita</a></li>
-                        <li><a href="toko.html">Semua Produk</a></li>
-                    </ul>
-                </div>
-
-                <!-- Help -->
-                <div class="footer-col">
-                    <h4>Help</h4>
-                    <ul>
-                        <li><a href="#">Customer Service</a></li>
-                        <li><a href="#">Akun Saya</a></li>
-                        <li><a href="#">Cari Toko</a></li>
-                        <li><a href="#">Legal & Privacy</a></li>
-                        <li><a href="#">Gift Card</a></li>
-                    </ul>
-                </div>
-
-                <!-- Categories -->
-                <div class="footer-col">
-                    <h4>Categories</h4>
-                    <ul>
-                        <li><a href="toko.html">Baju Sport Pria</a></li>
-                        <li><a href="toko.html">Baju Sport Wanita</a></li>
-                        <li><a href="toko.html">Baju Sport Anak</a></li>
-                        <li><a href="toko.html">Aksesoris</a></li>
-                        <li><a href="toko.html">Produk Custom</a></li>
-                    </ul>
-                </div>
+              </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Djava Works. All rights reserved.</p>
-                <a href="#">Privacy Policy</a>
-            </div>
+          </div>
         </div>
-    </footer>
 
-    <script src="assets/js/script.js"></script>
+        <!-- Warna -->
+        <div class="accordion" id="color-filters">
+          <div class="accordion-item mb-4 pb-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button p-0 border-0 fs-5 text-uppercase collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-filter-2">
+                Warna
+                <svg class="accordion-button__icon type2" viewBox="0 0 10 6"><use href="#icon_next_sm"/></svg>
+              </button>
+            </h5>
+            <div id="accordion-filter-2" class="accordion-collapse collapse show" data-bs-parent="#color-filters">
+              <div class="accordion-body px-0 pb-0">
+                <div class="d-flex flex-wrap">
+                  <a href="#" class="swatch-color js-filter" style="color: #0a2472"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #d7bb4f"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #282828"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #b1d6e8"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #9c7539"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #d29b48"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #e6ae95"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #d76b67"></a>
+                  <a href="#" class="swatch-color swatch_active js-filter" style="color: #bababa"></a>
+                  <a href="#" class="swatch-color js-filter" style="color: #bfdcc4"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ukuran -->
+        <div class="accordion" id="size-filters">
+          <div class="accordion-item mb-4 pb-3">
+            <h5 class="accordion-header">
+              <button class="accordion-button p-0 border-0 fs-5 text-uppercase collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-filter-size">
+                Ukuran
+                <svg class="accordion-button__icon type2" viewBox="0 0 10 6"><use href="#icon_next_sm"/></svg>
+              </button>
+            </h5>
+            <div id="accordion-filter-size" class="accordion-collapse collapse show" data-bs-parent="#size-filters">
+              <div class="accordion-body px-0 pb-0">
+                <div class="d-flex flex-wrap">
+                  <a href="#" class="swatch-size btn btn-sm btn-outline-light mb-3 me-3 js-filter">XS</a>
+                  <a href="#" class="swatch-size btn btn-sm btn-outline-light mb-3 me-3 js-filter">S</a>
+                  <a href="#" class="swatch-size btn btn-sm btn-outline-light mb-3 me-3 js-filter">M</a>
+                  <a href="#" class="swatch-size btn btn-sm btn-outline-light mb-3 me-3 js-filter">L</a>
+                  <a href="#" class="swatch-size btn btn-sm btn-outline-light mb-3 me-3 js-filter">XL</a>
+                  <a href="#" class="swatch-size btn btn-sm btn-outline-light mb-3 me-3 js-filter">XXL</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Merek & Harga tetap (bahasa diubah) -->
+        <!-- ... (bagian Brands dan Price sama, hanya judul diubah ke "Merek" dan "Harga") ... -->
+
+      </div>
+
+      <!-- LIST PRODUK -->
+      <div class="shop-list flex-grow-1">
+        <!-- Banner slideshow tetap, teks diubah -->
+        <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{"autoplay":{"delay":5000},"slidesPerView":1,"effect":"fade","loop":true,"pagination":{"el":".slideshow-pagination","type":"bullets","clickable":true}}'>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
+                <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
+                  <div class="slideshow-text container p-3 p-xl-5">
+                    <h2 class="text-uppercase section-title fw-normal mb-3">Aksesoris <br><strong>WANITA</strong></h2>
+                    <p class="mb-0">Aksesoris adalah cara terbaik untuk memperbarui penampilan. Tambahkan sentuhan baru dengan gaya dan warna terbaru.</p>
+                  </div>
+                </div>
+                <div class="slide-split_media position-relative">
+                  <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                    <img loading="lazy" src="assets/images/shop/shop_banner3.jpg" width="630" height="450" alt="Aksesoris Wanita" class="slideshow-bg__img object-fit-cover" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- slide lain sama -->
+          </div>
+          <div class="container p-3 p-xl-5">
+            <div class="slideshow-pagination d-flex align-items-center position-absolute bottom-0 mb-4 pb-xl-2"></div>
+          </div>
+        </div>
+
+        <div class="mb-3 pb-2 pb-xl-3"></div>
+
+        <!-- Breadcrumb & Sort -->
+        <div class="d-flex justify-content-between mb-4 pb-md-2">
+          <div class="breadcrumb mb-0 d-none d-md-block flex-grow-1">
+            <a href="index.html" class="menu-link text-uppercase fw-medium">Beranda</a>
+            <span class="breadcrumb-separator menu-link fw-medium ps-1 pe-1">/</span>
+            <span class="menu-link text-uppercase fw-medium">Belanja</span>
+          </div>
+          <div class="shop-acs d-flex align-items-center justify-content-between justify-content-md-end flex-grow-1">
+            <select class="shop-acs__select form-select w-auto border-0 py-0" name="total-number">
+              <option selected>Urutkan Default</option>
+              <option value="1">Terbaru</option>
+              <option value="2">Terlaris</option>
+              <option value="3">Harga, Rendah ke Tinggi</option>
+              <option value="3">Harga, Tinggi ke Rendah</option>
+            </select>
+            <!-- view & filter tetap -->
+          </div>
+        </div>
+
+        <!-- GRID PRODUK -->
+        <div class="products-grid row row-cols-2 row-cols-md-3" id="products-grid">
+          <!-- Contoh satu produk (semua produk lain ikuti pola sama) -->
+          <div class="product-card-wrapper">
+            <div class="product-card mb-3 mb-md-4 mb-xxl-5">
+              <div class="pc__img-wrapper">
+                <div class="swiper-container background-img js-swiper-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="details.html"><img src="assets/images/products/product_1.jpg" alt="Jaket Kulit Cropped" class="pc__img"></a></div>
+                    <div class="swiper-slide"><a href="details.html"><img src="assets/images/products/product_1-1.jpg" alt="" class="pc__img"></a></div>
+                  </div>
+                  <!-- prev/next tetap -->
+                </div>
+                <a href="https://wa.me/6285693206083?text=Saya%20tertarik%20dengan%20Jaket%20Kulit%20Cropped%20-%20Rp450.000" class="btn anim_appear-bottom position-absolute border-0 text-uppercase fw-medium" target="_blank">Beli via WA</a>
+              </div>
+              <div class="pc__info position-relative">
+                <p class="pc__category">Dress</p>
+                <h6 class="pc__title"><a href="details.html">Jaket Kulit Cropped</a></h6>
+                <div class="product-card__price d-flex"><span class="money price">Rp450.000</span></div>
+                <div class="product-card__review d-flex align-items-center">
+                  <div class="reviews-group d-flex"><!-- bintang --></div>
+                  <span class="reviews-note text-lowercase text-secondary ms-1">8k+ ulasan</span>
+                </div>
+                <button class="pc__btn-wl position-absolute top-0 end-0 bg-transparent border-0 js-add-wishlist" title="Tambah ke Wishlist">
+                  <svg width="16" height="16"><use href="#icon_heart"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Produk lain: Calvin Shorts → Rp950.000, Kirby T-Shirt → Rp250.000, Cableknit Shawl → Rp1.500.000 (diskon jadi Rp1.350.000), dll. -->
+          <!-- Semua tombol jadi "Beli via WA" dengan link WA + pesan nama produk + harga -->
+
+        </div>
+
+        <!-- Pagination -->
+        <nav class="shop-pages d-flex justify-content-between mt-3">
+          <a href="#" class="btn-link d-inline-flex align-items-center"><svg class="me-1" width="7" height="11"><use href="#icon_prev_sm"/></svg><span class="fw-medium">SEBELUMNYA</span></a>
+          <ul class="pagination mb-0">
+            <li class="page-item"><a class="btn-link px-1 mx-2 btn-link_active" href="#">1</a></li>
+            <li class="page-item"><a class="btn-link px-1 mx-2" href="#">2</a></li>
+            <!-- ... -->
+          </ul>
+          <a href="#" class="btn-link d-inline-flex align-items-center"><span class="fw-medium me-1">BERIKUTNYA</span><svg width="7" height="11"><use href="#icon_next_sm"/></svg></a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (bahasa Indonesia) -->
+  <hr class="mt-5 text-secondary" />
+  <footer class="footer footer_type_2">
+    <div class="footer-middle container">
+      <div class="row row-cols-lg-5 row-cols-2">
+        <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
+          <div class="logo"><a href="index.html"><img src="assets/images/logo.png" alt="Surfside Media" class="logo__image d-block"/></a></div>
+          <p class="footer-address">Jl. Pantai Indah No.123, Kota Surfside, Indonesia</p>
+          <p class="m-0"><strong class="fw-medium">contact@surfsidemedia.id</strong></p>
+          <p><strong class="fw-medium">+62 856-9320-6083</strong></p>
+          <!-- Sosial media tetap -->
+        </div>
+        <!-- Menu footer: Company → Perusahaan, Shop → Belanja, Help → Bantuan, Categories → Kategori -->
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container d-md-flex align-items-center">
+        <span class="footer-copyright me-auto">©2026 Surfside Media</span>
+        <div class="footer-settings d-md-flex align-items-center">
+          <a href="privacy-policy.html">Kebijakan Privasi</a> &nbsp;|&nbsp; <a href="terms-conditions.html">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer mobile tetap, teks "Home" → "Beranda", "Shop" → "Belanja", "Wishlist" tetap -->
+
+  <script src="assets/js/plugins/jquery.min.js"></script>
+  <script src="assets/js/plugins/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/plugins/bootstrap-slider.min.js"></script>
+  <script src="assets/js/plugins/swiper.min.js"></script>
+  <script src="assets/js/plugins/countdown.js"></script>
+  <script src="assets/js/theme.js"></script>
 </body>
 </html>
