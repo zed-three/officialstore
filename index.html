@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zed - Sport Official Store</title>
     
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- FONTS ASLI DARI SLIDER (Sofia & Jost) -->
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Sofia&display=swap" rel="stylesheet">
-    
-    <!-- Font Zed Sport (Untuk Header/Produk) -->
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Library Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="surfside media" />
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
@@ -384,91 +388,83 @@
             <i class="fas fa-shopping-bag" onclick="switchPage('wishlist')"></i>
         </div>
     </header>
-
-    <!-- MAIN CONTENT -->
-    <div class="container">
-
-        <!-- 1. HOME PAGE (3 SLIDE, TEXT CENTER, IMAGE RIGHT) -->
-        <section id="home" class="page-section">
-            
-            <!-- SLIDER HOME (FINAL VERSION) -->
-            <section class="swiper-container js-swiper-slider slideshow" data-settings='{
-                "autoplay": { "delay": 5000 },
-                "slidesPerView": 1,
-                "effect": "fade",
-                "loop": true
-            }'>
-              <div class="swiper-wrapper">
-                <!-- SLIDE 1 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <!-- GAMBAR KANAN BAWAH -->
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character1.png" width="542" height="733"
-                        alt="Woman Fashion 1"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup type2">
-                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-                          Dresses</p>
-                      </div>
-                    </div>
-                    <!-- TEKS TENGAH -->
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        New Arrivals</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-                      <a href="#" onclick="switchPage('shop')"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                        Now</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- SLIDE 2 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="733"
-                        alt="Woman Fashion 1"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup">
-                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer
-                        </p>
-                      </div>
-                    </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        New Arrivals</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-                      <a href="#" onclick="switchPage('shop')"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                        Now</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- SLIDE 3 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character3.png" width="400" height="690"
-                        alt="Woman Fashion 2"
-                        class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
-                    </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        New Arrivals</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-                      <a href="#" onclick="switchPage('shop')"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                        Now</a>
-                    </div> 
-                  </div>
-                </div>
+<main>
+    
+  <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
+        "autoplay": {
+          "delay": 5000
+        },
+        "slidesPerView": 1,
+        "effect": "fade",
+        "loop": true
+      }'>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="overflow-hidden position-relative h-100">
+            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+              <img loading="lazy" src="assets/images/home/demo3/slideshow-character1.png" width="542" height="733"
+                alt="Woman Fashion 1"
+                class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
+              <div class="character_markup type2">
+                <p
+                  class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
+                  Dresses</p>
               </div>
+            </div>
+            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                New Arrivals</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <a href="#"
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="overflow-hidden position-relative h-100">
+            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+              <img loading="lazy" src="assets/images/slideshow-character1.png" width="400" height="733"
+                alt="Woman Fashion 1"
+                class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
+              <div class="character_markup">
+                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer
+                </p>
+              </div>
+            </div>
+            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                New Arrivals</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <a href="#"
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="overflow-hidden position-relative h-100">
+            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+              <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="690"
+                alt="Woman Fashion 2"
+                class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
+            </div>
+            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                New Arrivals</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <a href="#"
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
               
               <div class="container">
                 <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
@@ -506,8 +502,11 @@
                     <div class="slideshow-text">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                         Katalog Lengkap</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
+                    <h2
+                      class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
+                      Women's <br /><strong>ACCESSORIES</strong></h2>
+                    <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are the best way to
+                      update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</h6>
                       <a href="#"
                         class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
                         Sekarang</a>
@@ -530,8 +529,11 @@
                     <div class="slideshow-text">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                         Katalog Lengkap</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
+                      <h2
+                      class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
+                      Women's <br /><strong>ACCESSORIES</strong></h2>
+                    <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are the best way to
+                      update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</h6>
                       <a href="#"
                         class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
                         Sekarang</a>
@@ -539,30 +541,7 @@
                   </div>
                 </div>
 
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character3.png" width="400" height="733"
-                        alt="Fashion Shop 3"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup">
-                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Sale
-                        </p>
-                      </div>
-                    </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        Katalog Lengkap</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
-                      <a href="#"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
-                        Sekarang</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    
               <div class="container">
                 <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
                 </div>
