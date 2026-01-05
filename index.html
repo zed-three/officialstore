@@ -17,9 +17,29 @@
     <!-- Library Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-    <style>
-        /* --- 1. SLIDER STYLE (Meniru Asli Slider Kamu) --- */
-        /* Reset dasar agar slider berjalan apa adanya */
+    <style>        /* --- CSS PAKSA SLIDER MUNCUL (FORCE VISIBLE) --- */
+        
+        /* Container Utama Slider */
+        .swiper-container {
+            width: 100%;
+            height: 600px; /* WAJIB. Paksa slider punya tinggi 600px */
+            overflow: hidden;
+            position: relative;
+            background-color: orange; /* WARNA KUNING - JIKA INI MUNCUL, ARTINYA HTML BENAR */
+            border-bottom: 10px solid #333; /* Biar gampang dilihat */
+            margin-bottom: 30px;
+        }
+
+        /* Setiap Slide */
+        .swiper-slide {
+            width: 100%;
+            height: 100%; /* ISI PENUH KOTAK */
+            position: relative;
+            overflow: hidden;
+            background-color: #fff; /* Background putih jika gambar kosong */
+        }
+
+        /* Utilitas Bootstrap (Agar HTML slider barumu jalan) */
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .align-items-center { align-items: center; }
@@ -35,21 +55,33 @@
         .h-auto { height: auto !important; }
         .overflow-hidden { overflow: hidden !important; }
         .bottom-0 { bottom: 0 !important; }
+        .pos_right-center { right: 5%; bottom: 0; position: absolute; }
         .mb-0 { margin-bottom: 0 !important; }
-        .mb-5 { margin-bottom: 30px !important; }
-        .pb-4 { padding-bottom: 20px !important; }
-        .mt-2 { margin-top: 10px !important; }
-        .mt-3 { margin-top: 20px !important; }
-        .mt-4 { margin-top: 30px !important; }
-        .pb-2 { padding-bottom: 10px !important; }
-        .mt-xxl-4 { margin-top: 50px !important; }
         .text-uppercase { text-transform: uppercase !important; }
         .fw-bold { font-weight: 700 !important; }
         .fw-normal { font-weight: 400 !important; }
         .fw-medium { font-weight: 500 !important; }
         .fs-base { font-size: 1rem !important; }
-        .default-underline { text-decoration: underline; text-decoration-color: currentColor; }
         .container { max-width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+        .default-underline { text-decoration: underline; text-decoration-color: currentColor; }
+
+        /* Styling Tambahan */
+        .js-swiper-slider { margin-bottom: 0; } /* Override margin bawah biar pas */
+        .slideshow-character__img { max-height: 100%; width: auto; display: block; }
+        
+        /* Text Styles */
+        .slideshow-text { z-index: 10; width: 100%; text-align: center; position: relative; }
+        .slideshow-text h6 { font-family: 'Jost', sans-serif; color: #fff; font-size: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .slideshow-text h2 { font-family: 'Jost', sans-serif; color: #fff; font-size: 3.5rem; text-shadow: 0 4px 8px rgba(0,0,0,0.8); line-height: 1; }
+        .slideshow-text a { color: #fff; font-family: 'Jost', sans-serif; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); text-decoration: underline; }
+        
+        /* Character Markup */
+        .character_markup { background: #fff; color: #000; padding: 5px 15px; font-weight: 700; text-transform: uppercase; display: inline-block; margin-top: 10px; font-family: 'Sofia', cursive; }
+        
+        /* Pagination (Titik-titik) */
+        .slideshow-pagination { bottom: 30px; z-index: 20; width: 100%; display: flex; justify-content: center; gap: 10px; }
+        .swiper-pagination-bullet { background: rgba(255,255,255,0.5); width: 12px; height: 12px; opacity: 1; }
+        .swiper-pagination-bullet-active { background: #fff; }
         
         /* Font Kelas Khusus Slider */
         .font-sofia { font-family: 'Sofia', cursive; }
@@ -890,13 +922,26 @@
             renderProducts(products, 'shop-grid');
 
             // Inisialisasi Swiper Slider (Baru)
-            document.querySelectorAll('.js-swiper-slider').forEach(el => {
-                const settings = el.getAttribute('data-settings');
-                const options = settings ? JSON.parse(settings) : {};
-                new Swiper(el, options);
-            });
-        });
+                    // --- INISIALISASI SLIDER (Update) ---
+        window.addEventListener('DOMContentLoaded', () => {
+            // Render Produk
+            renderProducts(products.slice(0, 4), 'home-featured');
+            renderProducts(products, 'shop-grid');
 
+            // 1. Inisialisasi Slider Home
+            const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
+            if(homeSliderEl) {
+                const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
+                new Swiper(homeSliderEl, homeSettings);
+            }
+
+            // 2. Inisialisasi Slider Shop
+            const shopSliderEl = document.getElementById('shop').querySelector('.js-swiper-slider');
+            if(shopSliderEl) {
+                const shopSettings = JSON.parse(shopSliderEl.getAttribute('data-settings'));
+                new Swiper(shopSliderEl, shopSettings);
+            }
+        });
         window.onclick = function(event) {
             const modal = document.getElementById('adminModal');
             if (event.target == modal) {
