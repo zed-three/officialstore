@@ -17,29 +17,9 @@
     <!-- Library Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-    <style>        /* --- CSS PAKSA SLIDER MUNCUL (FORCE VISIBLE) --- */
-        
-        /* Container Utama Slider */
-        .swiper-container {
-            width: 100%;
-            height: 600px; /* WAJIB. Paksa slider punya tinggi 600px */
-            overflow: hidden;
-            position: relative;
-            background-color: orange; /* WARNA KUNING - JIKA INI MUNCUL, ARTINYA HTML BENAR */
-            border-bottom: 10px solid #333; /* Biar gampang dilihat */
-            margin-bottom: 30px;
-        }
-
-        /* Setiap Slide */
-        .swiper-slide {
-            width: 100%;
-            height: 100%; /* ISI PENUH KOTAK */
-            position: relative;
-            overflow: hidden;
-            background-color: #fff; /* Background putih jika gambar kosong */
-        }
-
-        /* Utilitas Bootstrap (Agar HTML slider barumu jalan) */
+    <style>
+        /* --- 1. CLONES BOOTSTRAP (Agar HTML Slider Contoh Jalan) --- */
+        .container { max-width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .align-items-center { align-items: center; }
@@ -57,49 +37,236 @@
         .bottom-0 { bottom: 0 !important; }
         .pos_right-center { right: 5%; bottom: 0; position: absolute; }
         .mb-0 { margin-bottom: 0 !important; }
-        .text-uppercase { text-transform: uppercase !important; }
+        .mb-3 { margin-bottom: 20px; }
+        .mb-5 { margin-bottom: 30px; }
+        .mb-xl-5 { margin-bottom: 30px; }
+        .pb-4 { padding-bottom: 20px !important; }
+        .mt-3 { margin-top: 20px !important; }
+        .mt-4 { margin-top: 30px !important; }
+        .text-uppercase { text-text-transform: uppercase !important; }
         .fw-bold { font-weight: 700 !important; }
         .fw-normal { font-weight: 400 !important; }
         .fw-medium { font-weight: 500 !important; }
         .fs-base { font-size: 1rem !important; }
-        .container { max-width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
         .default-underline { text-decoration: underline; text-decoration-color: currentColor; }
+        .text-secondary { color: #6c757d; }
+        
+        /* --- 2. SLIDER STYLE (Contoh HTML) --- */
+        .js-swiper-slider { margin-bottom: 30px; }
+        .swiper-wrapper { display: flex; }
+        .swiper-slide { flex-shrink: 0; width: 100%; position: relative; }
+        
+        /* Container Slider Utama */
+        .swiper-container {
+            width: 100%;
+            height: 700px; /* Tinggi Slider */
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        /* Karakter (Gambar Pinggir) */
+        .slideshow-character__img { max-height: 700px; width: auto; display: block; }
+        
+                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
 
-        /* Styling Tambahan */
-        .js-swiper-slider { margin-bottom: 0; } /* Override margin bawah biar pas */
-        .slideshow-character__img { max-height: 100%; width: auto; display: block; }
-        
-        /* Text Styles */
-        .slideshow-text { z-index: 10; width: 100%; text-align: center; position: relative; }
-        .slideshow-text h6 { font-family: 'Jost', sans-serif; color: #fff; font-size: 1rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
-        .slideshow-text h2 { font-family: 'Jost', sans-serif; color: #fff; font-size: 3.5rem; text-shadow: 0 4px 8px rgba(0,0,0,0.8); line-height: 1; }
-        .slideshow-text a { color: #fff; font-family: 'Jost', sans-serif; font-size: 1.2rem; text-shadow: 0 2px 4px rgba(0,0,0,0.8); text-decoration: underline; }
-        
-        /* Character Markup */
-        .character_markup { background: #fff; color: #000; padding: 5px 15px; font-weight: 700; text-transform: uppercase; display: inline-block; margin-top: 10px; font-family: 'Sofia', cursive; }
+                     /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+        /* Memaksa Warna Tulisan Menjadi PUTIH */
+        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
+        }
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+        /* Memaksa Warna Tulisan Menjadi PUTIH */
+        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
+        }
+        }
+                 /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+        /* Memaksa Warna Tulisan Menjadi PUTIH */
+        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
+        }
+
+                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+        /* Memaksa Warna Tulisan Menjadi PUTIH */
+        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
+        }
+                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+        /* Memaksa Warna Tulisan Menjadi PUTIH */
+        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
+        }
+                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        .slideshow-text { 
+            /* Memaksa posisi tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            
+            /* Styling Tambahan */
+            width: 100%; 
+            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            text-align: center; 
+            z-index: 20; /* Supaya di atas gambar */
+            padding: 0;
+        }
+
+        /* Memaksa Warna Tulisan Menjadi PUTIH */
+        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
+            color: #ffffff !important;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
+        }
+        /* Label "Dresses" di bawah karakter */
+        .character_markup { 
+            background: #fff; 
+            color: #000; 
+            padding: 5px 15px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            display: inline-block; 
+            margin-top: 10px; 
+            font-family: 'Sofia', cursive; 
+        }
         
         /* Pagination (Titik-titik) */
-        .slideshow-pagination { bottom: 30px; z-index: 20; width: 100%; display: flex; justify-content: center; gap: 10px; }
-        .swiper-pagination-bullet { background: rgba(255,255,255,0.5); width: 12px; height: 12px; opacity: 1; }
-        .swiper-pagination-bullet-active { background: #fff; }
-        
-        /* Font Kelas Khusus Slider */
-        .font-sofia { font-family: 'Sofia', cursive; }
-        .mark-grey-color { color: #888; }
-
-        /* Styling Tambahan Slider */
-        .js-swiper-slider { margin-bottom: 30px; }
-        .slideshow-character__img { max-height: 600px; width: auto; }
-        .slideshow-text { z-index: 10; width: 100%; }
-        .slideshow-text h6 { font-family: 'Jost', sans-serif; color: #fff; letter-spacing: 2px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .slideshow-text h2 { font-family: 'Jost', sans-serif; color: #fff; text-shadow: 0 4px 8px rgba(0,0,0,0.5); }
-        .slideshow-text a { font-family: 'Jost', sans-serif; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .character_markup { background: #fff; color: #000; padding: 5px 15px; font-weight: 700; text-transform: uppercase; display: inline-block; margin-top: 10px; font-family: 'Sofia', cursive; }
-        .slideshow-pagination { bottom: 30px; z-index: 20; }
-        .swiper-pagination-bullet { background: rgba(255,255,255,0.5); width: 12px; height: 12px; }
+        .slideshow-pagination { 
+            bottom: 30px; 
+            z-index: 20; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+        .swiper-pagination-bullet { 
+            background: rgba(255,255,255,0.5); 
+            width: 12px; 
+            height: 12px; 
+            opacity: 1; 
+            cursor: pointer;
+        }
         .swiper-pagination-bullet-active { background: #fff; }
 
-        /* Animasi Slider */
+        /* Animasi Fade dari Contoh */
         @keyframes animate_fade { from { opacity: 0; } to { opacity: 1; } }
         @keyframes animate_btt { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes animate_rtl { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
@@ -113,7 +280,7 @@
         .animate_delay-9 { animation-delay: 0.9s; }
         .animate_delay-10 { animation-delay: 1s; }
 
-        /* --- 2. ZED SPORT STYLE (Header, Produk, Footer) --- */
+        /* --- 3. ZED SPORT STYLE (Header, Produk, Footer) --- */
         :root {
             --primary: #000000;
             --secondary: #ffffff;
@@ -127,8 +294,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        /* Header Pakai Font Zed Sport */
-        header, .logo, .desktop-nav a, .section-header, .detail-title { font-family: 'Teko', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
+        header, .logo, .desktop-nav a, .section-header, .detail-title, h1, h2, h3 { font-family: 'Teko', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
         
         body { background-color: var(--bg-light); color: var(--text-main); padding-top: var(--nav-height); }
         a { text-decoration: none; color: inherit; }
@@ -194,14 +360,15 @@
         .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 5px; line-height: 1.4; text-transform: uppercase; }
         .card-price { font-weight: 700; font-size: 1.1rem; color: var(--primary); }
 
-        /* --- PRODUCT DETAIL PAGE --- */
+        /* --- PRODUCT DETAIL PAGE (3 THUMBNAILS) --- */
         .detail-container { background: white; padding: 40px; display: flex; flex-direction: column; gap: 40px; margin-bottom: 40px; border-top: 5px solid var(--accent); }
         @media(min-width: 768px) { .detail-container { flex-direction: row; padding: 60px; } }
         
         .detail-left { flex: 1.2; }
         .detail-img-main { width: 100%; border-radius: 4px; cursor: crosshair; margin-bottom: 15px; border: 1px solid var(--border); }
-        .detail-thumbs { display: flex; gap: 10px; }
-        .thumb { width: 80px; height: 80px; border-radius: 4px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: 0.3s; }
+        
+        .detail-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Grid untuk 3 Thumbnail */
+        .thumb { width: 100%; height: 80px; border-radius: 4px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: 0.3s; aspect-ratio: 1/1; }
         .thumb:hover, .thumb.active { border-color: var(--accent); opacity: 1; }
 
         .detail-right { flex: 1; }
@@ -318,10 +485,10 @@
     <!-- MAIN CONTENT -->
     <div class="container">
 
-        <!-- 1. HOME PAGE -->
+        <!-- 1. HOME PAGE (SLIDER DARI CONTOH HTML - 3 SLIDE) -->
         <section id="home" class="page-section">
             
-            <!-- SLIDER HOME (APA ADANYA) -->
+            <!-- SLIDER HOME (APA ADANYA - 3 SLIDE) -->
             <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
                 "autoplay": { "delay": 5000 },
                 "slidesPerView": 1,
@@ -329,10 +496,10 @@
                 "loop": true
             }'>
               <div class="swiper-wrapper">
+                <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <!-- GANTI NAMA FILE INI SESUAI FILE DI FOLDER assets/images/ KAMU -->
                       <img loading="lazy" src="assets/images/slideshow-character1.png" width="542" height="733"
                         alt="Woman Fashion 1"
                         class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
@@ -353,6 +520,7 @@
                   </div>
                 </div>
 
+                <!-- SLIDE 2 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
@@ -376,6 +544,7 @@
                   </div>
                 </div>
 
+                <!-- SLIDE 3 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
@@ -406,10 +575,10 @@
             <div class="product-grid" id="home-featured"></div>
         </section>
 
-        <!-- 2. SHOP PAGE -->
+        <!-- 2. SHOP PAGE (SLIDER DISAMAKAN DARI CONTOH HTML) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP (APA ADANYA) -->
+            <!-- SLIDER SHOP (APA ADANYA - TULISAN SESUAI CONTOH HTML) -->
             <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
                 "autoplay": { "delay": 5000 },
                 "slidesPerView": 1,
@@ -417,6 +586,7 @@
                 "loop": true
             }'>
               <div class="swiper-wrapper">
+                <!-- Slide 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
@@ -440,6 +610,7 @@
                   </div>
                 </div>
 
+                <!-- Slide 2 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
@@ -448,6 +619,30 @@
                         class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup">
                         <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Promo
+                        </p>
+                      </div>
+                    </div>
+                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                        Katalog Lengkap</h6>
+                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
+                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
+                      <a href="#"
+                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
+                        Sekarang</a>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                  <div class="overflow-hidden position-relative h-100">
+                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+                      <img loading="lazy" src="assets/images/slideshow-character3.png" width="400" height="733"
+                        alt="Fashion Shop 3"
+                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
+                      <div class="character_markup">
+                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Sale
                         </p>
                       </div>
                     </div>
@@ -498,7 +693,7 @@
                     </div>
 
                     <div style="display:flex; justify-content:space-between; margin-bottom:20px; align-items:center; border-bottom: 1px solid var(--border); padding-bottom: 15px;">
-                        <h3 style="font-size:1.5rem; font-family:'Teko', sans-serif; letter-spacing: 1px;">DAFTAR PRODUK</h3>
+                        <h3 style="font-size:1.5rem; letter-spacing: 1px;">DAFTAR PRODUK</h3>
                         <select style="padding:5px 10px; border-radius:4px; border:1px solid #ddd; font-weight: 600;">
                             <option>Terbaru</option>
                             <option>Harga Terendah</option>
@@ -511,7 +706,7 @@
             </div>
         </section>
 
-        <!-- 3. PRODUCT DETAIL PAGE -->
+        <!-- 3. PRODUCT DETAIL PAGE (DENGAN 3 THUMBNAIL) -->
         <section id="product-detail" class="page-section section-hidden">
             <button onclick="switchPage('shop')" style="background:none; border:none; cursor:pointer; margin-bottom:20px; font-weight:700; color:#555; text-transform: uppercase; font-size: 0.9rem;">
                 <i class="fas fa-arrow-left"></i> Kembali ke Katalog
@@ -519,10 +714,11 @@
 
             <div class="detail-container">
                 <div class="detail-left">
-                    <!-- TANPA ONERROR. JIKA GAGAL AKAN ADA IKON BROKEN -->
+                    <!-- Gambar Utama -->
                     <img id="detail-img" src="" class="detail-img-main">
-                    <div class="detail-thumbs">
-                        <img id="thumb-1" src="" class="thumb active" onclick="changeImage(this)">
+                    <!-- Area 3 Thumbnail -->
+                    <div class="detail-thumbs" id="detail-thumbs-container">
+                        <!-- Thumbnails akan di-render via JS -->
                     </div>
                 </div>
                 <div class="detail-right">
@@ -601,7 +797,7 @@
         <section id="wishlist" class="page-section section-hidden">
             <div style="text-align:center; padding:80px 20px;">
                 <i class="fas fa-heart" style="font-size:3rem; color:#ddd; margin-bottom:20px;"></i>
-                <h2 style="font-family:'Teko', sans-serif; font-size:2rem;">Wishlist Kosong</h2>
+                <h2 style="font-size:2rem;">Wishlist Kosong</h2>
                 <p style="margin-bottom:20px;">Simpan barang favoritmu agar tidak hilang.</p>
                 <button onclick="switchPage('shop')" class="btn-wa" style="display:inline-block; width:auto; padding:12px 30px;">Mulai Belanja</button>
             </div>
@@ -613,7 +809,7 @@
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-col">
-                <h2 class="logo" style="color:white; margin-bottom:15px; height:auto;">ZED <span style="color:var(--accent);">SPORT</span></h2>
+                <h2 style="color:white; margin-bottom:15px; height:auto;">ZED <span style="color:var(--accent);">SPORT</span></h2>
                 <p style="font-size:0.9rem; line-height:1.6; color:#aaa;">Toko online terpercaya untuk kebutuhan sport fashion. Kualitas premium dengan harga yang bersaing.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -727,20 +923,20 @@
     <!-- SCRIPT SECTION -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // --- DATABASE PRODUK ---
+        // --- DATABASE PRODUK (CONTOH) ---
         const products = [
-            { id: 1, name: "Jersey Home Red", price: 150000, images: ["assets/images/pria/jersey-home.jpg", "assets/images/detail/jersey-home-detail.jpg"], category: "pria", color: "red" },
-            { id: 2, name: "Jaket Bomber Black", price: 299000, images: ["assets/images/pria/jaket-bomber.jpg", "assets/images/detail/jaket-bomber-detail.jpg"], category: "pria", color: "black" },
-            { id: 3, name: "Singlet Running Pro", price: 85000, images: ["assets/images/pria/singlet-run.jpg"], category: "pria", color: "white" },
-            { id: 4, name: "Legging Gym Black", price: 210000, images: ["assets/images/wanita/legging-gym.jpg", "assets/images/detail/legging-gym-detail.jpg"], category: "wanita", color: "black" },
-            { id: 5, name: "Sports Bra Blue", price: 125000, images: ["assets/images/wanita/bra-sport.jpg"], category: "wanita", color: "blue" },
-            { id: 6, name: "Track Set Merah", price: 350000, images: ["assets/images/baju stelan/trackset-merah.jpg", "assets/images/detail/trackset-merah-detail.jpg"], category: "baju stelan", color: "red" },
-            { id: 7, name: "Training Set Hitam", price: 320000, images: ["assets/images/baju stelan/set-hitam.jpg"], category: "baju stelan", color: "black" },
-            { id: 8, name: "Set Anak Bola", price: 150000, images: ["assets/images/anak/set-anak-bola.jpg"], category: "anak", color: "blue" },
-            { id: 9, name: "Celana Jogger Grey", price: 175000, images: ["assets/images/celana/jogger-sport.jpg"], category: "celana", color: "grey" },
-            { id: 10, name: "Celana Basket Pendek", price: 120000, images: ["assets/images/celana/shorts-basket.jpg"], category: "celana", color: "black" },
-            { id: 11, name: "Sarung Tangan Gym", price: 95000, images: ["assets/images/aksesoris/gloves.jpg"], category: "aksesoris", color: "black" },
-            { id: 12, name: "Topi Snapback Sport", price: 75000, images: ["assets/images/aksesoris/topi.jpg"], category: "aksesoris", color: "black" }
+            { id: 1, name: "Jersey Home Red", price: 150000, images: ["assets/images/pria/jersey-home.jpg", "assets/images/detail/jersey-home-detail.jpg", "assets/images/detail/jersey-home-extra.jpg"], category: "pria", color: "red" },
+            { id: 2, name: "Jaket Bomber Black", price: 299000, images: ["assets/images/pria/jaket-bomber.jpg", "assets/images/detail/jaket-bomber-1.jpg", "assets/images/detail/jaket-bomber-2.jpg"], category: "pria", color: "black" },
+            { id: 3, name: "Singlet Running Pro", price: 85000, images: ["assets/images/pria/singlet-run.jpg", "assets/images/detail/run-1.jpg", "assets/images/detail/run-2.jpg"], category: "pria", color: "white" },
+            { id: 4, name: "Legging Gym Black", price: 210000, images: ["assets/images/wanita/legging-gym.jpg", "assets/images/detail/gym-1.jpg", "assets/images/detail/gym-2.jpg"], category: "wanita", color: "black" },
+            { id: 5, name: "Sports Bra Blue", price: 125000, images: ["assets/images/wanita/bra-sport.jpg", "assets/images/detail/bra-1.jpg", "assets/images/detail/bra-2.jpg"], category: "wanita", color: "blue" },
+            { id: 6, name: "Track Set Merah", price: 350000, images: ["assets/images/baju stelan/trackset-merah.jpg", "assets/images/detail/set-merah-1.jpg", "assets/images/detail/set-merah-2.jpg"], category: "baju stelan", color: "red" },
+            { id: 7, name: "Training Set Hitam", price: 320000, images: ["assets/images/baju stelan/set-hitam.jpg", "assets/images/detail/set-hitam-1.jpg", "assets/images/detail/set-hitam-2.jpg"], category: "baju stelan", color: "black" },
+            { id: 8, name: "Set Anak Bola", price: 150000, images: ["assets/images/anak/set-anak-bola.jpg", "assets/images/detail/anak-1.jpg", "assets/images/detail/anak-2.jpg"], category: "anak", color: "blue" },
+            { id: 9, name: "Celana Jogger Grey", price: 175000, images: ["assets/images/celana/jogger-sport.jpg", "assets/images/detail/jogger-1.jpg", "assets/images/detail/jogger-2.jpg"], category: "celana", color: "grey" },
+            { id: 10, name: "Celana Basket Pendek", price: 120000, images: ["assets/images/celana/shorts-basket.jpg", "assets/images/detail/shorts-1.jpg", "assets/images/detail/shorts-2.jpg"], category: "celana", color: "black" },
+            { id: 11, name: "Sarung Tangan Gym", price: 95000, images: ["assets/images/aksesoris/gloves.jpg", "assets/images/detail/gloves-1.jpg", "assets/images/detail/gloves-2.jpg"], category: "aksesoris", color: "black" },
+            { id: 12, name: "Topi Snapback Sport", price: 75000, images: ["assets/images/aksesoris/topi.jpg", "assets/images/detail/topi-1.jpg", "assets/images/detail/topi-2.jpg"], category: "aksesoris", color: "black" }
         ];
 
         let currentProduct = null;
@@ -748,9 +944,12 @@
         let selectedColor = "Hitam";
 
         function switchPage(pageId) {
+            // Sembunyikan semua section
             document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('section-hidden'));
+            // Tampilkan section yang dipilih
             document.getElementById(pageId).classList.remove('section-hidden');
             
+            // Update Active di Nav
             document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
             const dLink = document.getElementById('d-' + pageId);
             if(dLink) dLink.classList.add('active');
@@ -815,15 +1014,14 @@
             mainImg.src = productImages[0];
             mainImg.onerror = function() { this.src = `https://picsum.photos/seed/error${id}/500/600` };
 
-            const thumbContainer = document.querySelector('.detail-thumbs');
+            // Render 3 Thumbnails
+            const thumbContainer = document.getElementById('detail-thumbs-container');
             thumbContainer.innerHTML = ''; 
 
             productImages.forEach((imgSrc, index) => {
-                const thumb = document.createElement('img');
-                thumb.src = imgSrc;
-                thumb.className = `thumb ${index === 0 ? 'active' : ''}`;
-                thumb.onclick = function() { changeImage(this); };
-                thumb.onerror = function() { this.src = `https://picsum.photos/seed/thumb${id}${index}/100/100` };
+                const thumb = document.createElement('div');
+                // Div dengan class thumb agar CSS grid bisa kerja
+                thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="openDetailWithId(${id}, ${index})" onerror="this.src='https://picsum.photos/seed/thumb${id}${index}/100/100'">`;
                 thumbContainer.appendChild(thumb);
             });
 
@@ -833,10 +1031,19 @@
             renderProducts(related, 'related-grid');
         }
 
-        function changeImage(thumb) {
-            document.getElementById('detail-img').src = thumb.src;
-            document.querySelectorAll('.thumb').forEach(img => img.classList.remove('active'));
-            thumb.classList.add('active');
+        function openDetailWithId(id, thumbIndex) {
+            // Fungsi khusus saat klik thumbnail, hanya ganti gambar main
+            const product = products.find(p => p.id === id);
+            const productImages = Array.isArray(product.images) ? product.images : [product.images];
+            
+            document.getElementById('detail-img').src = productImages[thumbIndex];
+            
+            // Update visual active state
+            const thumbs = document.querySelectorAll('.thumb');
+            thumbs.forEach((t, i) => {
+                if(i === thumbIndex) t.classList.add('active');
+                else t.classList.remove('active');
+            });
         }
 
         function selectSize(btn, size) {
@@ -916,32 +1123,26 @@
             }
         }
 
-        // --- INITIALIZATION & SWIPER LOGIC ---
+        // --- INISIALISASI UTAMA ---
         window.addEventListener('DOMContentLoaded', () => {
             renderProducts(products.slice(0, 4), 'home-featured');
             renderProducts(products, 'shop-grid');
 
-            // Inisialisasi Swiper Slider (Baru)
-                    // --- INISIALISASI SLIDER (Update) ---
-        window.addEventListener('DOMContentLoaded', () => {
-            // Render Produk
-            renderProducts(products.slice(0, 4), 'home-featured');
-            renderProducts(products, 'shop-grid');
-
-            // 1. Inisialisasi Slider Home
+            // 1. Inisialisasi Slider Home (3 Slide)
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
                 const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
                 new Swiper(homeSliderEl, homeSettings);
             }
 
-            // 2. Inisialisasi Slider Shop
+            // 2. Inisialisasi Slider Shop (3 Slide)
             const shopSliderEl = document.getElementById('shop').querySelector('.js-swiper-slider');
             if(shopSliderEl) {
                 const shopSettings = JSON.parse(shopSliderEl.getAttribute('data-settings'));
                 new Swiper(shopSliderEl, shopSettings);
             }
         });
+
         window.onclick = function(event) {
             const modal = document.getElementById('adminModal');
             if (event.target == modal) {
