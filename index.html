@@ -218,7 +218,21 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo" onclick="switchPage('home')">Zed - Three</div>
+        <div class="logo" onclick="switchPage('home')">
+    <!-- Pastikan nama file 'logo.png' sama dengan nama file aslimu di folder assets/images/ -->
+    <img src="assets/images/logo.png" alt="Zed Sport Logo" class="logo-img">
+</div>        .logo { 
+            cursor: pointer; 
+            display: flex; 
+            align-items: center;
+            /* Font-size dll sudah tidak perlu karena ini gambar */
+        }
+
+        .logo-img { 
+            height: 50px;  /* Atur tinggi logo sesuai keinginan */
+            width: auto;   
+            object-fit: contain; 
+        }
         <nav class="desktop-nav">
             <a onclick="switchPage('home')" id="d-home" class="active">Beranda</a>
             <a onclick="switchPage('shop')" id="d-shop">Toko</a>
