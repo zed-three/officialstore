@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
-        /* --- 1. CLONES BOOTSTRAP (Agar HTML Slider Contoh Jalan) --- */
-        .container { max-width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+        /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .align-items-center { align-items: center; }
@@ -43,199 +42,81 @@
         .pb-4 { padding-bottom: 20px !important; }
         .mt-3 { margin-top: 20px !important; }
         .mt-4 { margin-top: 30px !important; }
-        .text-uppercase { text-text-transform: uppercase !important; }
+        .mt-xxl-4 { margin-top: 50px !important; }
+        .text-uppercase { text-transform: uppercase !important; }
         .fw-bold { font-weight: 700 !important; }
         .fw-normal { font-weight: 400 !important; }
         .fw-medium { font-weight: 500 !important; }
         .fs-base { font-size: 1rem !important; }
+        .container { max-width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
         .default-underline { text-decoration: underline; text-decoration-color: currentColor; }
         .text-secondary { color: #6c757d; }
         
+        /* Font Kelas Khusus Slider */
+        .font-sofia { font-family: 'Sofia', cursive; }
+        .mark-grey-color { color: #888; }
+
         /* --- 2. SLIDER STYLE (Contoh HTML) --- */
         .js-swiper-slider { margin-bottom: 30px; }
         .swiper-wrapper { display: flex; }
         .swiper-slide { flex-shrink: 0; width: 100%; position: relative; }
         
-        /* Container Slider Utama */
+        /* Container Utama Slider */
         .swiper-container {
             width: 100%;
             height: 700px; /* Tinggi Slider */
             overflow: hidden;
-            margin-bottom: 30px;
             position: relative;
+            background-color: #f0f0f0; /* Warna background jika gambar kosong */
+            margin-bottom: 30px;
         }
-        
-        /* Karakter (Gambar Pinggir) */
+
+        /* Karakter (Gambar Pinggir Kanan) */
         .slideshow-character__img { max-height: 700px; width: auto; display: block; }
         
-                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
+        /* Teks Tengah Banner (PERBAIKAN FINAL) */
         .slideshow-text { 
-            /* Memaksa posisi tengah */
+            /* Memaksa posisi tepat di tengah layar secara Horizontal & Vertikal */
             position: absolute; 
             top: 50%; 
             left: 50%; 
             transform: translate(-50%, -50%); 
             
-            /* Styling Tambahan */
+            /* Lebar & Styling */
             width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
+            max-width: 1140px;
             text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
+            z-index: 20; /* Di atas gambar */
+        }
+        
+        /* Memaksa Warna Teks Putih Agar Terbaca */
+        .slideshow-text h6 { 
+            font-family: 'Jost', sans-serif; 
+            color: #ffffff !important; 
+            font-size: 1rem; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8); 
+        }
+        .slideshow-text h2 { 
+            font-family: 'Jost', sans-serif; 
+            color: #ffffff !important; 
+            font-size: 4rem; 
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8); 
+            line-height: 1; 
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .slideshow-text a { 
+            font-family: 'Jost', sans-serif; 
+            color: #ffffff !important; 
+            font-size: 1.2rem; 
+            text-decoration: underline; 
+            text-transform: uppercase; 
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
         }
 
-                     /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-        /* Memaksa Warna Tulisan Menjadi PUTIH */
-        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
-            color: #ffffff !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
-        }
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-        /* Memaksa Warna Tulisan Menjadi PUTIH */
-        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
-            color: #ffffff !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
-        }
-        }
-                 /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-        /* Memaksa Warna Tulisan Menjadi PUTIH */
-        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
-            color: #ffffff !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
-        }
-
-                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-        /* Memaksa Warna Tulisan Menjadi PUTIH */
-        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
-            color: #ffffff !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
-        }
-                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-        /* Memaksa Warna Tulisan Menjadi PUTIH */
-        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
-            color: #ffffff !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
-        }
-                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-                /* --- PERBAIKAN POSISI TEKS (TEPAT TENGAH & PUTIH) --- */
-        .slideshow-text { 
-            /* Memaksa posisi tengah */
-            position: absolute; 
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            
-            /* Styling Tambahan */
-            width: 100%; 
-            max-width: 1140px; /* Batas lebar tulisan supaya rapi */
-            text-align: center; 
-            z-index: 20; /* Supaya di atas gambar */
-            padding: 0;
-        }
-
-        /* Memaksa Warna Tulisan Menjadi PUTIH */
-        .slideshow-text h6, .slideshow-text h2, .slideshow-text a {
-            color: #ffffff !important;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Bayangan hitam supaya jelas */
-        }
         /* Label "Dresses" di bawah karakter */
         .character_markup { 
             background: #fff; 
@@ -262,11 +143,10 @@
             width: 12px; 
             height: 12px; 
             opacity: 1; 
-            cursor: pointer;
         }
         .swiper-pagination-bullet-active { background: #fff; }
 
-        /* Animasi Fade dari Contoh */
+        /* Animasi Slider */
         @keyframes animate_fade { from { opacity: 0; } to { opacity: 1; } }
         @keyframes animate_btt { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes animate_rtl { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
@@ -294,6 +174,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        /* Header Pakai Font Zed Sport */
         header, .logo, .desktop-nav a, .section-header, .detail-title, h1, h2, h3 { font-family: 'Teko', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
         
         body { background-color: var(--bg-light); color: var(--text-main); padding-top: var(--nav-height); }
@@ -367,7 +248,7 @@
         .detail-left { flex: 1.2; }
         .detail-img-main { width: 100%; border-radius: 4px; cursor: crosshair; margin-bottom: 15px; border: 1px solid var(--border); }
         
-        .detail-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Grid untuk 3 Thumbnail */
+        .detail-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Grid 3 Thumbnail */
         .thumb { width: 100%; height: 80px; border-radius: 4px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: 0.3s; aspect-ratio: 1/1; }
         .thumb:hover, .thumb.active { border-color: var(--accent); opacity: 1; }
 
@@ -485,11 +366,11 @@
     <!-- MAIN CONTENT -->
     <div class="container">
 
-        <!-- 1. HOME PAGE (SLIDER DARI CONTOH HTML - 3 SLIDE) -->
+        <!-- 1. HOME PAGE (3 SLIDE, TEXT CENTER, IMAGE RIGHT) -->
         <section id="home" class="page-section">
             
-            <!-- SLIDER HOME (APA ADANYA - 3 SLIDE) -->
-            <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
+            <!-- SLIDER HOME (FINAL VERSION) -->
+            <section class="swiper-container js-swiper-slider slideshow" data-settings='{
                 "autoplay": { "delay": 5000 },
                 "slidesPerView": 1,
                 "effect": "fade",
@@ -499,6 +380,7 @@
                 <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
+                    <!-- GAMBAR KANAN BAWAH -->
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
                       <img loading="lazy" src="assets/images/slideshow-character1.png" width="542" height="733"
                         alt="Woman Fashion 1"
@@ -508,14 +390,15 @@
                           Dresses</p>
                       </div>
                     </div>
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        New Arrivals</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-                      <a href="#" onclick="switchPage('shop')"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                        Now</a>
+                    <!-- TEKS TENGAH -->
+                    <<div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                New Arrivals</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <a href="#"
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                Now</a>
                     </div>
                   </div>
                 </div>
@@ -533,13 +416,13 @@
                       </div>
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        New Arrivals</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-                      <a href="#" onclick="switchPage('shop')"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                        Now</a>
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                New Arrivals</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <a href="#"
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                Now</a>
                     </div>
                   </div>
                 </div>
@@ -553,13 +436,13 @@
                         class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        New Arrivals</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-                      <a href="#" onclick="switchPage('shop')"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                        Now</a>
+              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                New Arrivals</h6>
+              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+              <a href="#"
+                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                Now</a>
                     </div> 
                   </div>
                 </div>
@@ -575,11 +458,11 @@
             <div class="product-grid" id="home-featured"></div>
         </section>
 
-        <!-- 2. SHOP PAGE (SLIDER DISAMAKAN DARI CONTOH HTML) -->
+        <!-- 2. SHOP PAGE (3 SLIDE, TEXT CENTER, IMAGE RIGHT) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP (APA ADANYA - TULISAN SESUAI CONTOH HTML) -->
-            <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
+            <!-- SLIDER SHOP (FINAL VERSION) -->
+            <section class="swiper-container js-swiper-slider slideshow" data-settings='{
                 "autoplay": { "delay": 5000 },
                 "slidesPerView": 1,
                 "effect": "fade",
@@ -598,7 +481,7 @@
                           Shop</p>
                       </div>
                     </div>
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                    <div class="slideshow-text">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                         Katalog Lengkap</h6>
                       <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
@@ -622,7 +505,7 @@
                         </p>
                       </div>
                     </div>
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                    <div class="slideshow-text">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                         Katalog Lengkap</h6>
                       <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
@@ -633,7 +516,7 @@
                     </div>
                   </div>
                 </div>
-                
+
                 <!-- Slide 3 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
@@ -646,7 +529,7 @@
                         </p>
                       </div>
                     </div>
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                    <div class="slideshow-text">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
                         Katalog Lengkap</h6>
                       <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
@@ -706,7 +589,7 @@
             </div>
         </section>
 
-        <!-- 3. PRODUCT DETAIL PAGE (DENGAN 3 THUMBNAIL) -->
+        <!-- 3. PRODUCT DETAIL PAGE (3 THUMBNAILS WORKING) -->
         <section id="product-detail" class="page-section section-hidden">
             <button onclick="switchPage('shop')" style="background:none; border:none; cursor:pointer; margin-bottom:20px; font-weight:700; color:#555; text-transform: uppercase; font-size: 0.9rem;">
                 <i class="fas fa-arrow-left"></i> Kembali ke Katalog
@@ -714,9 +597,8 @@
 
             <div class="detail-container">
                 <div class="detail-left">
-                    <!-- Gambar Utama -->
                     <img id="detail-img" src="" class="detail-img-main">
-                    <!-- Area 3 Thumbnail -->
+                    <!-- Container 3 Thumbnails -->
                     <div class="detail-thumbs" id="detail-thumbs-container">
                         <!-- Thumbnails akan di-render via JS -->
                     </div>
@@ -920,10 +802,10 @@
         </div>
     </div>
 
-    <!-- SCRIPT SECTION -->
+    <!-- SCRIPT SECTION (FULL VERSION) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // --- DATABASE PRODUK (CONTOH) ---
+        // --- DATABASE PRODUK (CONTOH 3 GAMBAR) ---
         const products = [
             { id: 1, name: "Jersey Home Red", price: 150000, images: ["assets/images/pria/jersey-home.jpg", "assets/images/detail/jersey-home-detail.jpg", "assets/images/detail/jersey-home-extra.jpg"], category: "pria", color: "red" },
             { id: 2, name: "Jaket Bomber Black", price: 299000, images: ["assets/images/pria/jaket-bomber.jpg", "assets/images/detail/jaket-bomber-1.jpg", "assets/images/detail/jaket-bomber-2.jpg"], category: "pria", color: "black" },
@@ -949,7 +831,6 @@
             // Tampilkan section yang dipilih
             document.getElementById(pageId).classList.remove('section-hidden');
             
-            // Update Active di Nav
             document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
             const dLink = document.getElementById('d-' + pageId);
             if(dLink) dLink.classList.add('active');
@@ -1014,14 +895,14 @@
             mainImg.src = productImages[0];
             mainImg.onerror = function() { this.src = `https://picsum.photos/seed/error${id}/500/600` };
 
-            // Render 3 Thumbnails
+            // Render 3 Thumbnails (UPDATED LOGIC)
             const thumbContainer = document.getElementById('detail-thumbs-container');
             thumbContainer.innerHTML = ''; 
 
             productImages.forEach((imgSrc, index) => {
                 const thumb = document.createElement('div');
-                // Div dengan class thumb agar CSS grid bisa kerja
-                thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="openDetailWithId(${id}, ${index})" onerror="this.src='https://picsum.photos/seed/thumb${id}${index}/100/100'">`;
+                // PERHATIKAN onclick="changeImageDetail(this)"
+                thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="changeImageDetail(this)" onerror="this.src='https://picsum.photos/seed/thumb${id}${index}/100/100'">`;
                 thumbContainer.appendChild(thumb);
             });
 
@@ -1031,19 +912,18 @@
             renderProducts(related, 'related-grid');
         }
 
-        function openDetailWithId(id, thumbIndex) {
-            // Fungsi khusus saat klik thumbnail, hanya ganti gambar main
-            const product = products.find(p => p.id === id);
-            const productImages = Array.isArray(product.images) ? product.images : [product.images];
+        function changeImageDetail(thumbElement) {
+            // 1. Ambil gambar utama
+            const mainImg = document.getElementById('detail-img');
             
-            document.getElementById('detail-img').src = productImages[thumbIndex];
+            // 2. Ganti src gambar utama dengan src gambar kecil yang diklik
+            mainImg.src = thumbElement.src;
+
+            // 3. Reset status "active" (border hijau) di semua thumbnail
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             
-            // Update visual active state
-            const thumbs = document.querySelectorAll('.thumb');
-            thumbs.forEach((t, i) => {
-                if(i === thumbIndex) t.classList.add('active');
-                else t.classList.remove('active');
-            });
+            // 4. Beri status "active" ke thumbnail yang diklik
+            thumbElement.classList.add('active');
         }
 
         function selectSize(btn, size) {
@@ -1123,19 +1003,20 @@
             }
         }
 
-        // --- INISIALISASI UTAMA ---
+        // --- INISIALISASI UTAMA (FINAL) ---
         window.addEventListener('DOMContentLoaded', () => {
+            // Render Produk
             renderProducts(products.slice(0, 4), 'home-featured');
             renderProducts(products, 'shop-grid');
 
-            // 1. Inisialisasi Slider Home (3 Slide)
+            // Inisialisasi Slider Home (3 Slide)
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
                 const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
                 new Swiper(homeSliderEl, homeSettings);
             }
 
-            // 2. Inisialisasi Slider Shop (3 Slide)
+            // Inisialisasi Slider Shop (3 Slide)
             const shopSliderEl = document.getElementById('shop').querySelector('.js-swiper-slider');
             if(shopSliderEl) {
                 const shopSettings = JSON.parse(shopSliderEl.getAttribute('data-settings'));
