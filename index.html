@@ -9,15 +9,17 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- FONTS -->
+    <!-- FONTS ASLI DARI SLIDER (Sofia & Jost) -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Sofia&display=swap" rel="stylesheet">
+    
+    <!-- Font Zed Sport (Untuk Header/Produk) -->
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Library Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
-        /* --- 1. BOOTSTRAP CLONES (AGAR HTML SLIDER JALAN) --- */
+        /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .d-block { display: block; }
@@ -216,7 +218,7 @@
         .page-section { animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- SHOP LAYOUT (ORIGINAL: SIDEBAR KANAN) --- */
+        /* --- SHOP LAYOUT --- */
         .shop-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
         .shop-sidebar {
             background: white; padding: 25px; border-radius: 4px; display: none;
@@ -236,9 +238,9 @@
 
         @media(min-width: 768px) {
             .desktop-nav { display: flex; }
-            .shop-layout { grid-template-columns: 280px 1fr; } /* SIDEBAR 280px, KANAN 1FR */
+            .shop-layout { grid-template-columns: 250px 1fr; }
             .shop-sidebar { display: flex; } 
-            .cat-chips { display: none; } /* Sembunyikan chips di desktop */
+            .cat-chips { display: none; }
             .product-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
             .d-md-flex { display: flex !important; } 
         }
@@ -428,6 +430,7 @@
     <!-- HEADER -->
     <header>
         <div class="logo" onclick="switchPage('home')">
+            <!-- Placeholder Logo karena assets lokal mungkin tidak ada -->
             <img src="assets/images/logo/logo z3.png" alt="Logo Zed Sport" class="logo-img">
         </div>
         
@@ -446,10 +449,10 @@
     <!-- MAIN CONTENT -->
     <div class="container">
 
-        <!-- 1. HOME PAGE (3 SLIDER) -->
+        <!-- 1. HOME PAGE (HTML ASLI) -->
         <section id="home" class="page-section">
             
-            <!-- SLIDER HOME -->
+            <!-- SLIDER HOME (HTML ASLI + IMAGE BANNER) -->
             <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
                 "autoplay": { "delay": 5000 }, "slidesPerView": 1, "effect": "fade", "loop": true,
                 "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
@@ -458,12 +461,13 @@
                 <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
+                    <!-- GAMBAR BANNER ASLI -->
                     <div style="position:absolute; width:100%; height:100%; background:#eee; z-index:1;"></div>
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img src="assets/images/banner/slideshow-character1.png" width="542" height="733"
+                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="542" height="733"
                         alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup type2">
-                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">RUNNING</p>
+                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">Running</p>
                       </div>
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
@@ -480,7 +484,8 @@
                   <div class="overflow-hidden position-relative h-100">
                     <div style="position:absolute; width:100%; height:100%; background:#f5f5f5; z-index:1;"></div>
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img src="assets/images/banner/slideshow-character3.png" width="400" height="733"
+                      <!-- GAMBAR BANNER ASLI -->
+                      <img loading="lazy" src="assets/images/banner/slideshow-character3.png" width="400" height="733"
                         alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup">
                         <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer</p>
@@ -500,7 +505,8 @@
                   <div class="overflow-hidden position-relative h-100">
                     <div style="position:absolute; width:100%; height:100%; background:#e0e0e0; z-index:1;"></div>
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img src="assets/images/banner/slideshow-character1.png" width="400" height="690"
+                      <!-- GAMBAR BANNER ASLI -->
+                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="400" height="690"
                         alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
@@ -534,10 +540,10 @@
             </div>
         </section>
 
-        <!-- 2. SHOP PAGE (SIDEBAR KIRI) -->
+        <!-- 2. SHOP PAGE (HTML ASLI + IMAGE BANNER) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP -->
+            <!-- SLIDER SHOP (HTML ASLI) -->
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
                     "autoplay": { "delay": 5000 }, "slidesPerView": 1, "effect": "fade", "loop": true,
@@ -557,6 +563,7 @@
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                                <!-- GAMBAR BANNER ASLI -->
                                 <img loading="lazy" src="assets/images/banner/about-1.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
@@ -574,6 +581,7 @@
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                                <!-- GAMBAR BANNER ASLI -->
                                 <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
@@ -591,6 +599,7 @@
                           </div>
                           <div class="slide-split_media position-relative">
                               <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                                  <!-- GAMBAR BANNER ASLI -->
                                   <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                               </div>
                           </div>
@@ -607,7 +616,7 @@
             </div>
 
             <div class="shop-layout">
-                <!-- Sidebar (Desktop) - KIRI -->
+                <!-- Sidebar (Desktop) -->
                 <aside class="shop-sidebar">
                     <div class="sidebar-title">Kategori</div>
                     <ul>
@@ -643,7 +652,7 @@
                     </div>
                 </aside>
 
-                <!-- Main Shop Content (KANAN) -->
+                <!-- Main Shop Content -->
                 <main>
                     <!-- Mobile Chips -->
                     <div class="cat-chips">
@@ -888,42 +897,42 @@
     <!-- TOAST CONTAINER -->
     <div id="toast-container"></div>
 
-    <!-- SCRIPT SECTION --- -->
+    <!-- SCRIPT SECTION (DATA PRODUK LOKAL) --- -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // --- DATABASE PRODUK (DATA GAMBAR ANDA) ---
+        // --- DATABASE PRODUK (SESUAI FOLDER KAMU) ---
         const products = [
-            // --- KATEGORI PRIA ---
+            // --- KATEGORI PRIA (pria1 - pria8) ---
             { id: 1, name: "Z-3 Pria 1", price: 150000, images: ["assets/images/pria/pria1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
-            { id: 2, name: "Z-3 Pria 2", price: 160000, images: ["assets/images/pria/pria2.png", "assets/images/detail/pria2-gas.png", "assets/images/detail/pria2-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
-            { id: 3, name: "Z-3 Pria 3", price: 85000, images: ["assets/images/pria/pria3.png", "assets/images/detail/pria3-gas.png", "assets/images/detail/pria3-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
-            { id: 4, name: "Z-3 Pria 4", price: 210000, images: ["assets/images/pria/pria4.png", "assets/images/detail/pria4-gas.png", "assets/images/detail/pria4-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
-            { id: 5, name: "Z-3 Pria 5", price: 125000, images: ["assets/images/pria/pria5.png", "assets/images/detail/pria5-gas.png", "assets/images/detail/pria5-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
-            { id: 6, name: "Z-3 Pria 6", price: 350000, images: ["assets/images/pria/pria6.png", "assets/images/detail/pria6-gas.png", "assets/images/detail/pria6-gas.png"], category: "pria", color: "black", sizes: ["M", "L", "XL"] },
-            { id: 7, name: "Z-3 Pria 7", price: 320000, images: ["assets/images/pria/pria7.png", "assets/images/detail/pria7-gas.png", "assets/images/detail/pria7-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-            { id: 8, name: "Z-3 Pria 8", price: 150000, images: ["assets/images/pria/pria8.png", "assets/images/detail/pria8-gas.png", "assets/images/detail/pria8-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
+            { id: 2, name: "Z-3 Pria 2", price: 160000, images: ["assets/images/pria/pria2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 3, name: "Z-3 Pria 3", price: 85000, images: ["assets/images/pria/pria3.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
+            { id: 4, name: "Z-3 Pria 4", price: 210000, images: ["assets/images/pria/pria4.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 5, name: "Z-3 Pria 5", price: 125000, images: ["assets/images/pria/pria5.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
+            { id: 6, name: "Z-3 Pria 6", price: 350000, images: ["assets/images/pria/pria6.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["M", "L", "XL"] },
+            { id: 7, name: "Z-3 Pria 7", price: 320000, images: ["assets/images/pria/pria7.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 8, name: "Z-3 Pria 8", price: 150000, images: ["assets/images/pria/pria8.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
 
-            // --- KATEGORI WANITA ---
+            // --- KATEGORI WANITA (4 Item) ---
             { id: 9, name: "Z-3 Kaos Abu", price: 145000, images: ["assets/images/wanita/z-3 offcial - kaos abu - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "grey", sizes: ["S", "M", "L", "XL"] },
             { id: 10, name: "Z-3 Kaos Navy", price: 155000, images: ["assets/images/wanita/z-3 offcial - kaos navy - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
             { id: 11, name: "Z-3 Kaos Putih", price: 145000, images: ["assets/images/wanita/z-3 offcial - kaos putih - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "white", sizes: ["S", "M", "L"] },
             { id: 12, name: "Z-3 Kaos Pink", price: 135000, images: ["assets/images/wanita/z-3 offcial - kaos pnk - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "pink", sizes: ["S", "M", "L"] },
 
-            // --- KATEGORI ANAK ---
-            { id: 13, name: "Jersey Anak 1", price: 150000, images: ["assets/images/anak/jersey-bola anak 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L"] },
-            { id: 14, name: "Jersey Anak 2", price: 160000, images: ["assets/images/anak/jersey-bola anak 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "red", sizes: ["S", "M", "L"] },
-            { id: 15, name: "Jersey Anak 3", price: 85000, images: ["assets/images/anak/jersey-bola anak 3.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "white", sizes: ["S", "M", "L"] },
-            { id: 16, name: "Jersey Anak 4", price: 210000, images: ["assets/images/anak/jersey-bola anak 4.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL"] },
-            { id: 17, name: "Jersey Anak 5", price: 125000, images: ["assets/images/anak/jersey-bola anak 5.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
-            { id: 18, name: "Jersey Anak 6", price: 350000, images: ["assets/images/anak/jersey-bola anak 6.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-            { id: 19, name: "Jersey Anak 7", price: 320000, images: ["assets/images/anak/jersey-bola anak 7.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "grey", sizes: ["S", "M", "L"] },
-            { id: 20, name: "Jersey Anak 8", price: 150000, images: ["assets/images/anak/jersey-bola anak 8.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
-            { id: 21, name: "Jersey Anak 9", price: 120000, images: ["assets/images/anak/jersey-bola anak 9.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-            { id: 22, name: "Jersey Anak 10", price: 95000, images: ["assets/images/anak/jersey-bola anak 10.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["M", "L", "XL"] },
-            { id: 23, name: "Jersey Anak 11", price: 75000, images: ["assets/images/anak/jersey-bola anak 11.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["All Size"] },
-            { id: 24, name: "Jersey Anak 12", price: 85000, images: ["assets/images/anak/jersey-bola anak 12.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
+            // --- KATEGORI ANAK (jersey-bola anak1 - anak12) ---
+            { id: 13, name: "Jersey Anak 1", price: 150000, images: ["assets/images/anak/jersey-bola anak1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L"] },
+            { id: 14, name: "Jersey Anak 2", price: 160000, images: ["assets/images/anak/jersey-bola anak2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "red", sizes: ["S", "M", "L"] },
+            { id: 15, name: "Jersey Anak 3", price: 85000, images: ["assets/images/anak/jersey-bola anak3.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "white", sizes: ["S", "M", "L"] },
+            { id: 16, name: "Jersey Anak 4", price: 210000, images: ["assets/images/anak/jersey-bola anak4.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 17, name: "Jersey Anak 5", price: 125000, images: ["assets/images/anak/jersey-bola anak5.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 18, name: "Jersey Anak 6", price: 350000, images: ["assets/images/anak/jersey-bola anak6.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 19, name: "Jersey Anak 7", price: 320000, images: ["assets/images/anak/jersey-bola anak7.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "grey", sizes: ["S", "M", "L"] },
+            { id: 20, name: "Jersey Anak 8", price: 150000, images: ["assets/images/anak/jersey-bola anak8.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
+            { id: 21, name: "Jersey Anak 9", price: 120000, images: ["assets/images/anak/jersey-bola anak9.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 22, name: "Jersey Anak 10", price: 95000, images: ["assets/images/anak/jersey-bola anak10.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["M", "L", "XL"] },
+            { id: 23, name: "Jersey Anak 11", price: 75000, images: ["assets/images/anak/jersey-bola anak11.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["All Size"] },
+            { id: 24, name: "Jersey Anak 12", price: 85000, images: ["assets/images/anak/jersey-bola anak12.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
 
-            // --- KATEGORI CELANA ---
+            // --- KATEGORI CELANA (celana hitam 1-2, navy 1-2, putih 1-2) ---
             { id: 25, name: "Celana Jogger Grey", price: 175000, images: ["assets/images/celana/celana hitam 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "black", sizes: ["M", "L", "XL"] },
             { id: 26, name: "Celana Basket Pendek", price: 120000, images: ["assets/images/celana/celana hitam 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
             { id: 27, name: "Celana Jogger Navy", price: 175000, images: ["assets/images/celana/celana navy 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "blue", sizes: ["M", "L", "XL"] },
@@ -931,7 +940,7 @@
             { id: 29, name: "Celana Jogger Putih", price: 175000, images: ["assets/images/celana/celana putih 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "white", sizes: ["M", "L", "XL"] },
             { id: 30, name: "Celana Basket Putih", price: 120000, images: ["assets/images/celana/celana putih 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "white", sizes: ["S", "M", "L", "XL", "XXL"] },
 
-            // --- KATEGORI AKSESORIS ---
+            // --- KATEGORI AKSESORIS (kaoskaki1) ---
             { id: 31, name: "Kaos Kaki Gym", price: 50000, images: ["assets/images/aksesoris/kaoskaki1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "aksesoris", color: "black", sizes: ["All Size"] }
         ];
 
