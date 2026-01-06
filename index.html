@@ -65,6 +65,7 @@
         .swiper-wrapper { display: flex; }
         .swiper-slide { flex-shrink: 0; width: 100%; position: relative; }
         
+        /* Pastikan slide aktif terlihat */
         .swiper-slide { opacity: 0 !important; transition: opacity 0.5s; }
         .swiper-slide-active { opacity: 1 !important; }
         
@@ -74,7 +75,7 @@
             overflow: hidden;
             margin-bottom: 30px;
             position: relative;
-            background-color: #000; /* Default Hitam untuk video */
+            background-color: #f0f0f0; /* Fallback abu-abu */
         }
         
         .slideshow-character__img { max-height: 700px; width: auto; display: block; }
@@ -94,24 +95,24 @@
         
         .slideshow-text h2, .slideshow-text h6 { 
             font-family: 'Jost', sans-serif; 
-            color: #ffffff !important; /* Putih agar terlihat di atas video hitam */
+            color: #000000 !important; 
             font-size: 2.5rem; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important; /* Shadow untuk video */
+            text-shadow: none !important; 
             text-align: left !important;
         }
         .slideshow-text h6 {
             font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; 
-            color: #ffffff !important;
+            color: #000000 !important;
             text-align: left !important;
         }
         .slideshow-text a { 
             font-family: 'Jost', sans-serif; 
-            color: #ffffff !important; 
+            color: #000000 !important; 
             font-size: 1.2rem; 
             text-decoration: underline; 
             text-transform: uppercase; 
             font-weight: 500;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5) !important;
+            text-shadow: none !important;
             text-align: left !important;
         }
         
@@ -136,9 +137,10 @@
             position: absolute;
         }
         
+        /* Styling Tombol Slider Beranda (Agar tidak jelek) */
         .swiper-button-prev, .swiper-button-next {
             width: 50px; height: 50px;
-            background: rgba(255,255,255,0.2); 
+            background: rgba(0,0,0,0.2); 
             color: #fff;
             border-radius: 50%;
             border: 1px solid rgba(255,255,255,0.5);
@@ -154,8 +156,8 @@
             z-index: 30;
         }
         .swiper-button-prev:hover, .swiper-button-next:hover {
-            background: #fff;
-            color: #000;
+            background: #000;
+            color: #fff;
         }
 
         /* Animasi */
@@ -217,13 +219,28 @@
         .page-section { animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- SHOP LAYOUT --- */
-        .shop-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .shop-sidebar {
-            background: white; padding: 25px; border-radius: 4px; display: none;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 90px; height: fit-content; border-top: 4px solid var(--accent);
-            display: flex; flex-direction: column; gap: 20px;
+        /* --- SHOP LAYOUT (SIDEBAR KIRI - PRODUK KANAN) --- */
+        .shop-layout { 
+            display: grid; 
+            grid-template-columns: 1fr; /* Default Mobile (Full) */
+            gap: 30px; 
+            margin-top: 30px; /* Jarak dari slider ke konten */
         }
+        
+        /* Sidebar (Kiri) */
+        .shop-sidebar {
+            background: white; 
+            padding: 25px; 
+            border-radius: 4px; 
+            display: none; /* Hidden Mobile */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+            height: fit-content; /* Sesuai tinggi konten */
+            border-top: 4px solid var(--accent);
+            display: flex; /* Tampilkan flex secara block dulu */
+            flex-direction: column; 
+            gap: 20px;
+        }
+        
         .sidebar-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; }
         .cat-item { padding: 15px 10px; border-bottom: 1px solid var(--border); cursor: pointer; color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; display: flex; justify-content: space-between; transition: 0.2s;}
         .cat-item:hover, .cat-item.active { color: var(--accent); padding-left: 10px; background: #f8f8f8; }
@@ -233,12 +250,19 @@
         .chip { padding: 10px 25px; background: white; border: 1px solid var(--border); border-radius: 4px; white-space: nowrap; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
         .chip.active { background: var(--accent); color: white; border-color: var(--accent); }
 
+        /* Product Grid (Kanan) */
         .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; min-height: 400px; }
 
+        /* Media Queries untuk Responsive */
         @media(min-width: 768px) {
             .desktop-nav { display: flex; }
-            .shop-layout { grid-template-columns: 250px 1fr; }
-            .shop-sidebar { display: flex; } 
+            .shop-layout { 
+                grid-template-columns: 250px 1fr; /* Sidebar Kiri (250px) - Kanan (Auto) */
+            }
+            .shop-sidebar { 
+                display: flex; /* Tampilkan Sidebar di Desktop */
+                position: relative; /* Bukan Sticky biar rapi dengan layout grid */
+            } 
             .cat-chips { display: none; }
             .product-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
             .d-md-flex { display: flex !important; } 
@@ -252,7 +276,7 @@
         /* GAMBAR KECIL DI HP (PERSEGI) */
         .card-img-box { position: relative; padding-top: 120%; background: #f0f0f0; overflow: hidden; }
         @media(max-width: 767px) {
-            .card-img-box { padding-top: 100%; /* KOTAK 1:1 DI HP */ }
+            .card-img-box { padding-top: 100%; /* Lebih kotak/kompak di HP */ }
             .card-img-box-large { padding-top: 100%; /* KOTAK 1:1 DI HP */ }
         }
 
@@ -277,7 +301,7 @@
             position: relative;
         }
         .product-card-large:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
-        .card-img-box-large { position: relative; padding-top: 100%; background: #f0f0f0; overflow: hidden; }
+        .card-img-box-large { position: relative; padding-top: 100%; background: #f0f0f0; overflow: hidden; /* DIUBAH KE 100% AGAR KOTAK */ }
         .card-img-large { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .card-body-large { padding: 20px; background: white; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: left; position: relative; z-index: 2; }
         .card-title-large { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; line-height: 1.4; text-transform: uppercase; }
@@ -436,6 +460,7 @@
     <!-- HEADER -->
     <header>
         <div class="logo" onclick="switchPage('home')">
+            <!-- Placeholder Logo karena assets lokal mungkin tidak ada -->
             <img src="assets/images/logo/logo z3.png" alt="Logo Zed Sport" class="logo-img">
         </div>
         
@@ -454,7 +479,7 @@
     <!-- MAIN CONTENT -->
     <div class="container">
 
-        <!-- 1. HOME PAGE (HTML ASLI) -->
+        <!-- 1. HOME PAGE (GAMBAR BANNER SLIDER DI KEMBALIKAN) -->
         <section id="home" class="page-section">
             
             <!-- SLIDER HOME (DENGAN GAMBAR BANNER) -->
@@ -466,63 +491,66 @@
                 <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    <!-- GAMBAR BACKGROUND BANNER -->
-                    <img src="assets/images/banner/about-1.jpg" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
-                    <!-- KARAKTER (OVERLAY) -->
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="542" height="733"
-                        alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup type2">
-                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">Running</p>
+                      <!-- GAMBAR BACKGROUND BANNER (FIX) -->
+                      <div style="position:absolute; width:100%; height:100%; background:#eee; z-index:1;"></div>
+                      
+                      <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+                        <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="542" height="733"
+                          alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
+                        <div class="character_markup type2">
+                          <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">Running</p>
+                        </div>
+                      </div>
+                      <!-- TEKS -->
+                      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
+                        <ul class="sub-menu__list list-unstyled">
+                        <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed Three</h2>
+                        <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">SPORTWEAR</h2>
+                        <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop Now</a>
                       </div>
                     </div>
-                    <!-- TEKS -->
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed Three</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">SPORTWEAR</h2>
-                      <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop Now</a>
-                    </div>
-                  </div>
                 </div>
 
                 <!-- SLIDE 2 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    <!-- GAMBAR BACKGROUND BANNER -->
-                    <img src="assets/images/banner/shop_banner3.jpg" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character3.png" width="400" height="733"
-                        alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup">
-                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer</p>
+                      <!-- GAMBAR BACKGROUND BANNER (FIX) -->
+                      <div style="position:absolute; width:100%; height:100%; background:#f5f5f5; z-index:1;"></div>
+                      
+                      <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+                        <img loading="lazy" src="assets/images/banner/slideshow-character3.png" width="400" height="733"
+                          alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
+                        <div class="character_markup">
+                          <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer</p>
+                        </div>
+                      </div>
+                      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
+                        <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed Three</h2>
+                        <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">SPORTWEAR</h2>
+                        <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop Now</a>
                       </div>
                     </div>
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed Three</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">SPORTWEAR</h2>
-                      <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop Now</a>
-                    </div>
-                  </div>
                 </div>
 
                 <!-- SLIDE 3 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    <!-- GAMBAR BACKGROUND BANNER -->
-                    <img src="assets/images/banner/about-1.jpg" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="400" height="690"
-                        alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
+                      <!-- GAMBAR BACKGROUND BANNER (FIX) -->
+                      <div style="position:absolute; width:100%; height:100%; background:#e0e0e0; z-index:1;"></div>
+                      
+                      <div class="slideshow-character position-absolute bottom-0 pos_right-center">
+                        <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="400" height="690"
+                          alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
+                      </div>
+                      <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                        <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
+                        <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed Three</h2>
+                        <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">SPORTWEAR</h2>
+                        <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop Now</a>
+                      </div> 
                     </div>
-                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed Three</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">SPORTWEAR</h2>
-                      <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop Now</a>
-                    </div> 
-                  </div>
                 </div>
               </div>
               <div class="container">
@@ -533,7 +561,7 @@
               </div>
             </section>
 
-            <!-- KONTEN HOME -->
+            <!-- KONTEN HOME (UNGULULAN + TERBARU) -->
             <div class="home-content-spacer">
                 <div class="section-header">Produk Unggulan</div>
                 <div class="home-featured-large" id="home-featured-large"></div>
@@ -547,10 +575,10 @@
             </div>
         </section>
 
-        <!-- 2. SHOP PAGE (VIDEO SLIDER + PRODUK UNGGULAN + 9 ITEM) -->
+        <!-- 2. SHOP PAGE (VIDEO SLIDER + SIDEBAR KIRI + 9 PRODUK KANAN) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP (VIDEO SLIDER) -->
+            <!-- SLIDER SHOP (VIDEO) -->
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
                     "autoplay": { "delay": 5000 }, "slidesPerView": 1, "effect": "fade", "loop": true,
@@ -561,86 +589,76 @@
                     <!-- Slide 1: VIDEO (NIKE STYLE) -->
                     <div class="swiper-slide">
                       <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
-                        <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #000; color: white;">
+                        <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #000; color:white;">
                             <div class="slideshow-text container p-3 p-xl-5">
                               <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">ZED THREE <br /><strong>OFFICIAL</strong></h2>
-                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">The ultimate sport collection. Elevate your game.</p>
-                              <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7" style="color:white;">Shop Now</a>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Redefining sport with premium gear. The ultimate collection.</p>
+                              <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7" style="color:white;">Shop Collection</a>
                             </div>
                         </div>
                         <div class="slide-split_media position-relative">
-                            <div class="slideshow-bg" style="background-color: #000;">
+                            <div class="slideshow-bg" style="background-color: #000; position:absolute; width:100%; height:100%; z-index:1;">
                                 <!-- VIDEO AUTOPLAY LOOP -->
                                 <video width="630" height="450" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;">
-                                    <!-- GANTI SRC DENGAN VIDEO KAMU -->
-                                    <source src="assets/images/banner/video-sample.mp4" type="video/mp4">
-                                    <!-- BACKUP IMAGE JIKA VIDEO GAGAL/DI TIDAK ADA -->
-                                    <img src="assets/images/banner/about-1.jpg" style="width:100%; height:100%; object-fit:cover;" alt="Video Fallback">
+                                    <!-- GANTI SRC DENGAN FILE VIDEO KAMU -->
+                                    <source src="assets/images/banner/about-1.jpg" type="video/mp4">
+                                    <!-- BACKUP IMAGE JIKA VIDEO GAGAL -->
+                                    Your browser does not support the video tag.
                                 </video>
                             </div>
+                            <!-- TAMPILAN GAMBAR JIKA VIDEO GAGAL/DI HILANGKAN -->
+                            <img loading="lazy" src="assets/images/banner/about-1.jpg" width="630" height="450" 
+                                alt="Banner Video Fallback" class="slideshow-bg__img object-fit-cover" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;" />
                         </div>
                       </div>
                     </div>
-                    
+
                     <!-- Slide 2: GAMBAR PERFORMANCE -->
                     <div class="swiper-slide">
                       <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
                         <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
                             <div class="slideshow-text container p-3 p-xl-5">
                               <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">HIGH <br /><strong>PERFORMANCE</strong></h2>
-                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Engineered for modern athlete. Breathable, durable, and ready for action.</p>
-                              <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Lihat Koleksi</a>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Engineered for modern athlete.</p>
+                              <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja Sekarang</a>
                             </div>
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Performance Banner" class="slideshow-bg__img object-fit-cover" />
+                                <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Performance" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
                       </div>
                     </div>
 
-                     <!-- Slide 3: GAMBAR PREMIUM -->
-                     <div class="swiper-slide">
-                        <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
-                          <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
-                              <div class="slideshow-text container p-3 p-xl-5">
+                    <!-- Slide 3: GAMBAR PREMIUM -->
+                    <div class="swiper-slide">
+                      <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
+                        <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
+                            <div class="slideshow-text container p-3 p-xl-5">
                                 <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">PREMIUM <br /><strong>QUALITY</strong></h2>
-                                <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Get the best gear for your sport. Official merchandise guaranteeing style and substance.</p>
+                                <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Get best gear for your sport. Official merchandise guaranteeing style and substance.</p>
                                 <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Beli Sekarang</a>
-                              </div>
-                          </div>
-                          <div class="slide-split_media position-relative">
+                            </div>
+                        </div>
+                        <div class="slide-split_media position-relative">
                               <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                  <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Quality Banner" class="slideshow-bg__img object-fit-cover" />
+                                  <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450"
+                          alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                               </div>
-                          </div>
                         </div>
                       </div>
+                    </div>
                   </div>
                   <div class="container">
-                    <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
-                        <div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
-                        <div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
-                    </div>
+                    <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-4 pb-xl-2"></div>
                   </div>
                 </div>
             </div>
 
-            <!-- KONTEN PRODUK (UNGULULAN + TERBARU) DI BAWAH SLIDER -->
-            <div class="container" style="margin-bottom: 40px;">
-                
-                <!-- 2 GAMBAR BESAR (UNGgULAN) -->
-                <div class="section-header" style="margin-top: 30px;">Produk Unggulan</div>
-                <div class="home-featured-large" id="shop-featured-large"></div>
-
-                <!-- 9 GAMBAR GRID (TERBARU) -->
-                <div class="section-header">Produk Terbaru</div>
-                <div class="product-grid" id="shop-featured"></div>
-            </div>
-
+            <!-- LAYOUT: SIDEBAR KIRI + PRODUK KANAN -->
             <div class="shop-layout">
-                <!-- Sidebar (Desktop) -->
+                <!-- Sidebar (Desktop - KIRI) -->
                 <aside class="shop-sidebar">
                     <div class="sidebar-title">Kategori</div>
                     <ul>
@@ -653,7 +671,7 @@
                         <li class="cat-item" onclick="filterCategory('aksesoris')">Aksesoris <i class="fas fa-chevron-right"></i></li>
                     </ul>
 
-                    <!-- FILTER SIZE & WARNA -->
+                    <!-- FILTER SIZE & WARNA (SEJAJAR DI KIRI) -->
                     <div class="shop-filters">
                         <div class="filter-group">
                             <span class="filter-label">Filter Ukuran:</span>
@@ -676,9 +694,9 @@
                     </div>
                 </aside>
 
-                <!-- Main Shop Content -->
+                <!-- Main Shop Content (KANAN) -->
                 <main>
-                    <!-- Mobile Chips -->
+                    <!-- Mobile Chips (Hanya di Mobile) -->
                     <div class="cat-chips">
                         <div class="chip active" onclick="filterCategory('all')">Semua</div>
                         <div class="chip" onclick="filterCategory('pria')">Pria</div>
@@ -689,20 +707,21 @@
                         <div class="chip" onclick="filterCategory('aksesoris')">Aksesoris</div>
                     </div>
 
+                    <!-- JUDUL TANPA TULISAN 'DAFTAR PRODUK LENGKAP' SESUAI PERINTAH -->
                     <div style="display:flex; justify-content:space-between; margin-bottom:20px; align-items:center; border-bottom: 1px solid var(--border); padding-bottom: 15px;">
-                        <h3 style="font-size:1.5rem; letter-spacing: 1px;">DAFTAR PRODUK LENGKAP</h3>
+                        <h3 style="font-size:1.5rem; letter-spacing: 1px;">DAFTAR PRODUK</h3>
                         <div id="result-count" style="font-size:0.9rem; color:var(--text-muted);">Menampilkan...</div>
                     </div>
 
                     <!-- GRID PRODUK (9 ITEM) -->
                     <div class="product-grid" id="shop-grid"></div>
 
-                    <!-- PAGINATION -->
+                    <!-- PAGINATION (PREV 1 2 3 4 NEXT) -->
                     <div class="shop-pagination" id="shop-pagination">
                         <!-- Buttons Generated by JS -->
                     </div>
 
-                    <!-- PRODUK LAIN (DIHILANGKAN SESUAI REQUEST) -->
+                    <!-- PRODUK LAIN (DIHAPUS SESUAI REQUEST) -->
                     <!-- <div class="related-section">
                         <div class="section-header">Menu Produk Lain</div>
                         <div class="product-grid" id="shop-related-grid"></div>
@@ -1263,12 +1282,9 @@
             renderProducts(products.slice(0, 2), 'home-featured-large', 'large'); 
             renderProducts(products.slice(0, 9), 'home-featured', 'standard');
             
-            // TAMBAHKAN RENDER TOKO
-            renderProducts(products.slice(0, 2), 'shop-featured-large', 'large'); 
-            renderProducts(products.slice(0, 9), 'shop-featured', 'standard');
-            
-            applyFilters(); // Init Shop Filter
-            
+            // Init Shop Filter (Meresap 9 produk di grid)
+            applyFilters(); 
+
             // Slider Init
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
