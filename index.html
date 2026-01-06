@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
-        /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
+        /* --- 1. BOOTSTRAP CLONES --- */
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .d-block { display: block; }
@@ -56,7 +56,6 @@
         .text-secondary { color: #6c757d; }
         .text_dash { text-decoration: underline; }
         
-        /* Font Kelas Khusus Slider */
         .font-sofia { font-family: 'Sofia', cursive; }
         .mark-grey-color { color: #888; }
         .section-title { font-size: 3.5rem; }
@@ -249,7 +248,14 @@
         /* --- PRODUCT CARD --- */
         .product-card { background: white; border-radius: 0; overflow: hidden; transition: 0.3s; cursor: pointer; border: 1px solid transparent; display: flex; flex-direction: column; }
         .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+        
+        /* GAMBAR LEBIH KECIL DI HP (MOBILE FIX) */
         .card-img-box { position: relative; padding-top: 120%; background: #f0f0f0; overflow: hidden; }
+        @media(max-width: 767px) {
+            .card-img-box { padding-top: 100%; /* Lebih kotak/kompak di HP */ }
+            .card-img-box-large { padding-top: 65%; }
+        }
+
         .card-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .product-card:hover .card-img { transform: scale(1.05); }
         .card-body { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
@@ -430,7 +436,6 @@
     <!-- HEADER -->
     <header>
         <div class="logo" onclick="switchPage('home')">
-            <!-- Placeholder Logo karena assets lokal mungkin tidak ada -->
             <img src="assets/images/logo/logo z3.png" alt="Logo Zed Sport" class="logo-img">
         </div>
         
@@ -461,10 +466,8 @@
                 <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    
-                    <!-- TAMBAHKAN GAMBAR BACKGROUND BANNER DI SINI -->
-                    <img src="assets/images/banner/slideshow-character1.png" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
-
+                    <!-- GAMBAR BACKGROUND BANNER -->
+                    <img src="assets/images/banner/about-1.jpg" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
                     <!-- KARAKTER (OVERLAY) -->
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
                       <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="542" height="733"
@@ -473,7 +476,6 @@
                         <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">Running</p>
                       </div>
                     </div>
-
                     <!-- TEKS -->
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
@@ -487,10 +489,8 @@
                 <!-- SLIDE 2 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    
-                    <!-- TAMBAHKAN GAMBAR BACKGROUND BANNER DI SINI -->
-                    <img src="assets/images/banner/slideshow-character3.png" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
-
+                    <!-- GAMBAR BACKGROUND BANNER -->
+                    <img src="assets/images/banner/shop_banner3.jpg" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
                       <img loading="lazy" src="assets/images/banner/slideshow-character3.png" width="400" height="733"
                         alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
@@ -510,12 +510,10 @@
                 <!-- SLIDE 3 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    
-                    <!-- TAMBAHKAN GAMBAR BACKGROUND BANNER DI SINI -->
-                    <img src="assets/images/banner/slideshow-character2.png" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
-
+                    <!-- GAMBAR BACKGROUND BANNER -->
+                    <img src="assets/images/banner/about-1.jpg" style="position:absolute; width:100%; height:100%; object-fit:cover; z-index:1;">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character2.png" width="400" height="690"
+                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="400" height="690"
                         alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
@@ -549,24 +547,10 @@
             </div>
         </section>
 
-            <!-- KONTEN HOME -->
-            <div class="home-content-spacer">
-                <div class="section-header">Produk Unggulan</div>
-                <div class="home-featured-large" id="home-featured-large"></div>
-
-                <div class="section-header">Produk Terbaru</div>
-                <div class="product-grid" id="home-featured"></div>
-                
-                <div style="text-align: center;">
-                    <button onclick="switchPage('shop')" class="btn-load-more">Muat Lebih Banyak</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. SHOP PAGE (HTML ASLI + IMAGE BANNER) -->
+        <!-- 2. SHOP PAGE (REVISI TOTAL) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP (HTML ASLI) -->
+            <!-- SLIDER SHOP (GANTI TULISAN JADI TEMA SPORT) -->
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
                     "autoplay": { "delay": 5000 }, "slidesPerView": 1, "effect": "fade", "loop": true,
@@ -574,56 +558,55 @@
                     "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }
                   }'>
                   <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
+                    <!-- Slide 1: ZED THREE SPORTWEAR -->
                     <div class="swiper-slide">
                       <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
                         <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
                             <div class="slideshow-text container p-3 p-xl-5">
-                              <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">Women's <br /><strong>ACCESSORIES</strong></h2>
-                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are best way to update your look.</p>
+                              <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">ZED THREE <br /><strong>SPORTWEAR</strong></h2>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Redefine your limits with our premium athletic collection. Designed for performance and comfort.</p>
                               <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja Sekarang</a>
                             </div>
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                <!-- GAMBAR BANNER ASLI -->
-                                <img loading="lazy" src="assets/images/banner/about-1.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
+                                <img loading="lazy" src="assets/images/banner/about-1.jpg" width="630" height="450" alt="Zed Sport Banner" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
                       </div>
                     </div>
-                    <!-- Slide 2 -->
+                    
+                    <!-- Slide 2: PERFORMANCE -->
                     <div class="swiper-slide">
                       <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
                         <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
                             <div class="slideshow-text container p-3 p-xl-5">
-                              <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">Women's <br /><strong>PROMO</strong></h2>
-                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are best way to update your look.</p>
-                              <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja Sekarang</a>
+                              <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">HIGH <br /><strong>PERFORMANCE</strong></h2>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Engineered for the modern athlete. Breathable, durable, and ready for action.</p>
+                              <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Lihat Koleksi</a>
                             </div>
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                <!-- GAMBAR BANNER ASLI -->
-                                <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
+                                <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Performance Banner" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
                       </div>
                     </div>
-                     <!-- Slide 3 -->
+
+                     <!-- Slide 3: PREMIUM QUALITY -->
                      <div class="swiper-slide">
                         <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
                           <div class="slide-split_text position-relative d-flex align-items-center" style="background-color: #f5e6e0;">
                               <div class="slideshow-text container p-3 p-xl-5">
-                                <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">SALE</h2>
-                                <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are best way to update your look.</p>
-                                <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja Sekarang</a>
+                                <h2 class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">PREMIUM <br /><strong>QUALITY</strong></h2>
+                                <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Get the best gear for your sport. Official merchandise guaranteeing style and substance.</p>
+                                <a href="#" class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Beli Sekarang</a>
                               </div>
                           </div>
                           <div class="slide-split_media position-relative">
                               <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                  <!-- GAMBAR BANNER ASLI -->
-                                  <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
+                                  <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Quality Banner" class="slideshow-bg__img object-fit-cover" />
                               </div>
                           </div>
                         </div>
@@ -701,11 +684,6 @@
                         <!-- Buttons Generated by JS -->
                     </div>
 
-                    <!-- PRODUK LAIN (DI SHOP SAJA) -->
-                    <div class="related-section">
-                        <div class="section-header">Menu Produk Lain</div>
-                        <div class="product-grid" id="shop-related-grid"></div>
-                    </div>
                 </main>
             </div>
         </section>
@@ -972,7 +950,7 @@
         let currentColor = 'all';
         let currentSize = 'all';
         let currentPage = 1;
-        const itemsPerPage = 6;
+        const itemsPerPage = 9; // DIUBAH JADI 9 GAMBAR SESUAI REQUEST
 
         let currentProduct = null;
         let selectedSize = "L";
@@ -1264,8 +1242,6 @@
             
             applyFilters(); // Init Shop Filter
             
-            renderProducts(products.slice(0, 4), 'shop-related-grid');
-
             // Slider Init
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
