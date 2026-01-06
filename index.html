@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="id">
-<head> <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
+<head>
+    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zed - Sport Official Store</title>
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <style>
-        /* --- 1. BOOTSTRAP CLONES --- */
+        /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .d-block { display: block; }
@@ -202,9 +203,8 @@
             padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             border-bottom: 2px solid var(--accent);
         }
-        <div class="logo" onclick="switchPage('home')">
-    <img src="assets/images/logo/logo z3.png" alt="Logo Zed Sport" class="logo-img">
-</div>
+        .logo { cursor: pointer; display: flex; align-items: center; height: 100%; }
+        .logo-img { height: 50px; width: auto; object-fit: contain; }
         
         .desktop-nav { display: none; gap: 30px; }
         .desktop-nav a { font-weight: 600; font-size: 1rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; position: relative; cursor: pointer; }
@@ -229,7 +229,7 @@
         .cat-item { padding: 15px 10px; border-bottom: 1px solid var(--border); cursor: pointer; color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; display: flex; justify-content: space-between; transition: 0.2s;}
         .cat-item:hover, .cat-item.active { color: var(--accent); padding-left: 10px; background: #f8f8f8; }
 
-        .cat-chips { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 25px; scrollbar-width: none; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        .cat-chips { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; margin-bottom: 25px; scrollbar-width: none; border-bottom:1px solid var(--border); padding-bottom: 20px; }
         .cat-chips::-webkit-scrollbar { display: none; }
         .chip { padding: 10px 25px; background: white; border: 1px solid var(--border); border-radius: 4px; white-space: nowrap; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
         .chip.active { background: var(--accent); color: white; border-color: var(--accent); }
@@ -430,7 +430,7 @@
     <!-- HEADER -->
     <header>
         <div class="logo" onclick="switchPage('home')">
-            <img src="https://via.placeholder.com/150x50/000/fff?text=ZED+SPORT" alt="Logo Zed Sport" class="logo-img">
+            <img src="assets/images/logo/logo z3.png" alt="Logo Zed Sport" class="logo-img">
         </div>
         
         <nav class="desktop-nav">
@@ -462,7 +462,8 @@
                   <div class="overflow-hidden position-relative h-100">
                     <div style="position:absolute; width:100%; height:100%; background:#eee; z-index:1;"></div>
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png"
+                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="542" height="733"
+                        alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup type2">
                         <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">RUNNING</p>
                       </div>
@@ -481,7 +482,8 @@
                   <div class="overflow-hidden position-relative h-100">
                     <div style="position:absolute; width:100%; height:100%; background:#f5f5f5; z-index:1;"></div>
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character2.png
+                      <img loading="lazy" src="assets/images/banner/slideshow-character3.png" width="400" height="733"
+                        alt="Woman Fashion 1" class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup">
                         <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer</p>
                       </div>
@@ -500,7 +502,8 @@
                   <div class="overflow-hidden position-relative h-100">
                     <div style="position:absolute; width:100%; height:100%; background:#e0e0e0; z-index:1;"></div>
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/banner/slideshow-character3.png
+                      <img loading="lazy" src="assets/images/banner/slideshow-character1.png" width="400" height="690"
+                        alt="Woman Fashion 2" class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
                       <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">Motion-Fit</h6>
@@ -556,7 +559,7 @@
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                <img loading="lazy" src="assets/images/banner/about-1.jpg"
+                                <img loading="lazy" src="assets/images/banner/about-1.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
                       </div>
@@ -573,7 +576,7 @@
                         </div>
                         <div class="slide-split_media position-relative">
                             <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                <img loading="lazy" src="assets/images/banner/shop_banner3.jpg"
+                                <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                             </div>
                         </div>
                       </div>
@@ -590,7 +593,7 @@
                           </div>
                           <div class="slide-split_media position-relative">
                               <div class="slideshow-bg" style="background-color: #f5e6e0;">
-                                  <img loading="lazy" src="assets/images/banner/shop_banner3.jpg"
+                                  <img loading="lazy" src="assets/images/banner/shop_banner3.jpg" width="630" height="450" alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
                               </div>
                           </div>
                         </div>
@@ -890,14 +893,7 @@
     <!-- SCRIPT SECTION --- -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // --- DATABASE PRODUK ---
-        // Menambahkan properti "sizes" agar filter ukuran bisa berfungsi
-        const products = [
-        <!-- SCRIPT SECTION (FULL & BENER) --- -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
         // --- DATABASE PRODUK (SUDAH DIPERBAIKI) ---
-        // HAPUS PENGGANDAAN GANDA DI SINI
         const products = [
             // --- KATEGORI PRIA ---
             { id: 1, name: "Z-3 Pria 1", price: 150000, images: ["assets/images/pria/pria1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
@@ -1205,10 +1201,10 @@
             let imageString = "";
             let imgArray = [];
             
-            imgArray.push(`"https://picsum.photos/seed/${cat}/${img1}"`);
+            imgArray.push(`"assets/images/${cat}/${img1}"`);
 
-            if(img2) imgArray.push(`"https://picsum.photos/seed/${cat}/${img2}"`);
-            if(img3) imgArray.push(`"https://picsum.photos/seed/${cat}/${img3}"`);
+            if(img2) imgArray.push(`"assets/images/detail/${img2}"`);
+            if(img3) imgArray.push(`"assets/images/detail/${img3}"`);
 
             imageString = `images: [${imgArray.join(', ')}]`;
 
@@ -1223,7 +1219,7 @@
 
         function copyCode() {
             const text = document.getElementById('codeResult').innerText;
-            if(text.includes("picsum")) {
+            if(text.includes("assets")) {
                 navigator.clipboard.writeText(text).then(() => {
                     const status = document.getElementById('copyStatus');
                     status.style.display = 'block';
