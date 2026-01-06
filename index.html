@@ -893,56 +893,60 @@
         // --- DATABASE PRODUK ---
         // Menambahkan properti "sizes" agar filter ukuran bisa berfungsi
         const products = [
-            const products = [
-    // --- KATEGORI PRIA (pria1 - pria8) ---
-    { id: 1, name: "Z-3 Pria 1", price: 150000, images: ["assets/images/pria/pria1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
-    { id: 2, name: "Z-3 Pria 2", price: 160000, images: ["assets/images/pria/pria2.png", "assets/images/detail/pria2-gas.png", "assets/images/detail/pria2-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
-    { id: 3, name: "Z-3 Pria 3", price: 85000, images: ["assets/images/pria/pria3.png", "assets/images/detail/pria3-gas.png", "assets/images/detail/pria3-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
-    { id: 4, name: "Z-3 Pria 4", price: 210000, images: ["assets/images/pria/pria4.png", "assets/images/detail/pria4-gas.png", "assets/images/detail/pria4-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
-    { id: 5, name: "Z-3 Pria 5", price: 125000, images: ["assets/images/pria/pria5.png", "assets/images/detail/pria5-gas.png", "assets/images/detail/pria5-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
-    { id: 6, name: "Z-3 Pria 6", price: 350000, images: ["assets/images/pria/pria6.png", "assets/images/detail/pria6-gas.png", "assets/images/detail/pria6-gas.png"], category: "pria", color: "black", sizes: ["M", "L", "XL"] },
-    { id: 7, name: "Z-3 Pria 7", price: 320000, images: ["assets/images/pria/pria7.png", "assets/images/detail/pria7-gas.png", "assets/images/detail/pria7-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 8, name: "Z-3 Pria 8", price: 150000, images: ["assets/images/pria/pria8.png", "assets/images/detail/pria8-gas.png", "assets/images/detail/pria8-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
+        <!-- SCRIPT SECTION (FULL & BENER) --- -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // --- DATABASE PRODUK (SUDAH DIPERBAIKI) ---
+        // HAPUS PENGGANDAAN GANDA DI SINI
+        const products = [
+            // --- KATEGORI PRIA ---
+            { id: 1, name: "Z-3 Pria 1", price: 150000, images: ["assets/images/pria/pria1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 2, name: "Z-3 Pria 2", price: 160000, images: ["assets/images/pria/pria2.png", "assets/images/detail/pria2-gas.png", "assets/images/detail/pria2-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 3, name: "Z-3 Pria 3", price: 85000, images: ["assets/images/pria/pria3.png", "assets/images/detail/pria3-gas.png", "assets/images/detail/pria3-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
+            { id: 4, name: "Z-3 Pria 4", price: 210000, images: ["assets/images/pria/pria4.png", "assets/images/detail/pria4-gas.png", "assets/images/detail/pria4-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 5, name: "Z-3 Pria 5", price: 125000, images: ["assets/images/pria/pria5.png", "assets/images/detail/pria5-gas.png", "assets/images/detail/pria5-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
+            { id: 6, name: "Z-3 Pria 6", price: 350000, images: ["assets/images/pria/pria6.png", "assets/images/detail/pria6-gas.png", "assets/images/detail/pria6-gas.png"], category: "pria", color: "black", sizes: ["M", "L", "XL"] },
+            { id: 7, name: "Z-3 Pria 7", price: 320000, images: ["assets/images/pria/pria7.png", "assets/images/detail/pria7-gas.png", "assets/images/detail/pria7-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 8, name: "Z-3 Pria 8", price: 150000, images: ["assets/images/pria/pria8.png", "assets/images/detail/pria8-gas.png", "assets/images/detail/pria8-gas.png"], category: "pria", color: "black", sizes: ["S", "M", "L"] },
 
-    // --- KATEGORI WANITA (4 Item) ---
-    { id: 9, name: "Z-3 Kaos Abu", price: 145000, images: ["assets/images/wanita/z-3 offcial - kaos abu - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "grey", sizes: ["S", "M", "L", "XL"] },
-    { id: 10, name: "Z-3 Kaos Navy", price: 155000, images: ["assets/images/wanita/z-3 offcial - kaos navy - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 11, name: "Z-3 Kaos Putih", price: 145000, images: ["assets/images/wanita/z-3 offcial - kaos putih - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "white", sizes: ["S", "M", "L"] },
-    { id: 12, name: "Z-3 Kaos Pink", price: 135000, images: ["assets/images/wanita/z-3 offcial - kaos pnk - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "pink", sizes: ["S", "M", "L"] },
+            // --- KATEGORI WANITA ---
+            { id: 9, name: "Z-3 Kaos Abu", price: 145000, images: ["assets/images/wanita/z-3 offcial - kaos abu - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "grey", sizes: ["S", "M", "L", "XL"] },
+            { id: 10, name: "Z-3 Kaos Navy", price: 155000, images: ["assets/images/wanita/z-3 offcial - kaos navy - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 11, name: "Z-3 Kaos Putih", price: 145000, images: ["assets/images/wanita/z-3 offcial - kaos putih - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "white", sizes: ["S", "M", "L"] },
+            { id: 12, name: "Z-3 Kaos Pink", price: 135000, images: ["assets/images/wanita/z-3 offcial - kaos pnk - logo.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "wanita", color: "pink", sizes: ["S", "M", "L"] },
 
-    // --- KATEGORI ANAK (jersey-bola anak1 - anak12) ---
-    { id: 13, name: "Jersey Anak 1", price: 150000, images: ["assets/images/anak/jersey-bola anak1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L"] },
-    { id: 14, name: "Jersey Anak 2", price: 160000, images: ["assets/images/anak/jersey-bola anak2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "red", sizes: ["S", "M", "L"] },
-    { id: 15, name: "Jersey Anak 3", price: 85000, images: ["assets/images/anak/jersey-bola anak3.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "white", sizes: ["S", "M", "L"] },
-    { id: 16, name: "Jersey Anak 4", price: 210000, images: ["assets/images/anak/jersey-bola anak4.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL"] },
-    { id: 17, name: "Jersey Anak 5", price: 125000, images: ["assets/images/anak/jersey-bola anak5.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 18, name: "Jersey Anak 6", price: 350000, images: ["assets/images/anak/jersey-bola anak6.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 19, name: "Jersey Anak 7", price: 320000, images: ["assets/images/anak/jersey-bola anak7.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "grey", sizes: ["S", "M", "L"] },
-    { id: 20, name: "Jersey Anak 8", price: 150000, images: ["assets/images/anak/jersey-bola anak8.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
-    { id: 21, name: "Jersey Anak 9", price: 120000, images: ["assets/images/anak/jersey-bola anak9.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 22, name: "Jersey Anak 10", price: 95000, images: ["assets/images/anak/jersey-bola anak10.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["M", "L", "XL"] },
-    { id: 23, name: "Jersey Anak 11", price: 75000, images: ["assets/images/anak/jersey-bola anak11.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["All Size"] },
+            // --- KATEGORI ANAK ---
+            { id: 13, name: "Jersey Anak 1", price: 150000, images: ["assets/images/anak/jersey-bola anak1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L"] },
+            { id: 14, name: "Jersey Anak 2", price: 160000, images: ["assets/images/anak/jersey-bola anak2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "red", sizes: ["S", "M", "L"] },
+            { id: 15, name: "Jersey Anak 3", price: 85000, images: ["assets/images/anak/jersey-bola anak3.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "white", sizes: ["S", "M", "L"] },
+            { id: 16, name: "Jersey Anak 4", price: 210000, images: ["assets/images/anak/jersey-bola anak4.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL"] },
+            { id: 17, name: "Jersey Anak 5", price: 125000, images: ["assets/images/anak/jersey-bola anak5.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 18, name: "Jersey Anak 6", price: 350000, images: ["assets/images/anak/jersey-bola anak6.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 19, name: "Jersey Anak 7", price: 320000, images: ["assets/images/anak/jersey-bola anak7.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "grey", sizes: ["S", "M", "L"] },
+            { id: 20, name: "Jersey Anak 8", price: 150000, images: ["assets/images/anak/jersey-bola anak8.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
+            { id: 21, name: "Jersey Anak 9", price: 120000, images: ["assets/images/anak/jersey-bola anak9.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 22, name: "Jersey Anak 10", price: 95000, images: ["assets/images/anak/jersey-bola anak10.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["M", "L", "XL"] },
+            { id: 23, name: "Jersey Anak 11", price: 75000, images: ["assets/images/anak/jersey-bola anak11.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["All Size"] },
+            { id: 24, name: "Jersey Anak 12", price: 85000, images: ["assets/images/anak/jersey-bola anak12.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
 
-    { id: 24, name: "Jersey Anak 12", price: 85000, images: ["assets/images/anak/jersey-bola anak12.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "anak", color: "black", sizes: ["S", "M", "L"] },
+            // --- KATEGORI CELANA ---
+            { id: 25, name: "Celana Jogger Grey", price: 175000, images: ["assets/images/celana/celana hitam 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "black", sizes: ["M", "L", "XL"] },
+            { id: 26, name: "Celana Basket Pendek", price: 120000, images: ["assets/images/celana/celana hitam 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 27, name: "Celana Jogger Navy", price: 175000, images: ["assets/images/celana/celana navy 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "blue", sizes: ["M", "L", "XL"] },
+            { id: 28, name: "Celana Basket Navy", price: 120000, images: ["assets/images/celana/celana navy 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
+            { id: 29, name: "Celana Jogger Putih", price: 175000, images: ["assets/images/celana/celana putih 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "white", sizes: ["M", "L", "XL"] },
+            { id: 30, name: "Celana Basket Putih", price: 120000, images: ["assets/images/celana/celana putih 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "white", sizes: ["S", "M", "L", "XL", "XXL"] },
 
-    // --- KATEGORI CELANA (celana hitam 1-2, navy 1-2, putih 1-2) ---
-    { id: 25, name: "Celana Jogger Grey", price: 175000, images: ["assets/images/celana/celana hitam 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "black", sizes: ["M", "L", "XL"] },
-    { id: 26, name: "Celana Basket Pendek", price: 120000, images: ["assets/images/celana/celana hitam 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "black", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 27, name: "Celana Jogger Navy", price: 175000, images: ["assets/images/celana/celana navy 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "blue", sizes: ["M", "L", "XL"] },
-    { id: 28, name: "Celana Basket Navy", price: 120000, images: ["assets/images/celana/celana navy 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "blue", sizes: ["S", "M", "L", "XL", "XXL"] },
-    { id: 29, name: "Celana Jogger Putih", price: 175000, images: ["assets/images/celana/celana putih 1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "white", sizes: ["M", "L", "XL"] },
-    { id: 30, name: "Celana Basket Putih", price: 120000, images: ["assets/images/celana/celana putih 2.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "celana", color: "white", sizes: ["S", "M", "L", "XL", "XXL"] },
-
-    // --- KATEGORI AKSESORIS (kaoskaki1) ---
-    { id: 31, name: "Kaos Kaki Gym", price: 50000, images: ["assets/images/aksesoris/kaoskaki1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "aksesoris", color: "black", sizes: ["All Size"] }
-];
+            // --- KATEGORI AKSESORIS ---
+            { id: 31, name: "Kaos Kaki Gym", price: 50000, images: ["assets/images/aksesoris/kaoskaki1.png", "assets/images/detail/pria1-gas.png", "assets/images/detail/pria1-gas.png"], category: "aksesoris", color: "black", sizes: ["All Size"] }
+        ];
 
         // --- STATE VARIABLE (FILTER & PAGINATION) ---
         let currentCategory = 'all';
         let currentColor = 'all';
         let currentSize = 'all';
         let currentPage = 1;
-        const itemsPerPage = 6; // Berapa produk per halaman
+        const itemsPerPage = 6;
 
         let currentProduct = null;
         let selectedSize = "L";
@@ -979,7 +983,7 @@
                     const html = `
                     <div class="product-card-large" onclick="openDetail(${p.id})">
                         <div class="card-img-box-large">
-                            <img src="${mainImg}" class="card-img-large" onerror="this.src='https://picsum.photos/seed/${p.id}/500/800'">
+                            <img src="${mainImg}" class="card-img-large" onerror="this.src='https://via.placeholder.com/500x800?text=Image+Not+Found'">
                         </div>
                         <div class="card-body-large">
                             <div class="card-title-large">${p.name}</div>
@@ -991,7 +995,7 @@
                     const html = `
                     <div class="product-card" onclick="openDetail(${p.id})">
                         <div class="card-img-box">
-                            <img src="${mainImg}" class="card-img" onerror="this.src='https://picsum.photos/seed/${p.id}/500/600'">
+                            <img src="${mainImg}" class="card-img" onerror="this.src='https://via.placeholder.com/500x600?text=Image+Not+Found'">
                         </div>
                         <div class="card-body">
                             <div class="card-title">${p.name}</div>
@@ -1006,7 +1010,7 @@
         // --- FILTER FUNCTIONS ---
         function filterCategory(cat) {
             currentCategory = cat;
-            currentPage = 1; // Reset ke halaman 1 jika kategori berubah
+            currentPage = 1;
             updateFilterUI();
             applyFilters();
         }
@@ -1027,34 +1031,26 @@
 
         // --- CORE LOGIC: FILTER & PAGINATION ---
         function applyFilters() {
-            // 1. Filter Array
             let filtered = products.filter(p => {
                 const matchCat = currentCategory === 'all' || p.category === currentCategory;
                 const matchColor = currentColor === 'all' || p.color === currentColor;
-                // Cek apakah produk punya size yang dipilih
                 const matchSize = currentSize === 'all' || p.sizes.includes(currentSize);
                 
                 return matchCat && matchColor && matchSize;
             });
 
-            // 2. Hitung Total Halaman
             const totalPages = Math.ceil(filtered.length / itemsPerPage);
             
-            // 3. Cek batas halaman (jika hasil filter kurang dari halaman saat ini)
             if (currentPage > totalPages) currentPage = totalPages || 1;
 
-            // 4. Update Teks Hasil
             document.getElementById('result-count').innerText = `Menampilkan ${filtered.length} produk`;
 
-            // 5. Pagination Slice
             const start = (currentPage - 1) * itemsPerPage;
             const end = start + itemsPerPage;
             const pagedProducts = filtered.slice(start, end);
 
-            // 6. Render Grid
             renderProducts(pagedProducts, 'shop-grid');
 
-            // 7. Render Tombol Pagination
             renderPagination(totalPages);
         }
 
@@ -1062,9 +1058,8 @@
             const paginationContainer = document.getElementById('shop-pagination');
             paginationContainer.innerHTML = '';
 
-            if (totalPages <= 1) return; // Jangan tampilkan pagination jika cuma 1 halaman
+            if (totalPages <= 1) return; 
 
-            // Tombol Prev
             const prevBtn = document.createElement('button');
             prevBtn.className = 'page-btn';
             prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
@@ -1072,8 +1067,7 @@
             prevBtn.onclick = () => changePage(currentPage - 1);
             paginationContainer.appendChild(prevBtn);
 
-            // Angka Halaman
-            for (let i = 1; i <= totalPages; i++) {
+            for (let i =1; i <= totalPages; i++) {
                 const pageBtn = document.createElement('div');
                 pageBtn.className = `page-num ${i === currentPage ? 'active' : ''}`;
                 pageBtn.innerText = i;
@@ -1081,7 +1075,6 @@
                 paginationContainer.appendChild(pageBtn);
             }
 
-            // Tombol Next
             const nextBtn = document.createElement('button');
             nextBtn.className = 'page-btn';
             nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
@@ -1093,20 +1086,13 @@
         function changePage(page) {
             currentPage = page;
             applyFilters();
-            // Scroll sedikit ke atas grid produk
             document.getElementById('shop-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function updateFilterUI() {
-            // Update UI untuk kategori (sidebar & chips)
             document.querySelectorAll('.cat-item, .chip').forEach(el => el.classList.remove('active'));
-            // Mencari elemen yang sesuai (agak tricky karena ada event listener, jadi kita cari berdasarkan text atau onclick attribute, tapi cara simple loop semua)
-            // Untuk simplifikasi, kita highlight elemen yang memanggil fungsi ini lewat event.target, tapi karena dipanggil manual di applyFilters juga, kita pakai cara brute force check text content untuk demo ini.
-            // Cara terbaik: update class saat fungsi dipanggil.
-            
-            // Update UI Color & Size Buttons
+            // Highlight logic
             document.querySelectorAll('.filter-opt').forEach(btn => {
-                // Cek onclick string (sederhana)
                 if(btn.getAttribute('onclick').includes(`'${currentSize}'`)) btn.classList.add('active');
                 else btn.classList.remove('active');
             });
@@ -1135,14 +1121,14 @@
 
             const mainImg = document.getElementById('detail-img');
             mainImg.src = productImages[0];
-            mainImg.onerror = function() { this.src = `https://picsum.photos/seed/error${id}/500/600` };
+            mainImg.onerror = function() { this.src = `https://via.placeholder.com/500x600?text=Error+Image` };
 
             const thumbContainer = document.getElementById('detail-thumbs-container');
             thumbContainer.innerHTML = ''; 
 
             productImages.forEach((imgSrc, index) => {
                 const thumb = document.createElement('div');
-                thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="changeImageDetail(this)" onerror="this.src='https://picsum.photos/seed/thumb${id}${index}/100/100'">`;
+                thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="changeImageDetail(this)" onerror="this.src='https://via.placeholder.com/100x100'">`;
                 thumbContainer.appendChild(thumb);
             });
 
@@ -1174,7 +1160,6 @@
         function resetDetailUI() {
             document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.color-option-btn').forEach(b => b.classList.remove('active'));
-            // Default selection logic here if needed
         }
 
         function beliWA() {
@@ -1251,12 +1236,11 @@
             renderProducts(products.slice(0, 2), 'home-featured-large', 'large'); 
             renderProducts(products.slice(0, 9), 'home-featured', 'standard');
             
-            // Init Shop dengan filter awal
-            applyFilters(); // Memanggil applyFilters langsung untuk render pertama kali
+            applyFilters(); // Init Shop Filter
             
             renderProducts(products.slice(0, 4), 'shop-related-grid');
 
-            // Init Slider
+            // Slider Init
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
                 const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
