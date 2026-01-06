@@ -5,32 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zed - Sport Official Store</title>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <meta name="author" content="surfside media" />
-  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.gstatic.com/">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Allura&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" type="text/css" />
-  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
-  <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-
-    <style>
-        /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
-        .d-flex { display: flex; }
-        .flex-column { flex-direction: column; }<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zed - Sport Official Store</title>
-    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -43,10 +17,138 @@
     <!-- Library Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-    
-        .swiper-pagination-bullet-active { background: #fff; }
+    <style>
+        /* --- 1. BOOTSTRAP CLONES (AGAR HTML SLIDER KAMU JALAN) --- */
+        .d-flex { display: flex; }
+        .flex-column { flex-direction: column; }
+        .d-block { display: block; }
+        .d-md-flex { display: none; } /* Mobile hidden */
+        .align-items-center { align-items: center; }
+        .justify-content-center { justify-content: center; }
+        .position-absolute { position: absolute; }
+        .position-relative { position: relative; }
+        .start-50 { left: 50% !important; }
+        .top-50 { top: 50% !important; }
+        .translate-middle { transform: translate(-50%, -50%) !important; }
+        .h-100 { height: 100% !important; }
+        .w-100 { width: 100% !important; }
+        .w-auto { width: auto !important; }
+        .h-auto { height: auto !important; }
+        .overflow-hidden { overflow: hidden !important; }
+        .bottom-0 { bottom: 0 !important; }
+        .pos_right-center { right: 5%; bottom: 0; position: absolute; }
+        .mb-0 { margin-bottom: 0 !important; }
+        .mb-3 { margin-bottom: 20px; }
+        .mb-5 { margin-bottom: 30px; }
+        .mb-xl-5 { margin-bottom: 30px; }
+        .pb-4 { padding-bottom: 20px !important; }
+        .mt-3 { margin-top: 20px !important; }
+        .mt-4 { margin-top: 30px !important; }
+        .mt-xxl-4 { margin-top: 50px !important; }
+        .text-uppercase { text-transform: uppercase !important; }
+        .fw-bold { font-weight: 700 !important; }
+        .fw-normal { font-weight: 400 !important; }
+        .fw-medium { font-weight: 500 !important; }
+        .fs-base { font-size: 1rem !important; }
+        .container { max-width: 1140px; margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; }
+        .default-underline { text-decoration: underline; text-decoration-color: currentColor; }
+        .text-secondary { color: #6c757d; }
+        .text_dash { text-decoration: underline; }
+        
+        /* Font Kelas Khusus Slider */
+        .font-sofia { font-family: 'Sofia', cursive; }
+        .mark-grey-color { color: #888; }
+        .section-title { font-size: 3.5rem; } /* Ukuran judul slider */
 
-        /* Animasi Slider */
+        /* --- 2. SLIDER STYLE (SESUAI HTML KAMU) --- */
+        
+        /* Container Utama Slider */
+        .swiper-container {
+            width: 100%;
+            height: 700px; /* Tinggi Slider */
+            overflow: hidden;
+            margin-bottom: 30px;
+            position: relative;
+            background-color: #f0f0f0; /* Warna background jika gambar kosong */
+        }
+
+        /* Slide Wrapper */
+        .swiper-wrapper { display: flex; }
+        .swiper-slide { flex-shrink: 0; width: 100%; position: relative; }
+        
+        /* --- CSS UNTUK HOME SLIDER (HTML KAMU) --- */
+        /* Teks tengah - Sesuai HTML Kamu (container position-absolute start-50...) */
+        .slideshow-text { 
+            /* Mengakomodasi struktur HTML Kamu */
+            position: relative; 
+            z-index: 20;
+            text-align: left; /* Sesuai struktur Jost biasanya kiri/tengah */
+        }
+        
+        /* MEMAKSA WARNA TULISAN HITAM (Request Kamu) */
+        .slideshow-text h2, .slideshow-text h6, .slideshow-text p {
+            color: #000000 !important; 
+        }
+        /* Memberi bayangan tipis supaya tetap terbaca jika gambar terang */
+        .slideshow-text h2, .slideshow-text h6 {
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8); 
+        }
+
+        /* Label "Dresses" */
+        .character_markup { 
+            background: #fff; 
+            color: #000; 
+            padding: 5px 15px; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            display: inline-block; 
+            margin-top: 10px; 
+            font-family: 'Sofia', cursive; 
+        }
+
+        /* --- CSS UNTUK SHOP SLIDER (slide_split HTML KAMU) --- */
+        .shop-list { flex-grow: 1; }
+        .slide-split { 
+            display: flex; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+        }
+        .slide-split_text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        .slide-split_media {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        .slideshow-bg { height: 100%; background-color: #f5e6e0; }
+        .slideshow-bg__img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Pagination (Titik-titik) */
+        .slideshow-pagination { 
+            bottom: 30px; 
+            z-index: 20; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+        .swiper-pagination-bullet { 
+            background: rgba(0,0,0,0.5); /* Titik Hitam */
+            width: 12px; 
+            height: 12px; 
+            opacity: 1; 
+        }
+        .swiper-pagination-bullet-active { background: #000; }
+
+        /* Animasi Fade */
         @keyframes animate_fade { from { opacity: 0; } to { opacity: 1; } }
         @keyframes animate_btt { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes animate_rtl { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
@@ -54,6 +156,7 @@
         .animate_fade { animation-name: animate_fade; animation-duration: 0.8s; }
         .animate_btt { animation-name: animate_btt; animation-duration: 0.8s; }
         .animate_rtl { animation-name: animate_rtl; animation-duration: 0.8s; }
+        .animate_delay-2 { animation-delay: 0.2s; }
         .animate_delay-3 { animation-delay: 0.3s; }
         .animate_delay-5 { animation-delay: 0.5s; }
         .animate_delay-7 { animation-delay: 0.7s; }
@@ -83,83 +186,20 @@
         img { max-width: 100%; display: block; }
 
         /* --- HEADER --- */
-        <main>
-    
-  <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
-        "autoplay": {
-          "delay": 5000
-        },
-        "slidesPerView": 1,
-        "effect": "fade",
-        "loop": true
-      }'>
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-              <img loading="lazy" src="assets/images/home/demo3/slideshow-character1.png" width="542" height="733"
-                alt="Woman Fashion 1"
-                class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-              <div class="character_markup type2">
-                <p
-                  class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-                  Dresses</p>
-              </div>
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-              <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
-            </div>
-          </div>
-        </div>
+        header {
+            background: rgba(255,255,255,0.98); height: var(--nav-height); display: flex; align-items: center; justify-content: space-between;
+            padding: 0 5%; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 2px solid var(--accent);
+        }
+        .logo { cursor: pointer; display: flex; align-items: center; height: 100%; }
+        .logo-img { height: 50px; width: auto; object-fit: contain; }
+        
+        .desktop-nav { display: none; gap: 30px; }
+        .desktop-nav a { font-weight: 600; font-size: 1rem; color: var(--text-main); text-transform: uppercase; letter-spacing: 1px; position: relative; cursor: pointer; }
+        .desktop-nav a::after { content: ''; position: absolute; width: 0; height: 3px; background: var(--accent); bottom: -5px; left: 0; transition: 0.3s; }
+        .desktop-nav a:hover::after, .desktop-nav a.active::after { width: 100%; }
 
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-              <img loading="lazy" src="assets/images/slideshow-character1.png" width="400" height="733"
-                alt="Woman Fashion 1"
-                class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-              <div class="character_markup">
-                <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Summer
-                </p>
-              </div>
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-              <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="swiper-slide">
-          <div class="overflow-hidden position-relative h-100">
-            <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-              <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="690"
-                alt="Woman Fashion 2"
-                class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
-            </div>
-            <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-              <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        .header-actions { display: flex; gap: 20px; font-size: 1.2rem; cursor: pointer; align-items: center; }
 
         /* --- CONTAINER --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
@@ -190,6 +230,7 @@
             .shop-sidebar { display: block; }
             .cat-chips { display: none; }
             .product-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
+            .d-md-flex { display: flex !important; } /* Bootstrap clone for Shop Slider */
         }
         @media(min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
 
@@ -324,643 +365,52 @@
             <i class="fas fa-search"></i>
             <i class="fas fa-shopping-bag" onclick="switchPage('wishlist')"></i>
         </div>
-    </header>  
-              <div class="container">
-                <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
-                </div>
-              </div>
-            </section>
-
-            <div class="section-header">Produk Terbaru</div>
-            <div class="product-grid" id="home-featured"></div>
-        </section>
-
-        <!-- 2. SHOP PAGE (3 SLIDE, TEXT CENTER, IMAGE RIGHT) -->
-        <section id="shop" class="page-section section-hidden">
-            
-            <!-- SLIDER SHOP (FINAL VERSION) -->
-            <section class="swiper-container js-swiper-slider slideshow" data-settings='{
-                "autoplay": { "delay": 5000 },
-                "slidesPerView": 1,
-                "effect": "fade",
-                "loop": true
-            }'>
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character1.png" width="542" height="733"
-                        alt="Fashion Shop"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup type2">
-                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-                          Shop</p>
-                      </div>
-                    </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        Katalog Lengkap</h6>
-                    <h2
-                      class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
-                      Women's <br /><strong>ACCESSORIES</strong></h2>
-                    <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are the best way to
-                      update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</h6>
-                      <a href="#"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
-                        Sekarang</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="733"
-                        alt="Fashion Shop 2"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup">
-                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Promo
-                        </p>
-                      </div>
-                    </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        Katalog Lengkap</h6>
-                      <h2
-                      class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
-                      Women's <br /><strong>ACCESSORIES</strong></h2>
-                    <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are the best way to
-                      update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</h6>
-                      <a href="#"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
-                        Sekarang</a>
-                    </div>
-                  </div>
-                </div>
-
-    
-              <div class="container">
-                <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
-                </div>
-              </div>
-            </section>
-
-            <div class="shop-layout">
-                <!-- Sidebar (Desktop) -->
-                <aside class="shop-sidebar">
-                    <div class="sidebar-title">Kategori</div>
-                    <ul>
-                        <li class="cat-item active" onclick="filterCategory('all')">Semua Produk <i class="fas fa-chevron-right"></i></li>
-                        <li class="cat-item" onclick="filterCategory('pria')">Pria <i class="fas fa-chevron-right"></i></li>
-                        <li class="cat-item" onclick="filterCategory('wanita')">Wanita <i class="fas fa-chevron-right"></i></li>
-                        <li class="cat-item" onclick="filterCategory('anak')">Anak <i class="fas fa-chevron-right"></i></li>
-                        <li class="cat-item" onclick="filterCategory('baju stelan')">Baju Stelan <i class="fas fa-chevron-right"></i></li>
-                        <li class="cat-item" onclick="filterCategory('celana')">Celana <i class="fas fa-chevron-right"></i></li>
-                        <li class="cat-item" onclick="filterCategory('aksesoris')">Aksesoris <i class="fas fa-chevron-right"></i></li>
-                    </ul>
-                </aside>
-
-                <!-- Main Shop Content -->
-                <main>
-                    <!-- Mobile Chips -->
-                    <div class="cat-chips">
-                        <div class="chip active" onclick="filterCategory('all')">Semua</div>
-                        <div class="chip" onclick="filterCategory('pria')">Pria</div>
-                        <div class="chip" onclick="filterCategory('wanita')">Wanita</div>
-                        <div class="chip" onclick="filterCategory('anak')">Anak</div>
-                        <div class="chip" onclick="filterCategory('baju stelan')">Stelan</div>
-                        <div class="chip" onclick="filterCategory('celana')">Celana</div>
-                        <div class="chip" onclick="filterCategory('aksesoris')">Aksesoris</div>
-                    </div>
-
-                    <div style="display:flex; justify-content:space-between; margin-bottom:20px; align-items:center; border-bottom: 1px solid var(--border); padding-bottom: 15px;">
-                        <h3 style="font-size:1.5rem; letter-spacing: 1px;">DAFTAR PRODUK</h3>
-                        <select style="padding:5px 10px; border-radius:4px; border:1px solid #ddd; font-weight: 600;">
-                            <option>Terbaru</option>
-                            <option>Harga Terendah</option>
-                            <option>Harga Tertinggi</option>
-                        </select>
-                    </div>
-
-                    <div class="product-grid" id="shop-grid"></div>
-                </main>
-            </div>
-        </section>
-
-        <!-- 3. PRODUCT DETAIL PAGE (3 THUMBNAILS WORKING) -->
-        <section id="product-detail" class="page-section section-hidden">
-            <button onclick="switchPage('shop')" style="background:none; border:none; cursor:pointer; margin-bottom:20px; font-weight:700; color:#555; text-transform: uppercase; font-size: 0.9rem;">
-                <i class="fas fa-arrow-left"></i> Kembali ke Katalog
-            </button>
-
-            <div class="detail-container">
-                <div class="detail-left">
-                    <img id="detail-img" src="" class="detail-img-main">
-                    <!-- Container 3 Thumbnails -->
-                    <div class="detail-thumbs" id="detail-thumbs-container">
-                        <!-- Thumbnails akan di-render via JS -->
-                    </div>
-                </div>
-                <div class="detail-right">
-                    <div style="color:var(--accent); font-weight:700; text-transform: uppercase; letter-spacing: 1px; margin-bottom:5px;">Official Product</div>
-                    <h1 id="detail-title" class="detail-title">Nama Produk</h1>
-                    <div style="color:#f1c40f; margin-bottom:15px;"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> (5 Ulasan)</div>
-                    <div id="detail-price" class="detail-price">Rp 0</div>
-                    
-                    <p class="detail-desc">Produk olahraga premium Zed-Sport. Didesain untuk performa maksimal dengan bahan breathable yang nyaman. Tersedia dalam berbagai ukuran sesuai standar internasional.</p>
-
-                    <!-- PILIHAN WARNA -->
-                    <div class="color-selector">
-                        <span class="size-label">Warna:</span>
-                        <div class="color-options">
-                            <div class="color-option-btn active" style="background:black;" onclick="selectColor(this, 'Hitam')"></div>
-                            <div class="color-option-btn" style="background:white; border:1px solid #ccc;" onclick="selectColor(this, 'Putih')"></div>
-                            <div class="color-option-btn" style="background:#1E88E5;" onclick="selectColor(this, 'Biru Navy')"></div>
-                            <div class="color-option-btn" style="background:#D32F2F;" onclick="selectColor(this, 'Merah')"></div>
-                        </div>
-                    </div>
-
-                    <!-- PILIHAN SIZE -->
-                    <div class="size-selector">
-                        <span class="size-label">Ukuran:</span>
-                        <div class="size-options">
-                            <div class="size-btn" onclick="selectSize(this, 'S')">S</div>
-                            <div class="size-btn" onclick="selectSize(this, 'M')">M</div>
-                            <div class="size-btn active" onclick="selectSize(this, 'L')">L</div>
-                            <div class="size-btn" onclick="selectSize(this, 'XL')">XL</div>
-                            <div class="size-btn" onclick="selectSize(this, 'XXL')">XXL</div>
-                        </div>
-                    </div>
-
-                    <a href="#" onclick="beliWA()" class="btn-wa">
-                        <i class="fab fa-whatsapp" style="margin-right:8px;"></i> BELI VIA WHATSAPP
-                    </a>
-                    
-                    <div style="margin-top:20px; font-size:0.85rem; color:#777; text-align:center; border-top: 1px solid #eee; padding-top: 15px;">
-                        <i class="fas fa-shield-alt"></i> Garansi Original 100% & Garansi Pengembalian 7 Hari
-                    </div>
-                </div>
-            </div>
-
-            <div class="related-section">
-                <div class="section-header">Produk Lainnya</div>
-                <div class="product-grid" id="related-grid"></div>
-            </div>
-        </section>
-
-        <!-- 4. ABOUT & CONTACT PAGE -->
-        <section id="about" class="page-section section-hidden">
-            <div class="about-hero">
-                <h1>Tentang Zed - Sport</h1>
-                <p>Supporting Your Passion for Sport</p>
-            </div>
-            <div style="text-align:center; max-width:800px; margin:0 auto; line-height:1.8; color:#555;">
-                <p>Kami adalah pusat perlengkapan olahraga terlengkap yang menyediakan segala kebutuhan atlet profesional hingga pemula. Dari jersey bola, sepatu lari, hingga aksesoris gym, semua tersedia dengan harga kompetitif.</p>
-            </div>
-        </section>
-
-        <section id="contact" class="page-section section-hidden">
-            <div class="about-hero" style="background-image: url('https://picsum.photos/seed/contact/1200/600'); height: 300px; display:flex; align-items:center; justify-content:center;">
-                <h1>Hubungi Kami</h1>
-            </div>
-            <div class="contact-form-container">
-                <p style="text-align:center; margin-bottom:30px; font-weight:600;">Punya pertanyaan stok atau ukuran? Hubungi kami.</p>
-                <div style="display:flex; flex-direction:column; gap:15px;">
-                    <input type="text" placeholder="Nama Lengkap" style="padding:15px; border:1px solid #ddd; border-radius:4px;">
-                    <input type="email" placeholder="Alamat Email" style="padding:15px; border:1px solid #ddd; border-radius:4px;">
-                    <textarea rows="5" placeholder="Pesan Anda..." style="padding:15px; border:1px solid #ddd; border-radius:4px;"></textarea>
-                    <button class="btn-wa" style="background:var(--primary);">Kirim Pesan</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="wishlist" class="page-section section-hidden">
-            <div style="text-align:center; padding:80px 20px;">
-                <i class="fas fa-heart" style="font-size:3rem; color:#ddd; margin-bottom:20px;"></i>
-                <h2 style="font-size:2rem;">Wishlist Kosong</h2>
-                <p style="margin-bottom:20px;">Simpan barang favoritmu agar tidak hilang.</p>
-                <button onclick="switchPage('shop')" class="btn-wa" style="display:inline-block; width:auto; padding:12px 30px;">Mulai Belanja</button>
-            </div>
-        </section>
-
-    </div> <!-- End Container -->
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h2 style="color:white; margin-bottom:15px; height:auto;">ZED <span style="color:var(--accent);">SPORT</span></h2>
-                <p style="font-size:0.9rem; line-height:1.6; color:#aaa;">Toko online terpercaya untuk kebutuhan sport fashion. Kualitas premium dengan harga yang bersaing.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Menu</h4>
-                <ul>
-                    <li><a href="#" onclick="switchPage('home')">Beranda</a></li>
-                    <li><a href="#" onclick="switchPage('shop')">Toko</a></li>
-                    <li><a href="#" onclick="switchPage('about')">Tentang Kami</a></li>
-                    <li><a href="#" onclick="switchPage('contact')">Kontak</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Bantuan</h4>
-                <ul>
-                    <li><a href="#">Panduan Ukuran</a></li>
-                    <li><a href="#">Lacak Pesanan</a></li>
-                    <li><a href="#">Kebijakan Retur</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kontak Kami</h4>
-                <ul class="contact-info">
-                    <li><i class="fas fa-envelope" style="margin-top:4px; color:var(--accent);"></i> <a href="mailto:sport@zed.com">sport@zed.com</a></li>
-                    <li><i class="fab fa-whatsapp" style="margin-top:4px; color:var(--accent);"></i> +62 812-3456-7890</li>
-                    <li><i class="fas fa-map-marker-alt" style="margin-top:4px; color:var(--accent);"></i> Jakarta Sport Center</li>
-                </ul>
-                <div class="admin-trigger" onclick="openAdminModal()">
-                    <i class="fas fa-plus-circle"></i> Tambah Produk
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            &copy; 2023 Zed - Sport Official. All Rights Reserved.
-        </div>
-    </footer>
-
-    <!-- MOBILE BOTTOM NAV -->
-    <nav class="mobile-nav">
-        <div class="nav-item active" onclick="switchPage('home')" id="m-home">
-            <i class="fas fa-home"></i> <span>Home</span>
-        </div>
-        <div class="nav-item" onclick="switchPage('shop')" id="m-shop">
-            <i class="fas fa-store"></i> <span>Toko</span>
-        </div>
-        <div class="nav-item" onclick="switchPage('wishlist')" id="m-wishlist">
-            <i class="fas fa-heart"></i> <span>Simpan</span>
-        </div>
-        <div class="nav-item" onclick="switchPage('contact')" id="m-contact">
-            <i class="fas fa-comment-dots"></i> <span>CS</span>
-        </div>
-    </nav>
-
-    <!-- ADMIN GENERATOR MODAL -->
-    <div id="adminModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeAdminModal()">&times;</span>
-            <h3 style="margin-bottom:20px; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 10px;">Tambah Produk Baru</h3>
-            
-            <div class="form-group">
-                <label>Nama Produk</label>
-                <input type="text" id="newProdName" placeholder="Contoh: Jersey Home Red">
-            </div>
-            <div class="form-group">
-                <label>Harga (Angka)</label>
-                <input type="number" id="newProdPrice" placeholder="Contoh: 150000">
-            </div>
-            <div class="form-group">
-                <label>Kategori (Otomatis pilih folder)</label>
-                <select id="newProdCat">
-                    <option value="pria">PRIA</option>
-                    <option value="wanita">WANITA</option>
-                    <option value="anak">ANAK</option>
-                    <option value="baju stelan">BAJU STELAN</option>
-                    <option value="celana">CELANA</option>
-                    <option value="aksesoris">AKSESORIS</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Gambar Utama (Folder: assets/images/)</label>
-                <input type="text" id="newProdImg1" placeholder="Nama file saja, contoh: jersey-home.jpg">
-                <small style="color:var(--accent); font-size:0.75rem;">Sistem otomatis masuk ke folder sesuai kategori</small>
-            </div>
-            
-            <div class="form-group">
-                <label>Gambar Detail 1 (Folder: assets/images/detail/)</label>
-                <input type="text" id="newProdImg2" placeholder="Nama file detail, contoh: detail-samping.jpg">
-            </div>
-
-            <div class="form-group">
-                <label>Gambar Detail 2 (Folder: assets/images/detail/)</label>
-                <input type="text" id="newProdImg3" placeholder="Nama file detail, contoh: detail-belakang.jpg">
-            </div>
-
-            <button class="btn-generate" onclick="generateProductCode()">Buat Kode & Salin</button>
-
-            <div class="code-output" id="codeResult" onclick="copyCode()">
-                // Kode produk akan muncul di sini...
-            </div>
-            <div style="text-align:right; margin-top:5px;">
-                <small id="copyStatus" style="color:var(--wa-color); display:none; font-weight:700;">Berhasil disalin!</small>
-            </div>
-        </div>
-    </div>
-
-    <!-- SCRIPT SECTION (FULL VERSION) -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script>
-        // --- DATABASE PRODUK (CONTOH 3 GAMBAR) ---
-        const products = [
-            { id: 1, name: "Jersey Home Red", price: 150000, images: ["assets/images/pria/jersey-home.jpg", "assets/images/detail/jersey-home-detail.jpg", "assets/images/detail/jersey-home-extra.jpg"], category: "pria", color: "red" },
-            { id: 2, name: "Jaket Bomber Black", price: 299000, images: ["assets/images/pria/jaket-bomber.jpg", "assets/images/detail/jaket-bomber-1.jpg", "assets/images/detail/jaket-bomber-2.jpg"], category: "pria", color: "black" },
-            { id: 3, name: "Singlet Running Pro", price: 85000, images: ["assets/images/pria/singlet-run.jpg", "assets/images/detail/run-1.jpg", "assets/images/detail/run-2.jpg"], category: "pria", color: "white" },
-            { id: 4, name: "Legging Gym Black", price: 210000, images: ["assets/images/wanita/legging-gym.jpg", "assets/images/detail/gym-1.jpg", "assets/images/detail/gym-2.jpg"], category: "wanita", color: "black" },
-            { id: 5, name: "Sports Bra Blue", price: 125000, images: ["assets/images/wanita/bra-sport.jpg", "assets/images/detail/bra-1.jpg", "assets/images/detail/bra-2.jpg"], category: "wanita", color: "blue" },
-            { id: 6, name: "Track Set Merah", price: 350000, images: ["assets/images/baju stelan/trackset-merah.jpg", "assets/images/detail/set-merah-1.jpg", "assets/images/detail/set-merah-2.jpg"], category: "baju stelan", color: "red" },
-            { id: 7, name: "Training Set Hitam", price: 320000, images: ["assets/images/baju stelan/set-hitam.jpg", "assets/images/detail/set-hitam-1.jpg", "assets/images/detail/set-hitam-2.jpg"], category: "baju stelan", color: "black" },
-            { id: 8, name: "Set Anak Bola", price: 150000, images: ["assets/images/anak/set-anak-bola.jpg", "assets/images/detail/anak-1.jpg", "assets/images/detail/anak-2.jpg"], category: "anak", color: "blue" },
-            { id: 9, name: "Celana Jogger Grey", price: 175000, images: ["assets/images/celana/jogger-sport.jpg", "assets/images/detail/jogger-1.jpg", "assets/images/detail/jogger-2.jpg"], category: "celana", color: "grey" },
-            { id: 10, name: "Celana Basket Pendek", price: 120000, images: ["assets/images/celana/shorts-basket.jpg", "assets/images/detail/shorts-1.jpg", "assets/images/detail/shorts-2.jpg"], category: "celana", color: "black" },
-            { id: 11, name: "Sarung Tangan Gym", price: 95000, images: ["assets/images/aksesoris/gloves.jpg", "assets/images/detail/gloves-1.jpg", "assets/images/detail/gloves-2.jpg"], category: "aksesoris", color: "black" },
-            { id: 12, name: "Topi Snapback Sport", price: 75000, images: ["assets/images/aksesoris/topi.jpg", "assets/images/detail/topi-1.jpg", "assets/images/detail/topi-2.jpg"], category: "aksesoris", color: "black" }
-        ];
-
-        let currentProduct = null;
-        let selectedSize = "L";
-        let selectedColor = "Hitam";
-
-        function switchPage(pageId) {
-            // Sembunyikan semua section
-            document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('section-hidden'));
-            // Tampilkan section yang dipilih
-            document.getElementById(pageId).classList.remove('section-hidden');
-            
-            document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
-            const dLink = document.getElementById('d-' + pageId);
-            if(dLink) dLink.classList.add('active');
-
-            document.querySelectorAll('.mobile-nav .nav-item').forEach(i => i.classList.remove('active'));
-            const mLink = document.getElementById('m-' + pageId);
-            if(mLink) mLink.classList.add('active');
-            
-            window.scrollTo(0,0);
-        }
-
-        function renderProducts(data, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = ''; 
-            
-            data.forEach(p => {
-                const mainImg = Array.isArray(p.images) ? p.images[0] : p.images;
-                const html = `
-                <div class="product-card" onclick="openDetail(${p.id})">
-                    <div class="card-img-box">
-                        <img src="${mainImg}" class="card-img" onerror="this.src='https://picsum.photos/seed/${p.id}/500/600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">${p.name}</div>
-                        <div class="card-price">${formatRupiah(p.price)}</div>
-                    </div>
-                </div>`;
-                container.innerHTML += html;
-            });
-        }
-
-        function filterCategory(cat) {
-            document.querySelectorAll('.cat-item, .chip').forEach(el => el.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-
-            if(cat === 'all') {
-                renderProducts(products, 'shop-grid');
-            } else {
-                const filtered = products.filter(p => p.category === cat);
-                renderProducts(filtered, 'shop-grid');
-            }
-        }
-
-        function openDetail(id) {
-            currentProduct = products.find(p => p.id === id);
-            
-            selectedSize = "L";
-            selectedColor = "Hitam";
-            resetDetailUI();
-
-            document.getElementById('detail-title').innerText = currentProduct.name;
-            document.getElementById('detail-price').innerText = formatRupiah(currentProduct.price);
-
-            let productImages = [];
-            if (Array.isArray(currentProduct.images)) {
-                productImages = currentProduct.images;
-            } else {
-                productImages = [currentProduct.images];
-            }
-
-            const mainImg = document.getElementById('detail-img');
-            mainImg.src = productImages[0];
-            mainImg.onerror = function() { this.src = `https://picsum.photos/seed/error${id}/500/600` };
-
-            // Render 3 Thumbnails (UPDATED LOGIC)
-            const thumbContainer = document.getElementById('detail-thumbs-container');
-            thumbContainer.innerHTML = ''; 
-
-            productImages.forEach((imgSrc, index) => {
-                const thumb = document.createElement('div');
-                // PERHATIKAN onclick="changeImageDetail(this)"
-                thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="changeImageDetail(this)" onerror="this.src='https://picsum.photos/seed/thumb${id}${index}/100/100'">`;
-                thumbContainer.appendChild(thumb);
-            });
-
-            switchPage('product-detail');
-            
-            const related = products.filter(p => p.id !== id).slice(0, 4);
-            renderProducts(related, 'related-grid');
-        }
-
-        function changeImageDetail(thumbElement) {
-            // 1. Ambil gambar utama
-            const mainImg = document.getElementById('detail-img');
-            
-            // 2. Ganti src gambar utama dengan src gambar kecil yang diklik
-            mainImg.src = thumbElement.src;
-
-            // 3. Reset status "active" (border hijau) di semua thumbnail
-            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            
-            // 4. Beri status "active" ke thumbnail yang diklik
-            thumbElement.classList.add('active');
-        }
-
-        function selectSize(btn, size) {
-            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            selectedSize = size;
-        }
-
-        function selectColor(btn, color) {
-            document.querySelectorAll('.color-option-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            selectedColor = color;
-        }
-
-        function resetDetailUI() {
-            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.color-option-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.size-btn')[1].classList.add('active'); // L default
-            document.querySelectorAll('.color-option-btn')[0].classList.add('active'); // Hitam default
-        }
-
-        function beliWA() {
-            const phone = "6281234567890";
-            const msg = `Halo Zed-Sport, saya mau order:\n\n*Produk:* ${currentProduct.name}\n*Harga:* ${formatRupiah(currentProduct.price)}\n*Ukuran:* ${selectedSize}\n*Warna:* ${selectedColor}\n\nMohon info stoknya. Terima kasih.`;
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        function formatRupiah(num) {
-            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
-        }
-
-        // --- ADMIN GENERATOR ---
-        function openAdminModal() {
-            document.getElementById('adminModal').style.display = 'flex';
-        }
-
-        function closeAdminModal() {
-            document.getElementById('adminModal').style.display = 'none';
-        }
-
-        function generateProductCode() {
-            const name = document.getElementById('newProdName').value;
-            const price = document.getElementById('newProdPrice').value;
-            const cat = document.getElementById('newProdCat').value;
-            
-            const img1 = document.getElementById('newProdImg1').value || "default.jpg";
-            const img2 = document.getElementById('newProdImg2').value;
-            const img3 = document.getElementById('newProdImg3').value;
-
-            let imageString = "";
-            let imgArray = [];
-            
-            imgArray.push(`"assets/images/${cat}/${img1}"`);
-
-            if(img2) imgArray.push(`"assets/images/detail/${img2}"`);
-            if(img3) imgArray.push(`"assets/images/detail/${img3}"`);
-
-            imageString = `images: [${imgArray.join(', ')}]`;
-
-            const newId = products.length + 1;
-
-            const codeString = `    { id: ${newId}, name: "${name}", price: ${price}, ${imageString}, category: "${cat}", color: "black" },`;
-            
-            const output = document.getElementById('codeResult');
-            output.innerText = codeString;
-            output.style.backgroundColor = "#1a1a1a";
-        }
-
-        function copyCode() {
-            const text = document.getElementById('codeResult').innerText;
-            if(text.includes("assets")) {
-                navigator.clipboard.writeText(text).then(() => {
-                    const status = document.getElementById('copyStatus');
-                    status.style.display = 'block';
-                    setTimeout(() => status.style.display = 'none', 2000);
-                });
-            }
-        }
-
-        // --- INISIALISASI UTAMA (FINAL) ---
-        window.addEventListener('DOMContentLoaded', () => {
-            // Render Produk
-            renderProducts(products.slice(0, 4), 'home-featured');
-            renderProducts(products, 'shop-grid');
-
-            // Inisialisasi Slider Home (3 Slide)
-            const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
-            if(homeSliderEl) {
-                const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
-                new Swiper(homeSliderEl, homeSettings);
-            }
-
-            // Inisialisasi Slider Shop (3 Slide)
-            const shopSliderEl = document.getElementById('shop').querySelector('.js-swiper-slider');
-            if(shopSliderEl) {
-                const shopSettings = JSON.parse(shopSliderEl.getAttribute('data-settings'));
-                new Swiper(shopSliderEl, shopSettings);
-            }
-        });
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('adminModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-</body>
-</html>
-        
-    </style>
-</head>
-<body>
-
-    <!-- HEADER -->
-    <header>
-        <div class="logo" onclick="switchPage('home')">
-            <img src="assets/images/logo.png" alt="Logo Zed Sport" class="logo-img">
-        </div>
-        
-        <nav class="desktop-nav">
-            <a onclick="switchPage('home')" id="d-home" class="active">Beranda</a>
-            <a onclick="switchPage('shop')" id="d-shop">Toko</a>
-            <a onclick="switchPage('about')" id="d-about">Tentang</a>
-            <a onclick="switchPage('contact')" id="d-contact">Kontak</a>
-        </nav>
-        <div class="header-actions">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-shopping-bag" onclick="switchPage('wishlist')"></i>
-        </div>
     </header>
 
     <!-- MAIN CONTENT -->
     <div class="container">
 
-        <!-- 1. HOME PAGE (3 SLIDE, TEXT CENTER, IMAGE RIGHT) -->
+        <!-- 1. HOME PAGE (HTML ASLI DARI KAMU) -->
         <section id="home" class="page-section">
             
-            <!-- SLIDER HOME (FINAL VERSION) -->
-            <section class="swiper-container js-swiper-slider slideshow" data-settings='{
-                "autoplay": { "delay": 5000 },
+            <!-- SLIDER HOME (COPY PASTE HTML KAMU DISINI) -->
+            <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
+                "autoplay": {
+                  "delay": 5000
+                },
                 "slidesPerView": 1,
                 "effect": "fade",
                 "loop": true
-            }'>
+              }'>
               <div class="swiper-wrapper">
-                <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
-                    <!-- GAMBAR KANAN BAWAH -->
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character1.png" width="542" height="733"
+                      <img loading="lazy" src="assets/images/home/demo3/slideshow-character1.png" width="542" height="733"
                         alt="Woman Fashion 1"
                         class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup type2">
-                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
+                        <p
+                          class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
                           Dresses</p>
                       </div>
                     </div>
-                    <!-- TEKS TENGAH -->
-                    <<div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-              <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
+                    <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
+                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                        New Arrivals</h6>
+                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+                      <a href="#"
+                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                        Now</a>
                     </div>
                   </div>
                 </div>
 
-                <!-- SLIDE 2 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="733"
+                      <img loading="lazy" src="assets/images/slideshow-character1.png" width="400" height="733"
                         alt="Woman Fashion 1"
                         class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
                       <div class="character_markup">
@@ -969,33 +419,32 @@
                       </div>
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-              <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
+                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                        New Arrivals</h6>
+                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+                      <a href="#"
+                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                        Now</a>
                     </div>
                   </div>
                 </div>
 
-                <!-- SLIDE 3 -->
                 <div class="swiper-slide">
                   <div class="overflow-hidden position-relative h-100">
                     <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character3.png" width="400" height="690"
+                      <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="690"
                         alt="Woman Fashion 2"
                         class="slideshow-character__img animate animate_fade animate_rtl animate_delay-10 w-auto h-auto" />
                     </div>
                     <div class="slideshow-text container position-absolute start-50 top-50 translate-middle">
-              <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                New Arrivals</h6>
-              <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
-              <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
-              <a href="#"
-                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
-                Now</a>
+                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
+                        New Arrivals</h6>
+                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Night Spring</h2>
+                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Dresses</h2>
+                      <a href="#"
+                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Shop
+                        Now</a>
                     </div> 
                   </div>
                 </div>
@@ -1011,94 +460,106 @@
             <div class="product-grid" id="home-featured"></div>
         </section>
 
-        <!-- 2. SHOP PAGE (3 SLIDE, TEXT CENTER, IMAGE RIGHT) -->
+        <!-- 2. SHOP PAGE (HTML ASLI DARI KAMU - slide_split) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP (FINAL VERSION) -->
-            <section class="swiper-container js-swiper-slider slideshow" data-settings='{
-                "autoplay": { "delay": 5000 },
-                "slidesPerView": 1,
-                "effect": "fade",
-                "loop": true
-            }'>
-              <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character1.png" width="542" height="733"
-                        alt="Fashion Shop"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup type2">
-                        <p class="text-uppercase font-sofia mark-grey-color animate animate_fade animate_btt animate_delay-10 mb-0">
-                          Shop</p>
+            <!-- SLIDER SHOP (COPY PASTE HTML KAMU DISINI) -->
+            <div class="shop-list flex-grow-1">
+                <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "effect": "fade",
+                    "loop": true,
+                    "pagination": {
+                      "el": ".slideshow-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }'>
+                  <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                      <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
+                        <div class="slide-split_text position-relative d-flex align-items-center"
+                            style="background-color: #f5e6e0;">
+                            <div class="slideshow-text container p-3 p-xl-5">
+                              <h2
+                                class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
+                                Women's <br /><strong>ACCESSORIES</strong></h2>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are best way to
+                                update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</p>
+                              <a href="#"
+                                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
+                                Sekarang</a>
+                            </div>
+                        </div>
+                        <div class="slide-split_media position-relative">
+                            <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                                <img loading="lazy" src="assets/images/shop/shop_banner3.jpg" width="630" height="450"
+                                  alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
+                            </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        Katalog Lengkap</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
-                      <a href="#"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
-                        Sekarang</a>
-                    </div>
-                  </div>
-                </div>
 
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character2.png" width="400" height="733"
-                        alt="Fashion Shop 2"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup">
-                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Promo
-                        </p>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                      <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
+                        <div class="slide-split_text position-relative d-flex align-items-center"
+                            style="background-color: #f5e6e0;">
+                            <div class="slideshow-text container p-3 p-xl-5">
+                              <h2
+                              class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
+                              Women's <br /><strong>PROMO</strong></h2>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are best way to
+                                update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</p>
+                              <a href="#"
+                                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
+                                Sekarang</a>
+                            </div>
+                        </div>
+                        <div class="slide-split_media position-relative">
+                            <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                                <img loading="lazy" src="assets/images/slideshow-character1.png" width="630" height="450"
+                                  alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
+                            </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        Katalog Lengkap</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
-                      <a href="#"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
-                        Sekarang</a>
-                    </div>
-                  </div>
-                </div>
 
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                  <div class="overflow-hidden position-relative h-100">
-                    <div class="slideshow-character position-absolute bottom-0 pos_right-center">
-                      <img loading="lazy" src="assets/images/slideshow-character3.png" width="400" height="733"
-                        alt="Fashion Shop 3"
-                        class="slideshow-character__img animate animate_fade animate_btt animate_delay-9 w-auto h-auto" />
-                      <div class="character_markup">
-                        <p class="text-uppercase font-sofia fw-bold animate animate_fade animate_rtl animate_delay-10">Sale
-                        </p>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                      <div class="slide-split h-100 d-block d-md-flex overflow-hidden">
+                        <div class="slide-split_text position-relative d-flex align-items-center"
+                            style="background-color: #f5e6e0;">
+                            <div class="slideshow-text container p-3 p-xl-5">
+                              <h2
+                              class="text-uppercase section-title fw-normal mb-3 animate animate_fade animate_btt animate_delay-2">
+                              SALE</h2>
+                              <p class="mb-0 animate animate_fade animate_btt animate_delay-5">Accessories are best way to
+                                update your look. Add a title edge with new styles and new colors, or go for timeless pieces.</p>
+                              <a href="#"
+                                class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
+                                Sekarang</a>
+                            </div>
+                        </div>
+                        <div class="slide-split_media position-relative">
+                            <div class="slideshow-bg" style="background-color: #f5e6e0;">
+                                <img loading="lazy" src="assets/images/slideshow-character2.png" width="630" height="450"
+                                  alt="Women's accessories" class="slideshow-bg__img object-fit-cover" />
+                            </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="slideshow-text">
-                      <h6 class="text_dash text-uppercase fs-base fw-medium animate animate_fade animate_btt animate_delay-3">
-                        Katalog Lengkap</h6>
-                      <h2 class="h1 fw-normal mb-0 animate animate_fade animate_btt animate_delay-5">Zed</h2>
-                      <h2 class="h1 fw-bold animate animate_fade animate_btt animate_delay-5">Sport</h2>
-                      <a href="#"
-                        class="btn-link btn-link_lg default-underline fw-medium animate animate_fade animate_btt animate_delay-7">Belanja
-                        Sekarang</a>
+                  </div>
+                  <div class="container">
+                    <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="container">
-                <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
-                </div>
-              </div>
-            </section>
+            </div>
 
             <div class="shop-layout">
                 <!-- Sidebar (Desktop) -->
@@ -1448,7 +909,7 @@
             mainImg.src = productImages[0];
             mainImg.onerror = function() { this.src = `https://picsum.photos/seed/error${id}/500/600` };
 
-            // Render 3 Thumbnails (UPDATED LOGIC)
+            // Render 3 Thumbnails
             const thumbContainer = document.getElementById('detail-thumbs-container');
             thumbContainer.innerHTML = ''; 
 
@@ -1562,14 +1023,14 @@
             renderProducts(products.slice(0, 4), 'home-featured');
             renderProducts(products, 'shop-grid');
 
-            // Inisialisasi Slider Home (3 Slide)
+            // 1. Inisialisasi Slider Home (HTML Kamu)
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
                 const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
                 new Swiper(homeSliderEl, homeSettings);
             }
 
-            // Inisialisasi Slider Shop (3 Slide)
+            // 2. Inisialisasi Slider Shop (HTML Kamu - slide_split)
             const shopSliderEl = document.getElementById('shop').querySelector('.js-swiper-slider');
             if(shopSliderEl) {
                 const shopSettings = JSON.parse(shopSliderEl.getAttribute('data-settings'));
