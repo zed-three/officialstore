@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zed - Sport Official Store</title>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- FONTS ASLI DARI SLIDER (Sofia & Jost) -->
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Sofia&display=swap" rel="stylesheet">
-    
-    <!-- Font Zed Sport (Untuk Header/Produk) -->
-    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Library Swiper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="surfside media" />
+  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com/">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/plugins/swiper.min.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="assets/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
-        /* --- 1. BOOTSTRAP CLONES (AGAR HTML SLIDER KAMU JALAN) --- */
+        /* --- 1. BOOTSTRAP CLONES (Agar HTML Slider Jalan) --- */
         .d-flex { display: flex; }
         .flex-column { flex-direction: column; }
         .d-block { display: block; }
-        .d-md-flex { display: none; } /* Mobile hidden */
+        .d-md-flex { display: none; } 
         .align-items-center { align-items: center; }
         .justify-content-center { justify-content: center; }
         .position-absolute { position: absolute; }
@@ -40,7 +38,7 @@
         .mb-0 { margin-bottom: 0 !important; }
         .mb-3 { margin-bottom: 20px; }
         .mb-5 { margin-bottom: 30px; }
-        .mb-xl-5 { margin-bottom: 30px; }
+        .mb-xl-5 { margin-bottom: 50px; }
         .pb-4 { padding-bottom: 20px !important; }
         .mt-3 { margin-top: 20px !important; }
         .mt-4 { margin-top: 30px !important; }
@@ -58,9 +56,16 @@
         /* Font Kelas Khusus Slider */
         .font-sofia { font-family: 'Sofia', cursive; }
         .mark-grey-color { color: #888; }
-        .section-title { font-size: 3.5rem; } /* Ukuran judul slider */
+        .section-title { font-size: 3.5rem; }
 
-        /* --- 2. SLIDER STYLE (SESUAI HTML KAMU) --- */
+        /* --- 2. SLIDER STYLE --- */
+        .js-swiper-slider { margin-bottom: 30px; }
+        .swiper-wrapper { display: flex; }
+        .swiper-slide { flex-shrink: 0; width: 100%; position: relative; }
+        
+        /* --- PERBAIKAN SLIDER (TIDAK STACKING) --- */
+        .swiper-slide { opacity: 0 !important; transition: opacity 0.5s; }
+        .swiper-slide-active { opacity: 1 !important; }
         
         /* Container Utama Slider */
         .swiper-container {
@@ -69,32 +74,45 @@
             overflow: hidden;
             margin-bottom: 30px;
             position: relative;
-            background-color: #f0f0f0; /* Warna background jika gambar kosong */
+            background-color: #f0f0f0; 
         }
-
-        /* Slide Wrapper */
-        .swiper-wrapper { display: flex; }
-        .swiper-slide { flex-shrink: 0; width: 100%; position: relative; }
         
-        /* --- CSS UNTUK HOME SLIDER (HTML KAMU) --- */
-        /* Teks tengah - Sesuai HTML Kamu (container position-absolute start-50...) */
+        /* Karakter (Gambar Pinggir Kanan) */
+        .slideshow-character__img { max-height: 700px; width: auto; display: block; }
+        
+        /* Teks Tengah Banner */
         .slideshow-text { 
-            /* Mengakomodasi struktur HTML Kamu */
-            position: relative; 
-            z-index: 20;
-            text-align: left; /* Sesuai struktur Jost biasanya kiri/tengah */
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 100%; 
+            max-width: 1140px;
+            text-align: center; 
+            z-index: 20; 
         }
         
-        /* MEMAKSA WARNA TULISAN HITAM (Request Kamu) */
-        .slideshow-text h2, .slideshow-text h6, .slideshow-text p {
-            color: #000000 !important; 
+        /* Memaksa Warna Tulisan Putih */
+        .slideshow-text h2, .slideshow-text h6 { 
+            font-family: 'Jost', sans-serif; 
+            color: #ffffff !important; 
+            font-size: 4rem; 
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8); 
         }
-        /* Memberi bayangan tipis supaya tetap terbaca jika gambar terang */
-        .slideshow-text h2, .slideshow-text h6 {
-            text-shadow: 0 1px 2px rgba(255,255,255,0.8); 
+        .slideshow-text h6 {
+            font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; 
         }
-
-        /* Label "Dresses" */
+        .slideshow-text a { 
+            font-family: 'Jost', sans-serif; 
+            color: #ffffff !important; 
+            font-size: 1.2rem; 
+            text-decoration: underline; 
+            text-transform: uppercase; 
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        /* Label "Dresses" di bawah karakter */
         .character_markup { 
             background: #fff; 
             color: #000; 
@@ -105,33 +123,8 @@
             margin-top: 10px; 
             font-family: 'Sofia', cursive; 
         }
-
-        /* --- CSS UNTUK SHOP SLIDER (slide_split HTML KAMU) --- */
-        .shop-list { flex-grow: 1; }
-        .slide-split { 
-            display: flex; 
-            width: 100%; 
-            height: 100%; 
-            overflow: hidden; 
-        }
-        .slide-split_text {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-        .slide-split_media {
-            flex: 1;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-        .slideshow-bg { height: 100%; background-color: #f5e6e0; }
-        .slideshow-bg__img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Pagination (Titik-titik) */
+        
+        /* Pagination (Navigasi) */
         .slideshow-pagination { 
             bottom: 30px; 
             z-index: 20; 
@@ -139,14 +132,31 @@
             display: flex; 
             justify-content: center; 
             gap: 10px; 
+            position: absolute;
         }
-        .swiper-pagination-bullet { 
-            background: rgba(0,0,0,0.5); /* Titik Hitam */
-            width: 12px; 
-            height: 12px; 
-            opacity: 1; 
+        
+        /* --- NAVIGASI ARROW (2 GAMBAR) --- */
+        .swiper-button-prev, .swiper-button-next {
+            width: 50px; height: 50px;
+            background: rgba(255,255,255,0.2);
+            color: #fff;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            position: relative;
+            top: auto;
+            margin-top: auto;
+            z-index: 30;
         }
-        .swiper-pagination-bullet-active { background: #000; }
+        .swiper-button-prev:hover, .swiper-button-next:hover {
+            background: #fff;
+            color: #000;
+        }
 
         /* Animasi Fade */
         @keyframes animate_fade { from { opacity: 0; } to { opacity: 1; } }
@@ -163,7 +173,7 @@
         .animate_delay-9 { animation-delay: 0.9s; }
         .animate_delay-10 { animation-delay: 1s; }
 
-        /* --- 3. ZED SPORT STYLE (Header, Produk, Footer) --- */
+        /* --- 3. ZED SPORT STYLE --- */
         :root {
             --primary: #000000;
             --secondary: #ffffff;
@@ -177,7 +187,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        /* Header Pakai Font Zed Sport */
         header, .logo, .desktop-nav a, .section-header, .detail-title, h1, h2, h3 { font-family: 'Teko', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; }
         
         body { background-color: var(--bg-light); color: var(--text-main); padding-top: var(--nav-height); }
@@ -212,6 +221,7 @@
         .shop-sidebar {
             background: white; padding: 25px; border-radius: 4px; display: none;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 90px; height: fit-content; border-top: 4px solid var(--accent);
+            display: flex; flex-direction: column; gap: 20px;
         }
         .sidebar-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; }
         .cat-item { padding: 15px 10px; border-bottom: 1px solid var(--border); cursor: pointer; color: var(--text-muted); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; display: flex; justify-content: space-between; transition: 0.2s;}
@@ -227,12 +237,12 @@
         @media(min-width: 768px) {
             .desktop-nav { display: flex; }
             .shop-layout { grid-template-columns: 250px 1fr; }
-            .shop-sidebar { display: block; }
+            .shop-sidebar { display: flex; } 
             .cat-chips { display: none; }
             .product-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; }
-            .d-md-flex { display: flex !important; } /* Bootstrap clone for Shop Slider */
+            .d-md-flex { display: flex !important; } 
         }
-        @media(min-width: 1024px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media(min-width: 1024px) { .product-grid { grid-template-columns: repeat(3, 1fr); gap: 25px; } }
 
         /* --- PRODUCT CARD --- */
         .product-card { background: white; border-radius: 0; overflow: hidden; transition: 0.3s; cursor: pointer; border: 1px solid transparent; display: flex; flex-direction: column; }
@@ -245,6 +255,43 @@
         .card-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 5px; line-height: 1.4; text-transform: uppercase; }
         .card-price { font-weight: 700; font-size: 1.1rem; color: var(--primary); }
 
+        /* --- FEATURED PRODUCTS (2 GAMBAR LEBIH BESAR) --- */
+        .home-featured-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Mobile 1 Kolom, Desktop 2 Kolom */
+            gap: 20px;
+            margin-bottom: 30px; /* Jarak ke grid produk selanjutnya */
+        }
+        .product-card-large {
+            background: white; border-radius: 0; overflow: hidden; transition: 0.3s; cursor: pointer; border: 1px solid transparent; display: flex; flex-direction: column;
+            position: relative;
+        }
+        .product-card-large:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+        .card-img-box-large { position: relative; padding-top: 65%; /* Tinggi gambar lebih dominan */ background: #f0f0f0; overflow: hidden; }
+        .card-img-large { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .card-body-large { padding: 20px; background: white; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: left; position: relative; z-index: 2; }
+        .card-title-large { font-size: 1.5rem; font-weight: 700; margin-bottom: 5px; line-height: 1.4; text-transform: uppercase; }
+        .card-price-large { font-weight: 700; font-size: 1.5rem; color: var(--accent); }
+
+        /* --- SHOP FILTERS (SIDEBAR STYLE) --- */
+        .shop-filters { 
+            display: flex; flex-direction: column; gap: 20px; 
+            border-top: 1px solid var(--border); padding-top: 20px;
+        }
+        .filter-group { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .filter-label { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 10px; display: block; color: var(--text-muted); }
+        .filter-opt { padding: 8px 15px; border: 1px solid var(--border); cursor: pointer; font-size: 0.8rem; border-radius: 4px; background: white; transition: 0.2s; font-weight: 600; text-transform: uppercase; }
+        .filter-opt:hover, .filter-opt.active { border-color: var(--accent); color: var(--accent); background: #f8f8f8; }
+        .color-opt { width: 25px; height: 25px; border-radius: 50%; border: 1px solid var(--border); display: inline-block; }
+        .color-opt:hover, .color-opt.active { transform: scale(1.1); border-color: var(--accent); }
+
+        /* --- PAGINATION --- */
+        .shop-pagination { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 40px 0; }
+        .page-btn { padding: 8px 15px; border: 1px solid var(--border); background: white; cursor: pointer; font-weight: 600; border-radius: 4px; font-size: 0.9rem; transition: 0.2s; }
+        .page-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        .page-num { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border); cursor: pointer; font-weight: 600; border-radius: 4px; transition: 0.2s; font-size: 0.9rem; }
+        .page-num:hover, .page-num.active { border-color: var(--accent); color: var(--accent); background: #fff; }
+
         /* --- PRODUCT DETAIL PAGE (3 THUMBNAILS) --- */
         .detail-container { background: white; padding: 40px; display: flex; flex-direction: column; gap: 40px; margin-bottom: 40px; border-top: 5px solid var(--accent); }
         @media(min-width: 768px) { .detail-container { flex-direction: row; padding: 60px; } }
@@ -252,7 +299,7 @@
         .detail-left { flex: 1.2; }
         .detail-img-main { width: 100%; border-radius: 4px; cursor: crosshair; margin-bottom: 15px; border: 1px solid var(--border); }
         
-        .detail-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; } /* Grid 3 Thumbnail */
+        .detail-thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .thumb { width: 100%; height: 80px; border-radius: 4px; object-fit: cover; cursor: pointer; border: 2px solid transparent; opacity: 0.6; transition: 0.3s; aspect-ratio: 1/1; }
         .thumb:hover, .thumb.active { border-color: var(--accent); opacity: 1; }
 
@@ -312,7 +359,8 @@
 
         /* --- FOOTER --- */
         .main-footer {
-            background: #111; color: #ccc; padding: 60px 20px 20px 20px; margin-top: 80px; border-top: 5px solid var(--accent);
+            background: #111; color: #ccc; padding: 60px 20px 20px 20px; margin-top: 30px; /* JARAK FOOTER LANGSUNG (Dari 80px ke 30px) */
+            border-top: 5px solid var(--accent);
         }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 40px; }
         @media(min-width: 768px) { .footer-content { grid-template-columns: 1.5fr 1fr 1fr 1fr; } }
@@ -345,6 +393,19 @@
             color: white; padding: 100px 20px; text-align: center; border-radius: 4px; margin-bottom: 40px;
         }
         .contact-form-container { max-width:600px; margin:0 auto; background:white; padding:40px; border-radius:4px; box-shadow:0 5px 15px rgba(0,0,0,0.05); margin-top:-50px; position:relative; border-top: 4px solid var(--accent); }
+        
+        /* --- HOME (SPACING FIX) --- */
+        .home-content-spacer {
+            margin-top: 70px; /* Jarak Slider ke Konten */
+            margin-bottom: 20px;
+        }
+        .btn-load-more {
+            background: var(--primary); color: white; padding: 12px 30px;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 1px;
+            font-weight: 700; cursor: pointer; border: none; margin-top: 50px;
+            display: inline-block; transition: 0.3s; font-family: 'Teko', sans-serif; font-size: 1.2rem;
+        }
+        .btn-load-more:hover { background: var(--accent); transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -373,14 +434,18 @@
         <!-- 1. HOME PAGE (HTML ASLI DARI KAMU) -->
         <section id="home" class="page-section">
             
-            <!-- SLIDER HOME (COPY PASTE HTML KAMU DISINI) -->
+            <!-- SLIDER HOME (HTML ASLI) -->
             <section class="swiper-container js-swiper-slider swiper-number-pagination slideshow" data-settings='{
                 "autoplay": {
                   "delay": 5000
                 },
                 "slidesPerView": 1,
                 "effect": "fade",
-                "loop": true
+                "loop": true,
+                "navigation": {
+                    "nextEl": ".swiper-button-next",
+                    "prevEl": ".swiper-button-prev"
+                }
               }'>
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -452,18 +517,35 @@
               
               <div class="container">
                 <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
+                    <div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+                    <div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
                 </div>
               </div>
             </section>
 
-            <div class="section-header">Produk Terbaru</div>
-            <div class="product-grid" id="home-featured"></div>
+            <!-- KONTEN HOME (SUSUNAN BARU) -->
+            <div class="home-content-spacer">
+                
+                <!-- 1. 2 GAMBAR LEBIH BESAR (PRODUK UNGGULAN) -->
+                <div class="section-header">Produk Unggulan</div>
+                <div class="home-featured-large" id="home-featured-large"></div>
+
+                <!-- 2. 9 GAMBAR PRODUCT (GRID UTAMA) -->
+                <div class="section-header">Produk Terbaru</div>
+                <div class="product-grid" id="home-featured"></div>
+                
+                <!-- 3. TOMBOL "MUAT LEBIH BANYAK" -->
+                <div style="text-align: center;">
+                    <button onclick="switchPage('shop')" class="btn-load-more">Muat Lebih Banyak</button>
+                </div>
+
+            </div>
         </section>
 
         <!-- 2. SHOP PAGE (HTML ASLI DARI KAMU - slide_split) -->
         <section id="shop" class="page-section section-hidden">
             
-            <!-- SLIDER SHOP (COPY PASTE HTML KAMU DISINI) -->
+            <!-- SLIDER SHOP (HTML ASLI) -->
             <div class="shop-list flex-grow-1">
                 <div class="swiper-container js-swiper-slider slideshow slideshow_small slideshow_split" data-settings='{
                     "autoplay": {
@@ -476,6 +558,10 @@
                       "el": ".slideshow-pagination",
                       "type": "bullets",
                       "clickable": true
+                    },
+                    "navigation": {
+                      "nextEl": ".swiper-button-next",
+                      "prevEl": ".swiper-button-prev"
                     }
                   }'>
                   <div class="swiper-wrapper">
@@ -556,13 +642,15 @@
                   </div>
                   <div class="container">
                     <div class="slideshow-pagination slideshow-number-pagination d-flex align-items-center position-absolute bottom-0 mb-5">
+                        <div class="swiper-button-prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="swiper-button-next"><i class="fas fa-chevron-right"></i></div>
                     </div>
                   </div>
                 </div>
             </div>
 
             <div class="shop-layout">
-                <!-- Sidebar (Desktop) -->
+                <!-- Sidebar (Desktop) - FILTER DI SINI -->
                 <aside class="shop-sidebar">
                     <div class="sidebar-title">Kategori</div>
                     <ul>
@@ -574,6 +662,26 @@
                         <li class="cat-item" onclick="filterCategory('celana')">Celana <i class="fas fa-chevron-right"></i></li>
                         <li class="cat-item" onclick="filterCategory('aksesoris')">Aksesoris <i class="fas fa-chevron-right"></i></li>
                     </ul>
+
+                    <!-- FILTER SIZE & WARNA (PINDAH KE BAWAH INI) -->
+                    <div class="shop-filters">
+                        <div class="filter-group">
+                            <span class="filter-label">Filter Ukuran:</span>
+                            <div class="filter-opt" onclick="filterSize('S')">S</div>
+                            <div class="filter-opt" onclick="filterSize('M')">M</div>
+                            <div class="filter-opt" onclick="filterSize('L')">L</div>
+                            <div class="filter-opt" onclick="filterSize('XL')">XL</div>
+                            <div class="filter-opt" onclick="filterSize('XXL')">XXL</div>
+                        </div>
+                        <div class="filter-group">
+                            <span class="filter-label">Filter Warna:</span>
+                            <div class="color-opt active" style="background:black;" onclick="filterColor('black')"></div>
+                            <div class="color-opt" style="background:white; border:1px solid #ccc;" onclick="filterColor('white')"></div>
+                            <div class="color-opt" style="background:red;" onclick="filterColor('red')"></div>
+                            <div class="color-opt" style="background:blue;" onclick="filterColor('blue')"></div>
+                            <div class="color-opt" style="background:grey;" onclick="filterColor('grey')"></div>
+                        </div>
+                    </div>
                 </aside>
 
                 <!-- Main Shop Content -->
@@ -598,12 +706,29 @@
                         </select>
                     </div>
 
+                    <!-- GRID PRODUK (SEMUA) -->
                     <div class="product-grid" id="shop-grid"></div>
+
+                    <!-- PAGINATION -->
+                    <div class="shop-pagination">
+                        <button class="page-btn">Prev</button>
+                        <div class="page-num">1</div>
+                        <div class="page-num">2</div>
+                        <div class="page-num active">3</div>
+                        <div class="page-num">4</div>
+                        <button class="page-btn">Next</button>
+                    </div>
+
+                    <!-- PRODUK LAIN (BARU) -->
+                    <div class="related-section">
+                        <div class="section-header">Menu Produk Lain</div>
+                        <div class="product-grid" id="shop-related-grid"></div>
+                    </div>
                 </main>
             </div>
         </section>
 
-        <!-- 3. PRODUCT DETAIL PAGE (3 THUMBNAILS WORKING) -->
+        <!-- 3. PRODUCT DETAIL PAGE (3 THUMBNAILS WORKING) --- -->
         <section id="product-detail" class="page-section section-hidden">
             <button onclick="switchPage('shop')" style="background:none; border:none; cursor:pointer; margin-bottom:20px; font-weight:700; color:#555; text-transform: uppercase; font-size: 0.9rem;">
                 <i class="fas fa-arrow-left"></i> Kembali ke Katalog
@@ -660,11 +785,11 @@
 
             <div class="related-section">
                 <div class="section-header">Produk Lainnya</div>
-                <div class="product-grid" id="related-grid"></div>
+                <div class="product-grid" id="detail-related-grid"></div>
             </div>
         </section>
 
-        <!-- 4. ABOUT & CONTACT PAGE -->
+        <!-- 4. ABOUT & CONTACT PAGE --- -->
         <section id="about" class="page-section section-hidden">
             <div class="about-hero">
                 <h1>Tentang Zed - Sport</h1>
@@ -701,7 +826,7 @@
 
     </div> <!-- End Container -->
 
-    <!-- FOOTER -->
+    <!-- FOOTER (DATA BARU) --- -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-col">
@@ -731,11 +856,11 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Kontak Kami</h4>
+                <h4>Kontak Kami (UPDATE)</h4>
                 <ul class="contact-info">
-                    <li><i class="fas fa-envelope" style="margin-top:4px; color:var(--accent);"></i> <a href="mailto:sport@zed.com">sport@zed.com</a></li>
+                    <li><i class="fas fa-envelope" style="margin-top:4px; color:var(--accent);"></i> <a href="mailto:zeedthree007@gmail.com">zeedthree007@gmail.com</a></li>
                     <li><i class="fab fa-whatsapp" style="margin-top:4px; color:var(--accent);"></i> +62 812-3456-7890</li>
-                    <li><i class="fas fa-map-marker-alt" style="margin-top:4px; color:var(--accent);"></i> Jakarta Sport Center</li>
+                    <li><i class="fas fa-map-marker-alt" style="margin-top:4px; color:var(--accent);"></i> Tangerang - Indonesia</li>
                 </ul>
                 <div class="admin-trigger" onclick="openAdminModal()">
                     <i class="fas fa-plus-circle"></i> Tambah Produk
@@ -747,7 +872,7 @@
         </div>
     </footer>
 
-    <!-- MOBILE BOTTOM NAV -->
+    <!-- MOBILE BOTTOM NAV --- -->
     <nav class="mobile-nav">
         <div class="nav-item active" onclick="switchPage('home')" id="m-home">
             <i class="fas fa-home"></i> <span>Home</span>
@@ -763,7 +888,7 @@
         </div>
     </nav>
 
-    <!-- ADMIN GENERATOR MODAL -->
+    <!-- ADMIN GENERATOR MODAL --- -->
     <div id="adminModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeAdminModal()">&times;</span>
@@ -816,7 +941,7 @@
         </div>
     </div>
 
-    <!-- SCRIPT SECTION (FULL VERSION) -->
+    <!-- SCRIPT SECTION (FULL VERSION) --- -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
         // --- DATABASE PRODUK (CONTOH 3 GAMBAR) ---
@@ -840,9 +965,7 @@
         let selectedColor = "Hitam";
 
         function switchPage(pageId) {
-            // Sembunyikan semua section
             document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('section-hidden'));
-            // Tampilkan section yang dipilih
             document.getElementById(pageId).classList.remove('section-hidden');
             
             document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
@@ -856,23 +979,40 @@
             window.scrollTo(0,0);
         }
 
-        function renderProducts(data, containerId) {
+        function renderProducts(data, containerId, type = 'standard') {
             const container = document.getElementById(containerId);
             container.innerHTML = ''; 
             
             data.forEach(p => {
                 const mainImg = Array.isArray(p.images) ? p.images[0] : p.images;
-                const html = `
-                <div class="product-card" onclick="openDetail(${p.id})">
-                    <div class="card-img-box">
-                        <img src="${mainImg}" class="card-img" onerror="this.src='https://picsum.photos/seed/${p.id}/500/600'">
-                    </div>
-                    <div class="card-body">
-                        <div class="card-title">${p.name}</div>
-                        <div class="card-price">${formatRupiah(p.price)}</div>
-                    </div>
-                </div>`;
-                container.innerHTML += html;
+                
+                if(type === 'large') {
+                    // RENDER 2 GAMBAR LEBIH BESAR
+                    const html = `
+                    <div class="product-card-large" onclick="openDetail(${p.id})">
+                        <div class="card-img-box-large">
+                            <img src="${mainImg}" class="card-img-large" onerror="this.src='https://picsum.photos/seed/${p.id}/500/800'">
+                        </div>
+                        <div class="card-body-large">
+                            <div class="card-title-large">${p.name}</div>
+                            <div class="card-price-large">${formatRupiah(p.price)}</div>
+                        </div>
+                    </div>`;
+                    container.innerHTML += html;
+                } else {
+                    // RENDER STANDARD
+                    const html = `
+                    <div class="product-card" onclick="openDetail(${p.id})">
+                        <div class="card-img-box">
+                            <img src="${mainImg}" class="card-img" onerror="this.src='https://picsum.photos/seed/${p.id}/500/600'">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">${p.name}</div>
+                            <div class="card-price">${formatRupiah(p.price)}</div>
+                        </div>
+                    </div>`;
+                    container.innerHTML += html;
+                }
             });
         }
 
@@ -886,6 +1026,13 @@
                 const filtered = products.filter(p => p.category === cat);
                 renderProducts(filtered, 'shop-grid');
             }
+        }
+        
+        function filterSize(size) {
+            alert('Filter Ukuran: ' + size);
+        }
+        function filterColor(color) {
+            alert('Filter Warna: ' + color);
         }
 
         function openDetail(id) {
@@ -915,7 +1062,6 @@
 
             productImages.forEach((imgSrc, index) => {
                 const thumb = document.createElement('div');
-                // PERHATIKAN onclick="changeImageDetail(this)"
                 thumb.innerHTML = `<img src="${imgSrc}" class="thumb ${index === 0 ? 'active' : ''}" onclick="changeImageDetail(this)" onerror="this.src='https://picsum.photos/seed/thumb${id}${index}/100/100'">`;
                 thumbContainer.appendChild(thumb);
             });
@@ -923,20 +1069,13 @@
             switchPage('product-detail');
             
             const related = products.filter(p => p.id !== id).slice(0, 4);
-            renderProducts(related, 'related-grid');
+            renderProducts(related, 'detail-related-grid');
         }
 
         function changeImageDetail(thumbElement) {
-            // 1. Ambil gambar utama
             const mainImg = document.getElementById('detail-img');
-            
-            // 2. Ganti src gambar utama dengan src gambar kecil yang diklik
             mainImg.src = thumbElement.src;
-
-            // 3. Reset status "active" (border hijau) di semua thumbnail
             document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            
-            // 4. Beri status "active" ke thumbnail yang diklik
             thumbElement.classList.add('active');
         }
 
@@ -955,8 +1094,8 @@
         function resetDetailUI() {
             document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.color-option-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.size-btn')[1].classList.add('active'); // L default
-            document.querySelectorAll('.color-option-btn')[0].classList.add('active'); // Hitam default
+            document.querySelectorAll('.size-btn')[1].classList.add('active'); 
+            document.querySelectorAll('.color-option-btn')[0].classList.add('active'); 
         }
 
         function beliWA() {
@@ -969,7 +1108,6 @@
             return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(num);
         }
 
-        // --- ADMIN GENERATOR ---
         function openAdminModal() {
             document.getElementById('adminModal').style.display = 'flex';
         }
@@ -1017,20 +1155,29 @@
             }
         }
 
-        // --- INISIALISASI UTAMA (FINAL) ---
         window.addEventListener('DOMContentLoaded', () => {
-            // Render Produk
-            renderProducts(products.slice(0, 4), 'home-featured');
-            renderProducts(products, 'shop-grid');
+            // --- URUTANAN HOME (UPDATE) ---
+            // 1. Unggulan (2 Besar)
+            renderProducts(products.slice(0, 2), 'home-featured-large', 'large'); 
+            
+            // 2. Produk Terbaru (9 Besar)
+            renderProducts(products.slice(0, 9), 'home-featured', 'standard'); 
+            
+            // 3. Produk Lainnya (Kecil)
+            renderProducts(products.slice(2, 6), 'home-related-grid', 'standard');
 
-            // 1. Inisialisasi Slider Home (HTML Kamu)
+            // Shop Render Semua
+            renderProducts(products, 'shop-grid'); 
+            renderProducts(products.slice(0, 4), 'shop-related-grid');
+
+            // Slider Home
             const homeSliderEl = document.getElementById('home').querySelector('.js-swiper-slider');
             if(homeSliderEl) {
                 const homeSettings = JSON.parse(homeSliderEl.getAttribute('data-settings'));
                 new Swiper(homeSliderEl, homeSettings);
             }
 
-            // 2. Inisialisasi Slider Shop (HTML Kamu - slide_split)
+            // Slider Shop
             const shopSliderEl = document.getElementById('shop').querySelector('.js-swiper-slider');
             if(shopSliderEl) {
                 const shopSettings = JSON.parse(shopSliderEl.getAttribute('data-settings'));
